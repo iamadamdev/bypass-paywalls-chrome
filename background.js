@@ -38,7 +38,8 @@ var defaultSites = {
   'The Seattle Times': 'seattletimes.com',
   'The Sydney Morning Herald': 'smh.com.au',
   'The Washington Post': 'washingtonpost.com',
-  'The Wall Street Journal': 'wsj.com'
+  'The Wall Street Journal': 'wsj.com',
+  'Trouw': 'trouw.nl'
 };
 
 const restrictions = {
@@ -57,7 +58,8 @@ const allow_cookies = [
 'mercurynews.com',
 'theage.com.au',
 'economist.com',
-'bostonglobe.com'
+'bostonglobe.com',
+'trouw.nl'
 ]
 
 // Removes cookies after page load
@@ -70,7 +72,8 @@ const remove_cookies = [
 'mercurynews.com',
 'theage.com.au',
 'economist.com',
-'bostonglobe.com'
+'bostonglobe.com',
+'trouw.nl'
 ]
 
 function setDefaultOptions() {
