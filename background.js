@@ -39,7 +39,8 @@ var defaultSites = {
   'The Seattle Times': 'seattletimes.com',
   'The Sydney Morning Herald': 'smh.com.au',
   'The Washington Post': 'washingtonpost.com',
-  'The Wall Street Journal': 'wsj.com'
+  'The Wall Street Journal': 'wsj.com',
+  'Wired': 'wired.com'
 };
 
 const restrictions = {
@@ -49,7 +50,6 @@ const restrictions = {
 // Don't remove cookies before page load
 const allow_cookies = [
 'asia.nikkei.com',
-'nytimes.com',
 'wsj.com',
 'ft.com',
 'letemps.ch',
@@ -71,7 +71,9 @@ const remove_cookies = [
 'mercurynews.com',
 'theage.com.au',
 'economist.com',
-'bostonglobe.com'
+'bostonglobe.com',
+'nytimes.com',
+'wired.com'
 ]
 
 function setDefaultOptions() {
@@ -228,13 +230,3 @@ chrome.webRequest.onCompleted.addListener(function(details) {
 }, {
   urls: ["<all_urls>"]
 });
-
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-69824169-2']);
-_gaq.push(['_trackPageview']);
-
-(function() {
-  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-  ga.src = 'https://ssl.google-analytics.com/ga.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();

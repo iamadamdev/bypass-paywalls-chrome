@@ -37,7 +37,8 @@ var defaultSites = {
   'The Seattle Times': 'seattletimes.com',
   'The Sydney Morning Herald': 'smh.com.au',
   'The Washington Post': 'washingtonpost.com',
-  'The Wall Street Journal': 'wsj.com'
+  'The Wall Street Journal': 'wsj.com',
+  'Wired': 'wired.com'
 };
 
 // Saves options to chrome.storage
