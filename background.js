@@ -49,7 +49,6 @@ const restrictions = {
 // Don't remove cookies before page load
 const allow_cookies = [
 'asia.nikkei.com',
-'nytimes.com',
 'wsj.com',
 'ft.com',
 'letemps.ch',
@@ -71,7 +70,8 @@ const remove_cookies = [
 'mercurynews.com',
 'theage.com.au',
 'economist.com',
-'bostonglobe.com'
+'bostonglobe.com',
+'nytimes.com'
 ]
 
 function setDefaultOptions() {
