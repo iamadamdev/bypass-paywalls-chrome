@@ -43,7 +43,9 @@ var defaultSites = {
   'The Sydney Morning Herald': 'smh.com.au',
   'The Washington Post': 'washingtonpost.com',
   'The Wall Street Journal': 'wsj.com',
-  'Wired': 'wired.com'
+  'Wired': 'wired.com',
+  'The Advocate': 'theadvocate.com.au',
+  'Examiner': 'examiner.com.au'
 };
 
 const restrictions = {
@@ -63,7 +65,9 @@ const allow_cookies = [
 'economist.com',
 'bostonglobe.com',
 'denverpost.com',
-'chicagobusiness.com'
+'chicagobusiness.com',
+'theadvocate.com.au',
+'examiner.com.au' 
 ]
 
 // Removes cookies after page load
@@ -78,7 +82,9 @@ const remove_cookies = [
 'bostonglobe.com',
 'wired.com',
 'denverpost.com',
-'chicagobusiness.com'
+'chicagobusiness.com',
+'theadvocate.com.au',
+'examiner.com.au'
 ]
 
 function setDefaultOptions() {
