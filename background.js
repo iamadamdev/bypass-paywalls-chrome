@@ -64,57 +64,57 @@ var defaultSites = {
 
 const restrictions = {
   'barrons.com': 'barrons.com/articles'
-}
+};
 
 // Don't remove cookies before page load
 const allow_cookies = [
-'asia.nikkei.com',
-'nytimes.com',
-'wsj.com',
-'ft.com',
-'fd.nl',
-'mercurynews.com',
-'theage.com.au',
-'economist.com',
-'bostonglobe.com',
-'denverpost.com',
-'chicagobusiness.com',
-'theadvocate.com.au',
-'examiner.com.au',
-'hbr.org',
-'medium.com',
-'washingtonpost.com',
-'nymag.com',
-]
+  'asia.nikkei.com',
+  'nytimes.com',
+  'wsj.com',
+  'ft.com',
+  'fd.nl',
+  'mercurynews.com',
+  'theage.com.au',
+  'economist.com',
+  'bostonglobe.com',
+  'denverpost.com',
+  'chicagobusiness.com',
+  'theadvocate.com.au',
+  'examiner.com.au',
+  'hbr.org',
+  'medium.com',
+  'washingtonpost.com',
+  'nymag.com',
+];
 
 // Removes cookies after page load
 const remove_cookies = [
-'asia.nikkei.com',
-'ft.com',
-'fd.nl',
-'mercurynews.com',
-'theage.com.au',
-'economist.com',
-'bostonglobe.com',
-'wired.com',
-'denverpost.com',
-'chicagobusiness.com',
-'harpers.org',
-'theadvocate.com.au',
-'examiner.com.au',
-'lesechos.fr',
-'liberation.fr',
-'hbr.org',
-'medium.com',
-'foreignpolicy.com',
-'wsj.com',
-'seattletimes.com',
-'thenewsrep.com',
-'washingtonpost.com',
-'sfchronicle.com',
-'nymag.com',
-'foreignaffairs.com',
-]
+  'asia.nikkei.com',
+  'ft.com',
+  'fd.nl',
+  'mercurynews.com',
+  'theage.com.au',
+  'economist.com',
+  'bostonglobe.com',
+  'wired.com',
+  'denverpost.com',
+  'chicagobusiness.com',
+  'harpers.org',
+  'theadvocate.com.au',
+  'examiner.com.au',
+  'lesechos.fr',
+  'liberation.fr',
+  'hbr.org',
+  'medium.com',
+  'foreignpolicy.com',
+  'wsj.com',
+  'seattletimes.com',
+  'thenewsrep.com',
+  'washingtonpost.com',
+  'sfchronicle.com',
+  'nymag.com',
+  'foreignaffairs.com',
+];
 
 function setDefaultOptions() {
   chrome.storage.sync.set({
@@ -126,9 +126,9 @@ function setDefaultOptions() {
 
 
 var blockedRegexes = [
-/.+:\/\/.+\.tribdss\.com\//,
-/thenation\.com\/.+\/paywall-script\.php/,
-/haaretz\.co\.il\/htz\/js\/inter\.js/
+  /.+:\/\/.+\.tribdss\.com\//,
+  /thenation\.com\/.+\/paywall-script\.php/,
+  /haaretz\.co\.il\/htz\/js\/inter\.js/
 ];
 
 var enabledSites = [];
@@ -159,34 +159,34 @@ chrome.storage.onChanged.addListener(function(changes, namespace) {
 
 // Set and show default options on install
 chrome.runtime.onInstalled.addListener(function (details) {
-  if (details.reason == "install") {
+  if (details.reason === "install") {
     setDefaultOptions();
-  } else if (details.reason == "update") {
+  } else if (details.reason === "update") {
     // User updated extension
   }
 });
 
 // WSJ bypass
 chrome.webRequest.onBeforeRequest.addListener(function (details) {
-  if (!isSiteEnabled(details) || details.url.indexOf("mod=rsswn") !== -1) {
-    return;
-  }
+      if (!isSiteEnabled(details) || details.url.indexOf("mod=rsswn") !== -1) {
+        return;
+      }
 
-  var param;
-  var updatedUrl;
+      var param;
+      var updatedUrl;
 
-  param = getParameterByName("mod", details.url);
+      param = getParameterByName("mod", details.url);
 
-  if (param === null) {
-    updatedUrl = stripQueryStringAndHashFromPath(details.url);
-    updatedUrl += "?mod=rsswn";
-  } else {
-    updatedUrl = details.url.replace(param, "rsswn");
-  }
-  return { redirectUrl: updatedUrl};
-},
-{urls:["*://*.wsj.com/*"], types:["main_frame"]},
-["blocking"]
+      if (param === null) {
+        updatedUrl = stripQueryStringAndHashFromPath(details.url);
+        updatedUrl += "?mod=rsswn";
+      } else {
+        updatedUrl = details.url.replace(param, "rsswn");
+      }
+      return {redirectUrl: updatedUrl};
+    },
+    {urls: ["*://*.wsj.com/*"], types: ["main_frame"]},
+    ["blocking"]
 );
 
 chrome.webRequest.onBeforeSendHeaders.addListener(function(details) {
@@ -207,15 +207,15 @@ chrome.webRequest.onBeforeSendHeaders.addListener(function(details) {
   requestHeaders = requestHeaders.map(function(requestHeader) {
     if (requestHeader.name === 'Referer') {
       if (details.url.indexOf("wsj.com") !== -1 || details.url.indexOf("ft.com") !== -1) {
-       requestHeader.value = 'https://www.facebook.com/';
-     } else {
-       requestHeader.value = 'https://www.google.com/';
-     }
+        requestHeader.value = 'https://www.facebook.com/';
+      } else {
+        requestHeader.value = 'https://www.google.com/';
+      }
 
-     setReferer = true;
-   }
-   return requestHeader;
- });
+      setReferer = true;
+    }
+    return requestHeader;
+  });
 
   // otherwise add it
   if (!setReferer) {
@@ -253,7 +253,7 @@ chrome.webRequest.onBeforeSendHeaders.addListener(function(details) {
       runAt: 'document_start'
     }, function(res) {
       if (chrome.runtime.lastError || res[0]) {
-        return;
+
       }
     });
   }
@@ -291,21 +291,20 @@ _gaq.push(['_trackPageview']);
 })();
 
 function isSiteEnabled(details) {
-  var isEnabled = enabledSites.some(function(enabledSite) {
+  return enabledSites.some(function (enabledSite) {
     var useSite = details.url.indexOf("." + enabledSite) !== -1;
     if (enabledSite in restrictions) {
       return useSite && details.url.indexOf(restrictions[enabledSite]) !== -1;
     }
     return useSite;
   });
-  return isEnabled;
 }
 
 function getParameterByName(name, url) {
   if (!url) url = window.location.href;
   name = name.replace(/[\[\]]/g, '\\$&');
   var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-  results = regex.exec(url);
+      results = regex.exec(url);
   if (!results) return null;
   if (!results[2]) return '';
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
