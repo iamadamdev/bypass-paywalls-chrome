@@ -281,7 +281,7 @@ chrome.webRequest.onCompleted.addListener(function(details) {
   urls: ["<all_urls>"]
 });
 
-let _gaq = _gaq || [];
+let _gaq = [];
 _gaq.push(['_setAccount', 'UA-69824169-2']);
 _gaq.push(['_trackPageview']);
 
