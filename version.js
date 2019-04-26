@@ -1,3 +1,3 @@
-var manifestData = chrome.runtime.getManifest();
-var versionString = 'v' + manifestData.version;
+let manifestData = chrome.runtime.getManifest();
+let versionString = 'v' + manifestData.version;
 document.getElementById('version').innerText = versionString;
