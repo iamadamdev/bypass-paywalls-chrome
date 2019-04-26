@@ -1,24 +1,32 @@
 {
-	"background": {
-		"scripts": ["js/background.js"]
-	},
-	"content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
-	"browser_action": {
-		"default_popup": "html/popup.html"
-	},
-	"description": "Bypass News Sites' Paywalls",
-	"icons": {
-		"128": "icons/bypass.png"
-	},
-	"manifest_version": 2,
-	"key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3PRmcRnHFZwHUlCgoTAdBjc9nUjmJo8l8kvkl/OZV6biZFAGUQGdxF1xoGhRccWA7qfQrZdPwcM1VQoVS/1F+87XiutKTe/HNsTAFvOcVS0tjCSH6DOHpewkMUBZujwTIeo7UXUVmCPQ1UbVd6m8KmHYtSHYlaX0uXRcguWhLmO5hASxw4onvAD0uql/t/ntxsIATwn4hVApg0VZhy0QAbMany8/5ByKPa19mCQwsIdRkcpG+PNHTLWPDgeGoDL7S0DxIduraRhTlrDX/zy5ETu6NWq6r+/jRzmXAjx+vSDCU5Ps2YG8QwdCL4Zl+CNVdQrnqz4X1zfPFJ1FFmUSpwIDAQAB",
-	"name": "Bypass Paywalls",
-	"update_url": "https://raw.githubusercontent.com/iamadamdev/bypass-paywalls-chrome/master/updates.xml",
-	"short_name": "Bypass Paywall",
-	"options_ui": {
-		"chrome_style": true,
-		"page": "html/options.html"
-	},
-    "permissions": [ "cookies", "<all_urls>", "storage", "webRequest", "webRequestBlocking"],
-	"version": "1.4.8"
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ]
+  },
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+  "browser_action": {
+    "default_popup": "html/popup.html"
+  },
+  "description": "Bypass News Sites' Paywalls",
+  "icons": {
+    "128": "icons/bypass.png"
+  },
+  "manifest_version": 2,
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3PRmcRnHFZwHUlCgoTAdBjc9nUjmJo8l8kvkl/OZV6biZFAGUQGdxF1xoGhRccWA7qfQrZdPwcM1VQoVS/1F+87XiutKTe/HNsTAFvOcVS0tjCSH6DOHpewkMUBZujwTIeo7UXUVmCPQ1UbVd6m8KmHYtSHYlaX0uXRcguWhLmO5hASxw4onvAD0uql/t/ntxsIATwn4hVApg0VZhy0QAbMany8/5ByKPa19mCQwsIdRkcpG+PNHTLWPDgeGoDL7S0DxIduraRhTlrDX/zy5ETu6NWq6r+/jRzmXAjx+vSDCU5Ps2YG8QwdCL4Zl+CNVdQrnqz4X1zfPFJ1FFmUSpwIDAQAB",
+  "name": "Bypass Paywalls",
+  "update_url": "https://raw.githubusercontent.com/iamadamdev/bypass-paywalls-chrome/master/updates.xml",
+  "short_name": "Bypass Paywall",
+  "options_ui": {
+    "chrome_style": true,
+    "page": "html/options.html"
+  },
+  "permissions": [
+    "cookies",
+    "<all_urls>",
+    "storage",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+  "version": "1.4.8"
 }
