@@ -61,12 +61,15 @@ let defaultSites = {
 };
 
 // Saves options to chrome.storage
-function save_options() {
+function save_options()
+{
     let gh_url = document.getElementById('bypass_sites').value;
     let inputEls = document.querySelectorAll('#bypass_sites input');
 
-    let sites = Array.from(inputEls).reduce(function (memo, inputEl) {
-        if (inputEl.checked) {
+    let sites = Array.from(inputEls).reduce(function (memo, inputEl)
+    {
+        if (inputEl.checked)
+        {
             memo[inputEl.dataset.key] = inputEl.dataset.value;
         }
         return memo;
@@ -74,11 +77,13 @@ function save_options() {
 
     chrome.storage.sync.set({
         sites: sites
-    }, function () {
+    }, function ()
+    {
         // Update status to let user know options were saved.
         let status = document.getElementById('status');
         status.textContent = 'Options saved.';
-        setTimeout(function () {
+        setTimeout(function ()
+        {
             status.textContent = '';
             window.close();
         }, 800);
@@ -87,14 +92,18 @@ function save_options() {
 
 // Restores checkbox input states using the preferences
 // stored in chrome.storage.
-function renderOptions() {
+function renderOptions()
+{
     chrome.storage.sync.get({
         sites: {}
-    }, function (items) {
+    }, function (items)
+    {
         let sites = items.sites;
         let sitesEl = document.getElementById('bypass_sites');
-        for (let key in defaultSites) {
-            if (!defaultSites.hasOwnProperty(key)) {
+        for (let key in defaultSites)
+        {
+            if (!defaultSites.hasOwnProperty(key))
+            {
                 continue;
             }
 
@@ -113,16 +122,20 @@ function renderOptions() {
     });
 }
 
-function selectAll() {
+function selectAll()
+{
     let inputEls = Array.from(document.querySelectorAll('input'));
-    inputEls.forEach(function (inputEl) {
+    inputEls.forEach(function (inputEl)
+    {
         inputEl.checked = true;
     });
 }
 
-function selectNone() {
+function selectNone()
+{
     let inputEls = Array.from(document.querySelectorAll('input'));
-    inputEls.forEach(function (inputEl) {
+    inputEls.forEach(function (inputEl)
+    {
         inputEl.checked = false;
     });
 }
