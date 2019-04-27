@@ -1,0 +1,28 @@
+os:
+  - linux
+services:
+  - docker
+sudo: required
+addons:
+  chrome: stable
+
+language: node_js
+node_js:
+  - "10.15.3"
+
+branches:
+  only:
+    - /.*/
+stages:
+  - compile
+  - test
+  - deploy
+
+before_install:
+  - sudo apt-get update
+
+before_script:
+  - npm install -g gulp-cli
+
+script:
+  - gulp

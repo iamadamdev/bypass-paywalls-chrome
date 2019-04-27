@@ -83,7 +83,7 @@ Only large or major sites will be considered.
 Usually premium articles cannot be bypassed as they are behind a hard paywall.
 
 ### Troubleshooting
-* This extension works best alongside [uBlock Origin](https://chrome.google.com/webstore/detail/ublock/epcnnfbjfcgphgdmggkamkmgojdagdnn).
+* This extension works best alongside [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm).
 * On some sites if you open an article and the paywall comes up try refreshing the page.
 * For The Denver Post turn off uBlock.
 
