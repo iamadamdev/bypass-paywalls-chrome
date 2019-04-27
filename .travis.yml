@@ -22,7 +22,9 @@ before_install:
   - sudo apt-get update
 
 before_script:
-  - npm install -g gulp-cli
+  - npm install -g protractor
+  - webdriver-manager update
+  - webdriver-manager start
 
 script:
-  - gulp
+  - npm --version
