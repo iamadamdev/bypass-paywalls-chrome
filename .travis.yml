@@ -29,8 +29,10 @@ jobs:
       script: npm --version
     - script: npm --version
       name: "Compile Stage2"
+
     - stage: test
       script: npm --version
+
     - stage: deploy
       script: npm --version
 
