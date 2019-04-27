@@ -1,0 +1,22 @@
+os:
+  - linux
+services:
+  - docker
+sudo: required
+addons:
+  chrome: stable
+
+language: node_js
+node_js:
+  - "10.4.1"
+
+branches:
+  only:
+    - master
+
+before_script:
+  - npm install
+
+script:
+  - ng build --prod --aot
+  - ng test
