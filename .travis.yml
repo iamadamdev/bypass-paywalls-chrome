@@ -25,7 +25,10 @@ before_script:
 jobs:
   include:
     - stage: compile
+      name: "Compile Stage"            # names the first Tests stage job
       script: npm --version
+    - script: npm --version
+      name: "Compile Stage2"
     - stage: test
       script: npm --version
     - stage: deploy
