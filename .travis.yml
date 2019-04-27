@@ -20,7 +20,7 @@ before_install:
 before_script:
   - npm install -g protractor
   - webdriver-manager update
-  - webdriver-manager start
+  #- webdriver-manager start
 
 jobs:
   include:
