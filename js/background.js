@@ -371,3 +371,4 @@ function stripQueryStringAndHashFromPath(url)
 {
     return url.split("?")[0].split("#")[0];
 }
+
