@@ -17,12 +17,12 @@ stages:
   - compile
   - test
   - deploy
-  -
+
 before_install:
   - sudo apt-get update
+
 before_script:
-  - npm install -g @angular/cli
+  - npm install -g gulp-cli
 
 script:
-  - ng lint
-  - ng test
+  - gulp
