@@ -15,7 +15,7 @@ branches:
     - /.*/
 
 before_script:
-  - npm install
+  - npm install -g @angular/cli
 
 script:
   - ng build --prod --aot
