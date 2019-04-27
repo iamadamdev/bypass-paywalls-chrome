@@ -13,10 +13,16 @@ node_js:
 branches:
   only:
     - /.*/
-
+stages:
+  - compile
+  - test
+  - deploy
+  -
+before_install:
+  - sudo apt-get update
 before_script:
   - npm install -g @angular/cli
 
 script:
-  - ng build --prod --aot
+  - ng lint
   - ng test
