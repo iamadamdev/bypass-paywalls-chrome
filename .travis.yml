@@ -24,11 +24,11 @@ before_script:
 
 jobs:
   include:
-    - compile
+    - stage: compile
       script: npm --version
-    - test
+    - stage: test
       script: npm --version
-    - deploy
+    - stage: deploy
       script: npm --version
 
 
