@@ -11,9 +11,8 @@
 		"128": "bypass.png"
 	},
 	"manifest_version": 2,
-	"key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3PRmcRnHFZwHUlCgoTAdBjc9nUjmJo8l8kvkl/OZV6biZFAGUQGdxF1xoGhRccWA7qfQrZdPwcM1VQoVS/1F+87XiutKTe/HNsTAFvOcVS0tjCSH6DOHpewkMUBZujwTIeo7UXUVmCPQ1UbVd6m8KmHYtSHYlaX0uXRcguWhLmO5hASxw4onvAD0uql/t/ntxsIATwn4hVApg0VZhy0QAbMany8/5ByKPa19mCQwsIdRkcpG+PNHTLWPDgeGoDL7S0DxIduraRhTlrDX/zy5ETu6NWq6r+/jRzmXAjx+vSDCU5Ps2YG8QwdCL4Zl+CNVdQrnqz4X1zfPFJ1FFmUSpwIDAQAB",
+	"key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmWi3+TSiAMqmUdQfTTbq163CI73pIAIvBzV0+8YMI9SGqmosOrXP2BpNK2U172idWrCH+M15AHuZo6z3UbBrmDlStGzI9E6RzS6mOAD2z+f3Gl/kM5BgJq9AsvGbC0N2a8aMS+9j7iJghF9LdzyGBu+XXadlbE5d5Z9c+X9kux0w87sP40UusCwwkTRyAF3x355aqvvYHKlS/zD1tKOtuzR3vEAnnDbC5DrMJ9immr3Ew5JcJOgWlQgVahwRGn2aVPfEKmEsCZtpX1KqGYXPTWJ7QOxIapveKpIQYo7uY4TIm9/nshyUwRZ5bXTQB1z0rs9oSxVjfr2Ti7Zq2GbnQQIDAQAB",
 	"name": "Bypass Paywalls",
-	"update_url": "https://raw.githubusercontent.com/iamadamdev/bypass-paywalls-chrome/master/updates.xml",
 	"short_name": "Bypass Paywall",
 	"options_ui": {
 		"chrome_style": true,
