@@ -1,19 +1,19 @@
 # Bypass Paywalls for Chrome
 
 ### Installation Instructions
-**Google Chrome**:
+**Google Chrome**
 1. Download this repo as a [ZIP file from GitHub](https://github.com/iamadamdev/bypass-paywalls-chrome/archive/master.zip).
 1. Unzip the file and you should have a folder named `bypass-paywalls-chrome-master`.
-1. In Chrome go to the extensions page (`chrome://extensions`) 
-1. Enable Developer Mode
+1. In Chrome go to the extensions page (`chrome://extensions`).
+1. Enable Developer Mode.
 1. Drag the `bypass-paywalls-chrome-master` folder anywhere on the page to import it.
 
-Notes:
+**Notes**
 * Every time you open Chrome it may warn you about running extensions in developer mode, just click 🗙 to keep the extension enabled.
 * You will be logged out for any site you have checked.
 * This extension works best along side the adblocker uBlock Origin.
 
-### Bypass the following sites' paywalls with this extension:
+### Bypass the following sites' paywalls with this extension
 
 [American Banker](https://americanbanker.com)\
 [Baltimore Sun](https://www.baltimoresun.com)\
@@ -91,7 +91,16 @@ Notes:
 [Wired](https://www.wired.com)\
 [Zeit Online](https://www.zeit.de)
 
-### New site requests:
+### Sites with limited number of free articles
+The free article limit can normally be bypassed by removing cookies for the site.*
+
+Install the [Cookie Remover](https://chrome.google.com/webstore/detail/cookie-remover/kcgpggonjhmeaejebeoeomdlohicfhce) extension.
+
+When coming across a paywall click the cookie icon to remove the cookies then refresh the page.
+
+_*May not always succeed_
+
+### New site requests
 Only large or major sites will be considered.
 1. Visit an article on the site you want to bypass the paywall for and copy the article title.
 2. Open up a new incognito window (Ctrl+Shift+N) and paste the article title into Google.
