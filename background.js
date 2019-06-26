@@ -17,6 +17,7 @@ var defaultSites = {
   'Dynamed Plus': 'dynamed.com',
   'The Economist': 'economist.com',
   'Les Echos': 'lesechos.fr',
+  'Eindhovens Dagblad': 'ed.nl',
   'Encyclopedia Britannica': 'britannica.com',
   'Examiner': 'examiner.com.au',
   'Financial News': 'fnlondon.com',
@@ -35,6 +36,7 @@ var defaultSites = {
   'Liberation': 'liberation.fr',
   'Los Angeles Times': 'latimes.com',
   'Medium': 'medium.com',
+  'MIT Sloan Management Review': 'sloanreview.mit.edu',
   'MIT Technology Review': 'technologyreview.com',
   'Newsrep': 'thenewsrep.com',
   'New York Magazine': 'nymag.com',
@@ -46,6 +48,7 @@ var defaultSites = {
   'San Francisco Chronicle': 'sfchronicle.com',
   'Scientific American': 'scientificamerican.com',
   'SunSentinel': 'sun-sentinel.com',
+  'Telegraaf': 'telegraaf.nl',
   'The Advocate': 'theadvocate.com.au',
   'The Age': 'theage.com.au',
   'The Australian': 'theaustralian.com.au',
@@ -65,12 +68,14 @@ var defaultSites = {
   'The Seattle Times': 'seattletimes.com',
   'The Spectator': 'spectator.co.uk',
   'The Sydney Morning Herald': 'smh.com.au',
+  'The Telegraph': 'telegraph.co.uk',
   'The Toronto Star': 'thestar.com',
   'The Washington Post': 'washingtonpost.com',
   'The Wall Street Journal': 'wsj.com',
   'Winston-Salem Journal': 'journalnow.com',
   'Vanity Fair': 'vanityfair.com',
-  'Wired': 'wired.com'
+  'Wired': 'wired.com',
+  'Zeit Online': 'zeit.de'
 };
 
 const restrictions = {
@@ -97,12 +102,14 @@ const allow_cookies = [
 'washingtonpost.com',
 'nymag.com',
 'theaustralian.com.au',
+'telegraaf.nl', // keep accept cookies
 'demorgen.be',
 ]
 
 // Removes cookies after page load
 const remove_cookies = [
 'asia.nikkei.com',
+'ed.nl',
 'ft.com',
 'fd.nl',
 'mercurynews.com',
@@ -128,15 +135,20 @@ const remove_cookies = [
 'nymag.com',
 'foreignaffairs.com',
 'scientificamerican.com',
+'telegraaf.nl',
 'thestar.com',
 'qz.com',
 'demorgen.be',
+'sloanreview.mit.edu',
+'zeit.de',
 ]
 
 // Override User-Agent with Googlebot
 const use_google_bot = [
 'theaustralian.com.au',
 'barrons.com',
+'telegraph.co.uk',
+'zeit.de'
 ]
 
 function setDefaultOptions() {

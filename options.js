@@ -15,6 +15,7 @@ var defaultSites = {
   'Dynamed Plus': 'dynamed.com',
   'The Economist (javascript disabled)': 'economist.com',
   'Encyclopedia Britannica': 'britannica.com',
+  'Eindhovens Dagblad': 'ed.nl',
   'Examiner': 'examiner.com.au',
   'Financial News': 'fnlondon.com',
   'Financial Times': 'ft.com',
@@ -33,6 +34,7 @@ var defaultSites = {
   'Liberation': 'liberation.fr',
   'Los Angeles Times': 'latimes.com',
   'Medium': 'medium.com',
+  'MIT Sloan Management Review': 'sloanreview.mit.edu',
   'MIT Technology Review': 'technologyreview.com',
   'Newsrep': 'thenewsrep.com',
   'New York Magazine': 'nymag.com',
@@ -44,6 +46,7 @@ var defaultSites = {
   'San Francisco Chronicle': 'sfchronicle.com',
   'Scientific American': 'scientificamerican.com',
   'SunSentinel': 'sun-sentinel.com',
+  'Telegraaf': 'telegraaf.nl',
   'The Advocate': 'theadvocate.com.au',
   'The Age': 'theage.com.au',
   'The Australian': 'theaustralian.com.au',
@@ -63,12 +66,14 @@ var defaultSites = {
   'The Seattle Times': 'seattletimes.com',
   'The Spectator': 'spectator.co.uk',
   'The Sydney Morning Herald': 'smh.com.au',
+  'The Telegraph': 'telegraph.co.uk',
   'The Toronto Star (javascript disabled)': 'thestar.com',
   'The Washington Post': 'washingtonpost.com',
   'The Wall Street Journal': 'wsj.com',
   'Winston-Salem Journal': 'journalnow.com',
   'Vanity Fair': 'vanityfair.com',
-  'Wired': 'wired.com'
+  'Wired': 'wired.com',
+  'Zeit Online': 'zeit.de'
 };
 
 // Saves options to chrome.storage
