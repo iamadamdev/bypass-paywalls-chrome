@@ -59,6 +59,7 @@
 [Quora](https://www.quora.com)\
 [San Francisco Chronicle](https://sfchronicle.com)\
 [Scientific American](https://scientificamerican.com)\
+[Süddeutsche Zeitung](https://www.sueddeutsche.de)\
 [SunSentinel](https://www.sun-sentinel.com)\
 [Telegraaf](https://telegraaf.nl)\
 [The Advocate](https://www.theadvocate.com.au)\
