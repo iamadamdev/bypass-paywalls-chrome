@@ -148,4 +148,3 @@ document.addEventListener('DOMContentLoaded', renderOptions);
 document.getElementById('save').addEventListener('click', save_options);
 document.getElementById('select-all').addEventListener('click', selectAll);
 document.getElementById('select-none').addEventListener('click', selectNone);
-

@@ -231,7 +231,7 @@ chrome.webRequest.onBeforeRequest.addListener(function(details) {
   if (!isSiteEnabled(details) || details.url.indexOf("mod=rsswn") !== -1) {
     return;
   }
-  return {cancel: true}; 
+  return {cancel: true};
   },
   {
     urls: ["*://*.thestar.com/*", "*://*.economist.com/*", "*://*.theglobeandmail.com/*", "*://*.afr.com/*", "*://*.bizjournals.com/*", "*://*.businessinsider.com/*"],
@@ -290,7 +290,7 @@ chrome.webRequest.onBeforeSendHeaders.addListener(function(details) {
 
   // override User-Agent to use Googlebot
   var useGoogleBot = use_google_bot.filter(function(item) {
-    return typeof item == 'string' && details.url.indexOf(item) > -1;            
+    return typeof item == 'string' && details.url.indexOf(item) > -1;
   }).length > 0;
 
   if (useGoogleBot) {
