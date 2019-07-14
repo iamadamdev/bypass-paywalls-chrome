@@ -72,6 +72,7 @@ var defaultSites = {
   'Winston-Salem Journal': 'journalnow.com',
   'Vanity Fair': 'vanityfair.com',
   'Wired': 'wired.com',
+  'World Politics review': 'worldpoliticsreview.com',
   'Zeit Online': 'zeit.de'
 };
 
