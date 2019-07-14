@@ -74,6 +74,7 @@ var defaultSites = {
   'Winston-Salem Journal': 'journalnow.com',
   'Vanity Fair': 'vanityfair.com',
   'Wired': 'wired.com',
+  'World Politics Review': 'worldpoliticsreview.com',
   'Zeit Online': 'zeit.de'
 };
 
@@ -146,6 +147,7 @@ const use_google_bot = [
 'theaustralian.com.au',
 'barrons.com',
 'telegraph.co.uk',
+'worldpoliticsreview'.com,
 'zeit.de'
 ]
 
