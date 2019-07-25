@@ -26,6 +26,7 @@ var defaultSites = {
   'Glassdoor': 'glassdoor.com',
   'Haaretz': 'haaretz.co.il',
   'Haaretz English': 'haaretz.com',
+  'Handelsblatt': 'handelsblatt.com',
   'Hartford Courant': 'courant.com',
   'Harper\'s Magazine': 'harpers.org',
   'Harvard Business Review': 'hbr.org',
@@ -140,6 +141,7 @@ const remove_cookies = [
 'demorgen.be',
 'sloanreview.mit.edu',
 'zeit.de',
+'handelsblatt.com',
 ]
 
 // Override User-Agent with Googlebot
