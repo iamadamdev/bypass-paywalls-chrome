@@ -117,6 +117,18 @@ if (window.location.href.indexOf("firstthings.com") !== -1) {
 	if(paywall) removeDOMElement(paywall);
 }
 
+if (window.location.href.indexOf("harpers.org") !== -1) {
+	document.addEventListener('DOMContentLoaded', function() {
+		const paywall = document.getElementById('leaky_paywall_message');
+		const popups = [
+			document.getElementsByClassName('splash wmpci-popup-wrp closeClassDefault design1')[0],
+			document.getElementById('issuem-leaky-paywall-articles-remaining-nag'),
+			document.getElementsByClassName('customLHight')[0]
+		];
+		removeDOMElement(paywall, ...popups);
+	});
+}
+
 function removeDOMElement(...elements) {
 	for (let element of elements) {
 		if (element) element.remove();
