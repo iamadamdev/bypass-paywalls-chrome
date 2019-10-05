@@ -33,7 +33,7 @@ if (urlMatches('rep.repubblica.it')) {
 	}
 }
 
-if (window.location.href.indexOf("americanbanker.com") !== -1) {
+if (urlMatches('americanbanker.com')) {
 	const paywall = document.getElementsByClassName(
 		"embargo-content"
 	);
@@ -42,14 +42,14 @@ if (window.location.href.indexOf("americanbanker.com") !== -1) {
 	}
 }
 
-if (window.location.href.indexOf('telegraaf.nl') !== -1) {
+if (urlMatches('telegraaf.nl')) {
 	const paywall = document.getElementById('TEMPRORARY_METERING_ID');
 	if (paywall) {
 		window.location.reload(1);
 	}
 }
 
-if (window.location.href.indexOf('ed.nl') !== -1) {
+if (urlMatches('ed.nl')) {
 	const paywall = document.querySelector('.article__component.article__component--paywall-module-notification');
 	if (paywall) {
 		paywall.remove();
@@ -57,7 +57,7 @@ if (window.location.href.indexOf('ed.nl') !== -1) {
 	}
 }
 
-if (window.location.href.indexOf("washingtonpost.com") !== -1) {
+if (urlMatches('washingtonpost.com')) {
 	if (location.href.includes('/gdpr-consent/')) {
 		document.querySelector('.gdpr-consent-container .continue-btn.button.free').click();
 
@@ -71,17 +71,17 @@ if (window.location.href.indexOf("washingtonpost.com") !== -1) {
 	}
 }
 
-if (window.location.href.indexOf("wsj.com") !== -1) {
+if (urlMatches('wsj.com')) {
 	if (location.href.includes('/articles/')) {
 		document.querySelector('.close-btn').click();
 	}
 }
 
-if (window.location.href.indexOf("sloanreview.mit.edu") !== -1) {
+if (urlMatches('sloanreview.mit.edu')) {
 	document.querySelector('#cboxClose').click();
 }
 
-if (window.location.href.indexOf("mexiconewsdaily.com") !== -1) {
+if (urlMatches('mexiconewsdaily.com')) {
 	document.addEventListener('DOMContentLoaded', () => {
 		const sideNotification = document.querySelector('.pigeon-widget-prompt');
 		const subMessage = document.querySelector('.sub_message_container');
@@ -92,7 +92,7 @@ if (window.location.href.indexOf("mexiconewsdaily.com") !== -1) {
 	});
 }
 
-if (window.location.href.indexOf("the-american-interest.com") !== -1) {
+if (urlMatches('the-american-interest.com')) {
   const counter = document.getElementById('article-counter') || false;
   if (counter) {
     counter.remove();
@@ -100,7 +100,7 @@ if (window.location.href.indexOf("the-american-interest.com") !== -1) {
   }
 }
 
-if (window.location.href.indexOf("nzherald.co.nz") !== -1) {
+if (urlMatches('nzherald.co.nz')) {
   const paywall = document.getElementById(
     "article-content"
   );
