@@ -1,6 +1,22 @@
 window.localStorage.clear();
 
-if (location.hostname.endsWith('rep.repubblica.it')) {
+const getHostName = _ => {
+	let url = location.hostname;
+	if (location.hostname.startsWith('www.')) {
+		return url.replace('www.', '');
+	}
+
+	return url;
+};
+
+const urlMatches = (url) => {
+
+	return getHostName() === url;
+};
+
+
+if (urlMatches('rep.repubblica.it')) {
+	console.log('inside republica')
 	if (location.href.includes('/pwa/')) {
 		location.href = location.href.replace('/pwa/', '/ws/detail/');
 	}
