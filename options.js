@@ -52,6 +52,7 @@ var defaultSites = {
   'New Zealand Herald': 'nzherald.co.nz',
   'OrlandoSentinel': 'orlandosentinel.com',
   'Parool': 'parool.nl',
+  'Pittsburgh Post-Gazette': 'post-gazette.com',
   'Quartz': 'qz.com',
   'Quora': 'quora.com',
   'San Diego Union Tribune': 'sandiegouniontribune.com',
