@@ -133,7 +133,7 @@ Usually premium articles cannot be bypassed as they are behind a hard paywall.
 * If a site doesn't work try turning off uBlock and refreshing.
 * Make sure the site is checked under Options (on macOS sometimes the sites are unselected).
 
-### Pull Requesets
+### Pull Requests
 * PRs are welcome.
 
 ### Show your support
