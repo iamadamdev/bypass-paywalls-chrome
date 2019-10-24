@@ -1,5 +1,8 @@
 'use strict';
 
+/* Please respect alphabetical order when adding a site in any list */
+
+// Cookies from this list are blocked by default
 var defaultSites = {
   'Algemeen Dagblad': 'ad.nl',
   'American Banker': 'americanbanker.com',
@@ -18,8 +21,6 @@ var defaultSites = {
   'DeMorgen': 'demorgen.be',
   'Denver Post': 'denverpost.com',
   'Dynamed Plus': 'dynamed.com',
-  'The Economist': 'economist.com',
-  'Les Echos': 'lesechos.fr',
   'Eindhovens Dagblad': 'ed.nl',
   'Encyclopedia Britannica': 'britannica.com',
   'Examiner': 'examiner.com.au',
@@ -35,9 +36,13 @@ var defaultSites = {
   'Harvard Business Review': 'hbr.org',
   'Inc.com': 'inc.com',
   'Irish Times': 'irishtimes.com',
-  'LA Business Journal': 'labusinessjournal.com',
+  'L.A. Business Journal': 'labusinessjournal.com',
+  'La Nacion': 'lanacion.com.ar',
   'La Repubblica': 'repubblica.it',
   'La Tercera': 'latercera.com',
+  'L\'Echo': 'lecho.be',
+  'Le Monde': 'lemonde.fr',  
+  'Les Echos': 'lesechos.fr',
   'Liberation': 'liberation.fr',
   'Loeb Classical Library': 'loebclassics.com',
   'Los Angeles Times': 'latimes.com',
@@ -68,6 +73,7 @@ var defaultSites = {
   'The Australian Financial Review': 'afr.com',
   'The Boston Globe': 'bostonglobe.com',
   'The Business Journals': 'bizjournals.com',
+  'The Economist': 'economist.com',
   'The Globe and Mail': 'theglobeandmail.com',
   'The Japan Times': 'japantimes.co.jp',
   'TheMarker': 'themarker.com',
@@ -101,86 +107,76 @@ const restrictions = {
 
 // Don't remove cookies before page load
 const allow_cookies = [
-'asia.nikkei.com',
-'nytimes.com',
-'wsj.com',
-'ft.com',
 'ad.nl',
+'asia.nikkei.com',
+'bostonglobe.com',
+'chicagobusiness.com',
+'demorgen.be',
+'denverpost.com',
+'economist.com',
 'ed.nl',
+'examiner.com.au',
+'ft.com',
+'harpers.org',
+'hbr.org',
+'lemonde.fr',
+'medium.com',
+'mercurynews.com',
+'mexiconewsdaily.com',
+'nymag.com',
+'nytimes.com',
 'parool.nl',
+'qz.com',
+'telegraaf.nl',
+'the-american-interest.com',
+'theadvocate.com.au',
+'theage.com.au',
+'theaustralian.com.au',
 'trouw.nl',
 'vn.nl',
 'volkskrant.nl',
-'mercurynews.com',
-'theage.com.au',
-'economist.com',
-'bostonglobe.com',
-'denverpost.com',
-'chicagobusiness.com',
-'theadvocate.com.au',
-'examiner.com.au',
-'hbr.org',
-'medium.com',
 'washingtonpost.com',
-'nymag.com',
-'theaustralian.com.au',
-'telegraaf.nl', // keep accept cookies
-'demorgen.be',
-'mexiconewsdaily.com',
-'the-american-interest.com'
+'wsj.com'
 ]
 
 // Removes cookies after page load
 const remove_cookies = [
-'asia.nikkei.com',
 'ad.nl',
-'ed.nl',
-'vn.nl',
-'ft.com',
-'mercurynews.com',
-'theage.com.au',
-'economist.com',
+'asia.nikkei.com',
+'bloombergquint.com',
 'bostonglobe.com',
-'wired.com',
-'denverpost.com',
 'chicagobusiness.com',
-'harpers.org',
-'theadvocate.com.au',
-'examiner.com.au',
-'lesechos.fr',
-'liberation.fr',
-'hbr.org',
-'theatlantic.com',
-'medium.com',
-'mexiconewsdaily.com',
-'foreignpolicy.com',
-'wsj.com',
-'seattletimes.com',
-'thenewsrep.com',
-'washingtonpost.com',
-'sfchronicle.com',
-'nymag.com',
-'scientificamerican.com',
-'telegraaf.nl',
-'thestar.com',
-'qz.com',
 'demorgen.be',
-'sloanreview.mit.edu',
-'zeit.de',
-'firstthings.com',
-'bloombergquint.com'
+'denverpost.com',
+'economist.com',
+'ed.nl',
+'examiner.com.au',
+'ft.com',
+'harpers.org',
+'hbr.org',
+'medium.com',
+'mercurynews.com',
+'mexiconewsdaily.com',
+'nymag.com',
+'qz.com',
+'telegraaf.nl',
+'theadvocate.com.au',
+'theage.com.au',
+'vn.nl',
+'washingtonpost.com',
+'wsj.com'
 ]
 
 // Override User-Agent with Googlebot
 const use_google_bot = [
-'theaustralian.com.au',
 'barrons.com',
-'telegraph.co.uk',
-'zeit.de',
-'nytimes.com',
 'mexiconewsdaily.com',
 'nytimes.com',
+'telegraph.co.uk',
+'theaustralian.com.au',
 'thetimes.co.uk',
+'wsj.com',
+'zeit.de',
 ]
 
 function setDefaultOptions() {
@@ -237,6 +233,7 @@ chrome.runtime.onInstalled.addListener(function (details) {
   }
 });
 
+/**
 // WSJ bypass
 chrome.webRequest.onBeforeRequest.addListener(function (details) {
   if (!isSiteEnabled(details) || details.url.indexOf("mod=rsswn") !== -1) {
@@ -259,6 +256,7 @@ chrome.webRequest.onBeforeRequest.addListener(function (details) {
 {urls:["*://*.wsj.com/*"], types:["main_frame"]},
 ["blocking"]
 );
+**/
 
 // Disable javascript for these sites
 chrome.webRequest.onBeforeRequest.addListener(function(details) {
