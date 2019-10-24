@@ -60,7 +60,7 @@
 [MIT Sloan Management Review](https://sloanreview.mit.edu)\
 [MIT Technology Review](https://www.technologyreview.com)\
 [Medium](https://www.medium.com)\
-[Mexicon News Daily](mexiconewsdaily.com)\
+[Mexicon News Daily](https://mexiconewsdaily.com)\
 [NRC](https://www.nrc.nl)\
 [New York Magazine](https://www.nymag.com)\
 [New Zealand Herald](https://www.nzherald.co.nz)\
@@ -70,7 +70,7 @@
 [Parool](https://www.parool.nl)\
 [Quartz](https://qz.com)\
 [Quora](https://www.quora.com)\
-[San Diego Union Tribune](sandiegouniontribune.com)\
+[San Diego Union Tribune](https://sandiegouniontribune.com)\
 [San Francisco Chronicle](https://sfchronicle.com)\
 [Scientific American](https://scientificamerican.com)\
 [Statista](https://statista.com)\
