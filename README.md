@@ -68,6 +68,7 @@
 [Nikkei Asian Review](https://asia.nikkei.com)\
 [Orlando Sentinel](https://www.orlandosentinel.com)\
 [Parool](https://www.parool.nl)\
+[Pittsburgh Post-Gazette](post-gazette.com)\
 [Quartz](https://qz.com)\
 [Quora](https://www.quora.com)\
 [San Diego Union Tribune](https://sandiegouniontribune.com)\
