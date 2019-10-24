@@ -33,8 +33,11 @@ var defaultSites = {
   'Inc.com': 'inc.com',
   'Irish Times': 'irishtimes.com',
   'LA Business Journal': 'labusinessjournal.com',
+  'La Nacion': 'lanacion.com.ar',
   'La Repubblica': 'repubblica.it',
   'La Tercera': 'latercera.com',
+  'L\'Echo': 'lecho.be',
+  'Le Monde': 'lemonde.fr',
   'Les Echos': 'lesechos.fr',
   'Liberation': 'liberation.fr',
   'Loeb Classical Library': 'loebclassics.com',
@@ -165,4 +168,3 @@ document.addEventListener('DOMContentLoaded', renderOptions);
 document.getElementById('save').addEventListener('click', save_options);
 document.getElementById('select-all').addEventListener('click', selectAll);
 document.getElementById('select-none').addEventListener('click', selectNone);
-
