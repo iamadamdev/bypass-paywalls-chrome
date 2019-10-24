@@ -47,10 +47,11 @@
 [Harvard Business Review](https://www.hbr.org)\
 [Inc.com](https://www.inc.com)\
 [Irish Times](https://www.irishtimes.com)\
-[L.A. Business Journal](labusinessjournal.com)\
+[L.A. Business Journal](https://labusinessjournal.com)\
 [La Nación](https://www.lanacion.com.ar)\
 [La Repubblica](https://www.repubblica.it)\
-[La Tercera](latercera.com)\
+[La Tercera](https://latercera.com)\
+[L'Écho](https://lecho.be)\
 [Le Monde](https://www.lemonde.fr)\
 [Les Échos](https://lesechos.fr)\
 [Libération](https://liberation.fr)\
