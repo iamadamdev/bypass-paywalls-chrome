@@ -32,7 +32,7 @@ var defaultSites = {
   'Harvard Business Review': 'hbr.org',
   'Inc.com': 'inc.com',
   'Irish Times': 'irishtimes.com',
-  'LA Business Journal': 'labusinessjournal.com',
+  'L.A. Business Journal': 'labusinessjournal.com',
   'La Nacion': 'lanacion.com.ar',
   'La Repubblica': 'repubblica.it',
   'La Tercera': 'latercera.com',
