@@ -1,4 +1,5 @@
-/* Please respect alphabetical order when adding a site in any list */
+/* Please use absolute alphabetical order (taking the articles 'the', 'la', 'die', etc. into account)
+when adding a site in any of those lists */
 
 'use strict';
 
@@ -16,6 +17,7 @@ var defaultSites = {
   'Corriere Della Sera': 'corriere.it',
   'Daily Press': 'dailypress.com',
   'Dagens Nyheter': 'dn.se',
+  'Dark Reading': 'darkreading.com',
   'De Groene Amsterdammer': 'groene.nl',
   'De Volkskrant': 'volkskrant.nl',
   'DeMorgen': 'demorgen.be',
@@ -73,6 +75,7 @@ var defaultSites = {
   'The Australian Financial Review': 'afr.com',
   'The Boston Globe': 'bostonglobe.com',
   'The Business Journals': 'bizjournals.com',
+  'The Canberra Times': 'canberratimes.com.au',
   'The Economist': 'economist.com',
   'The Globe and Mail': 'theglobeandmail.com',
   'The Japan Times': 'japantimes.co.jp',
