@@ -155,6 +155,18 @@ if (window.location.href.indexOf('lemonde.fr') !== -1) {
     });
 }
 
+if (window.location.href.indexOf("canberratimes.com.au") !== -1) {
+    
+    const paywall = document.querySelector('.subscribe-article.news-article-body.article__body');
+    paywall.classList.remove('subscribe-article');
+	
+/* for each element with class:'subscriber-hider', replace with class:''
+
+	const content = document.getElementsByClassName('subscriber-hider')[0];
+        content.classList.remove('subscriber-hider');
+*/
+
+}
 
 function removeDOMElement(...elements) {
     for (let element of elements) {
