@@ -27,6 +27,7 @@
 [Crain's Chicago Business](https://www.chicagobusiness.com)\
 [Dagens Nyheter](https://dn.se)\
 [Daily Press](https://www.dailypress.com)\
+[Dark Reading](https://www.darkreading.com)\
 [De Groene Amsterdammer](https://www.groene.nl)\
 [De Volkskrant](https://www.volkskrant.nl)\
 [DeMorgen](https://demorgen.be)\
@@ -84,6 +85,7 @@
 [The Australian](https://www.theaustralian.com.au)\
 [The Boston Globe](https://www.bostonglobe.com)\
 [The Business Journals](https://www.bizjournals.com)\
+[The Canberra Times](https://www.canberratimes.com.au)\
 [The Economist](https://www.economist.com)\
 [The Globe and Mail](https://www.theglobeandmail.com)\
 [The Japan Times](https://www.japantimes.co.jp)\
