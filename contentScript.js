@@ -160,5 +160,3 @@ function removeDOMElement(...elements) {
     for (let element of elements) {
         if (element)
             element.remove();
-    }
-}
