@@ -154,11 +154,6 @@ if (window.location.href.indexOf('lemonde.fr') !== -1) {
         removeDOMElement(paywall, friend_paywall, cookie_banner);
     });
 }
-
-if (window.location.href.indexOf("canberratimes.com.au") !== -1) {
-    
-    const paywall = document.querySelector('.subscribe-article.news-article-body.article__body');
-    paywall.classList.remove('subscribe-article');
 	
 if (window.location.href.indexOf("canberratimes.com.au") !== -1) {
     
