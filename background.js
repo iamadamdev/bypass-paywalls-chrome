@@ -42,7 +42,6 @@ var defaultSites = {
   'La Tercera': 'latercera.com',
   'L\'Echo': 'lecho.be',
   'Le Monde': 'lemonde.fr',  
-  'Le Parisien': 'leparisien.fr',
   'Les Echos': 'lesechos.fr',
   'Liberation': 'liberation.fr',
   'Loeb Classical Library': 'loebclassics.com',
