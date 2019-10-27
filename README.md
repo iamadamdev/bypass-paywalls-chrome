@@ -9,7 +9,7 @@
 1. Drag the `bypass-paywalls-chrome-master` folder anywhere on the page to import it.
 
 **Notes**
-* Every time you open Chrome it may warn you about running extensions in developer mode, just click 🗙 to keep the extension enabled.
+* Every time you open Chrome it may warn you about running extensions in developer mode, just click ðŸ—™ to keep the extension enabled.
 * You will be logged out for any site you have checked.
 * This extension works best along side the adblocker uBlock Origin.
 
@@ -22,6 +22,7 @@
 [Bloomberg](https://www.bloomberg.com)\
 [Bloomberg Quint](https://bloombergquint.com)\
 [Business Insider](https://www.businessinsider.com)\
+[Cairns Post](https://www.cairnspost.com.au)\
 [Chicago Tribune](https://www.chicagotribune.com)\
 [Corriere Della Sera](https://www.corriere.it)\
 [Crain's Chicago Business](https://www.chicagobusiness.com)\
@@ -39,19 +40,22 @@
 [Financial News](https://fnlondon.com)\
 [Financial Times](https://www.ft.com)\
 [Foreign Policy](https://www.foreignpolicy.com)\
+[Geelong Advertiser](https://www.geelongadvertiser.com.au)\
 [Glassdoor](https://www.glassdoor.com)\
+[Gold Coast Bulletin](https://www.goldcoastbulletin.com.au)\
 [Haaretz.co.il](https://www.haaretz.co.il)\
 [Haaretz.com](https://www.haaretz.com)\
 [Harper's Magazine](https://harpers.org)\
 [Hartford Courant](https://www.courant.com)\
 [Harvard Business Review](https://www.hbr.org)\
+[Herald Sun](https://www.heraldsun.com.au)\
 [Inc.com](https://www.inc.com)\
 [Irish Times](https://www.irishtimes.com)\
 [LA Business Journal](labusinessjournal.com)\
 [La Repubblica](https://www.repubblica.it)\
 [La Tercera](latercera.com)\
-[Les Échos](https://lesechos.fr)\
-[Libération](https://liberation.fr)\
+[Les Ã‰chos](https://lesechos.fr)\
+[LibÃ©ration](https://liberation.fr)\
 [Loeb Classical Library](https://www.loebclassics.com)\
 [Los Angeles Times](https://www.latimes.com)\
 [MIT Sloan Management Review](https://sloanreview.mit.edu)\
@@ -63,6 +67,8 @@
 [New Zealand Herald](https://www.nzherald.co.nz)\
 [Newsrep](https://thenewsrep.com)\
 [Nikkei Asian Review](https://asia.nikkei.com)\
+[Noosa News](https://www.noosanews.com.au)\
+[NT News](https://www.ntnews.com.au)\
 [Orlando Sentinel](https://www.orlandosentinel.com)\
 [Parool](https://www.parool.nl)\
 [Quartz](https://qz.com)\
@@ -73,6 +79,7 @@
 [Statista](https://statista.com)\
 [SunSentinel](https://www.sun-sentinel.com)\
 [Telegraaf](https://telegraaf.nl)\
+[The Advertiser](https://www.adelaidenow.com.au)\
 [The Advocate](https://www.theadvocate.com.au)\
 [The Age](https://www.theage.com.au)\
 [The American Interest](https://www.the-american-interest.com)\
@@ -81,9 +88,12 @@
 [The Australian](https://www.theaustralian.com.au)\
 [The Boston Globe](https://www.bostonglobe.com)\
 [The Business Journals](https://www.bizjournals.com)\
+[The Daily Telegraph](https://www.dailytelegraph.com.au)\
+[The Courier Mail](https://www.couriermail.com.au)\
 [The Economist](https://www.economist.com)\
 [The Globe and Mail](https://www.theglobeandmail.com)\
 [The Japan Times](https://www.japantimes.co.jp)\
+[The Mercury](https://www.themercury.com.au)\
 [The Mercury News](https://www.mercurynews.com)\
 [The Morning Call](https://www.mcall.com)\
 [The Nation](https://www.thenation.com)\
@@ -100,7 +110,9 @@
 [The Toronto Star](https://www.thestar.com)\
 [The Wall Street Journal](https://www.wsj.com)\
 [The Washington Post](https://www.washingtonpost.com)\
+[The Weekly Times](https://www.weeklytimesnow.com.au)\
 [TheMarker](https://www.themarker.com)\
+[Townsville Bulletin](https://www.townsvillebulletin.com)\
 [Trouw](https://www.trouw.nl)\
 [Vanity Fair](https://www.vanityfair.com)\
 [Winston-Salem Journal](https://journalnow.com)\
