@@ -16,6 +16,7 @@ var defaultSites = {
   'Corriere Della Sera': 'corriere.it',
   'Daily Press': 'dailypress.com',
   'Dagens Nyheter': 'dn.se',
+  'Dark Reading': 'darkreading.com',
   'De Groene Amsterdammer': 'groene.nl',
   'De Volkskrant': 'volkskrant.nl',
   'DeMorgen': 'demorgen.be',
