@@ -167,6 +167,18 @@ if (window.location.href.indexOf("canberratimes.com.au") !== -1) {
     }
 }
 
+if (window.location.href.indexOf("leparisien.fr") !== -1) {
+    
+        const paywall = document.querySelector('.relative.piano-paywall.below_nav.sticky');
+        removeDOMElement(paywall);
+
+        var content = document.getElementsByClassName('content');
+
+        for (var i = 0; i < content.length; i++) {
+        content[i].removeAttribute("style");
+    }
+}
+
 function removeDOMElement(...elements) {
     for (let element of elements) {
         if (element)
