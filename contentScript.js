@@ -165,13 +165,11 @@ if (window.location.href.indexOf("canberratimes.com.au") !== -1) {
         const paywall = document.querySelector('.subscribe-article.news-article-body.article__body');
         paywall.classList.remove('subscribe-article');
     
-        var content = document.getElementsByClassName('subscriber-hider')[0];
+        var content = document.getElementsByClassName('subscriber-hider');
 
         for (var i = 0; i < content.length; i++) {
         content[i].classList.remove('subscriber-hider');
     }
-}
-
 }
 
 function removeDOMElement(...elements) {
