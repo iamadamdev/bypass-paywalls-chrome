@@ -16,7 +16,6 @@ var defaultSites = {
   'Corriere Della Sera': 'corriere.it',
   'Daily Press': 'dailypress.com',
   'Dagens Nyheter': 'dn.se',
-  'Dark Reading': 'darkreading.com',
   'De Groene Amsterdammer': 'groene.nl',
   'De Volkskrant': 'volkskrant.nl',
   'DeMorgen': 'demorgen.be',
@@ -74,7 +73,6 @@ var defaultSites = {
   'The Australian Financial Review': 'afr.com',
   'The Boston Globe': 'bostonglobe.com',
   'The Business Journals': 'bizjournals.com',
-  'The Canberra Times': 'canberratimes.com.au',
   'The Economist': 'economist.com',
   'The Globe and Mail': 'theglobeandmail.com',
   'The Japan Times': 'japantimes.co.jp',
@@ -112,10 +110,10 @@ const allow_cookies = [
 'ad.nl',
 'asia.nikkei.com',
 'bostonglobe.com',
-'canberratimes.com.au',
 'chicagobusiness.com',
 'demorgen.be',
 'denverpost.com',
+'canberratimes.com.au',
 'economist.com',
 'ed.nl',
 'examiner.com.au',
@@ -180,14 +178,14 @@ const remove_cookies = [
 
 // select specific cookie(s) to hold from remove_cookies domains
 const remove_cookies_select_hold = {
-  '.nrc.nl': ['nmt_closed_cookiebar'],
-  '.washingtonpost.com': ['wp_gdpr'],
-  '.wsj.com': ['wsjregion']
+	'.nrc.nl': ['nmt_closed_cookiebar'],
+	'.washingtonpost.com': ['wp_gdpr'],
+	'.wsj.com': ['wsjregion']
 }
 
 // select only specific cookie(s) to drop from remove_cookies domains
 const remove_cookies_select_drop = {
-  'www.nrc.nl': ['counter']
+	'www.nrc.nl': ['counter']
 }
 
 // Override User-Agent with Googlebot
@@ -397,18 +395,18 @@ chrome.webRequest.onCompleted.addListener(function(details) {
       continue; // don't remove cookies
     }
     chrome.cookies.getAll({domain: domainVar}, function(cookies) {
-    for (var i=0; i<cookies.length; i++) {
-      var cookie_domain = cookies[i].domain;
-      // hold specific cookie(s) from remove_cookies domains
-      if ((cookie_domain in remove_cookies_select_hold) && remove_cookies_select_hold[cookie_domain].includes(cookies[i].name)){
-        continue; // don't remove specific cookie
-      }
-      // drop only specific cookie(s) from remove_cookies domains
-      if ((cookie_domain in remove_cookies_select_drop) && !(remove_cookies_select_drop[cookie_domain].includes(cookies[i].name))){
-        continue; // only remove specific cookie
-      }
-      chrome.cookies.remove({url: (cookies[i].secure ? "https://" : "http://") + cookies[i].domain + cookies[i].path, name: cookies[i].name});
-    }
+		for (var i=0; i<cookies.length; i++) {
+			var cookie_domain = cookies[i].domain;
+			// hold specific cookie(s) from remove_cookies domains
+			if ((cookie_domain in remove_cookies_select_hold) && remove_cookies_select_hold[cookie_domain].includes(cookies[i].name)){
+				continue; // don't remove specific cookie
+			}
+			// drop only specific cookie(s) from remove_cookies domains
+			if ((cookie_domain in remove_cookies_select_drop) && !(remove_cookies_select_drop[cookie_domain].includes(cookies[i].name))){
+				continue; // only remove specific cookie
+			}
+			chrome.cookies.remove({url: (cookies[i].secure ? "https://" : "http://") + cookies[i].domain + cookies[i].path, name: cookies[i].name});
+		}
     });
   }
 }, {
