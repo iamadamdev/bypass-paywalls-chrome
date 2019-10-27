@@ -154,7 +154,20 @@ if (window.location.href.indexOf('lemonde.fr') !== -1) {
         removeDOMElement(paywall, friend_paywall, cookie_banner);
     });
 }
+	
+if (window.location.href.indexOf("canberratimes.com.au") !== -1) {
+    
+        const paywall = document.querySelector('.subscribe-article.news-article-body.article__body');
+        paywall.classList.remove('subscribe-article');
 
+        var subscribe = document.getElementsByClassName('subscriber-container')[0];
+        removeDOMElement(subscribe);
+    
+        var content = document.getElementsByClassName('subscriber-hider');
+        for (var i = 0; i < content.length; i++) {
+        content[i].classList.remove('subscriber-hider');
+    }
+}
 
 function removeDOMElement(...elements) {
     for (let element of elements) {
