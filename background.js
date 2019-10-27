@@ -1,4 +1,4 @@
-/* Please use alphabetical order when adding a site in any of those lists */
+/* Please respect alphabetical order when adding a site in any list */
 
 'use strict';
 
