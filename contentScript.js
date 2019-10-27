@@ -159,9 +159,11 @@ if (window.location.href.indexOf("canberratimes.com.au") !== -1) {
     
         const paywall = document.querySelector('.subscribe-article.news-article-body.article__body');
         paywall.classList.remove('subscribe-article');
+
+        var subscribe = document.getElementsByClassName('subscriber-container')[0];
+        removeDOMElement(subscribe);
     
         var content = document.getElementsByClassName('subscriber-hider');
-
         for (var i = 0; i < content.length; i++) {
         content[i].classList.remove('subscriber-hider');
     }
@@ -170,10 +172,10 @@ if (window.location.href.indexOf("canberratimes.com.au") !== -1) {
 if (window.location.href.indexOf("leparisien.fr") !== -1) {
     
         const paywall = document.querySelector('.relative.piano-paywall.below_nav.sticky');
-        removeDOMElement(paywall);
+        const newsletter = document.querySelector('.margin_bottom_md');
+        removeDOMElement(paywall, newsletter);
 
         var content = document.getElementsByClassName('content');
-
         for (var i = 0; i < content.length; i++) {
         content[i].removeAttribute("style");
     }
