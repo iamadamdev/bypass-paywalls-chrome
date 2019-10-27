@@ -160,11 +160,17 @@ if (window.location.href.indexOf("canberratimes.com.au") !== -1) {
     const paywall = document.querySelector('.subscribe-article.news-article-body.article__body');
     paywall.classList.remove('subscribe-article');
 	
-/* for each element with class:'subscriber-hider', replace with class:''
+if (window.location.href.indexOf("canberratimes.com.au") !== -1) {
+    
+        const paywall = document.querySelector('.subscribe-article.news-article-body.article__body');
+        paywall.classList.remove('subscribe-article');
+    
+        var content = document.getElementsByClassName('subscriber-hider')[0];
 
-	const content = document.getElementsByClassName('subscriber-hider')[0];
-        content.classList.remove('subscriber-hider');
-*/
+        for (var i = 0; i < content.length; i++) {
+        content[i].classList.remove('subscriber-hider');
+    }
+}
 
 }
 
