@@ -11,6 +11,7 @@ var defaultSites = {
   'Bloomberg': 'bloomberg.com',
   'Bloomberg Quint': 'bloombergquint.com',
   'Business Insider': 'businessinsider.com',
+  'The Canberra Times': 'canberratimes.com.au',
   'Crain\'s Chicago Business': 'chicagobusiness.com',
   'Chicago Tribune': 'chicagotribune.com',
   'Corriere Della Sera': 'corriere.it',
