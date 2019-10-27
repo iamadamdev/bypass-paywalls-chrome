@@ -1,4 +1,4 @@
-/* Please use absolute alphabetical order, taking the articles ('the', 'la', 'die', etc.) into account, when adding a site in any of those lists */
+/* Please use alphabetical order when adding a site in any of those lists */
 
 'use strict';
 
