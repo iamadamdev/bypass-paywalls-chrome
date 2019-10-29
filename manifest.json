@@ -20,5 +20,5 @@
 		"page": "options.html"
 	},
     "permissions": [ "cookies", "<all_urls>", "storage", "webRequest", "webRequestBlocking"],
-	"version": "1.5.5"
+	"version": "1.5.6"
 }
