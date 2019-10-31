@@ -109,7 +109,7 @@
 [Winston-Salem Journal](https://journalnow.com)\
 [Vrij Nederland](https://vn.nl)\
 [Wired](https://www.wired.com)\
-[Zeit Online](https://www.zeit.de)
+[Zeit Online](https://www.zeit.de)\
 [The Advertiser](https://www.adelaidenow.com.au)\
 [The Daily Telegraph](https://www.dailytelegraph.com.au)\
 [The Courier Mail](https://www.couriermail.com.au)\
@@ -121,7 +121,7 @@
 [Gold Coast Bulletin](https://www.goldcoastbulletin.com.au)\
 [Noosa News](https://www.noosanews.com.au)\
 [The Weekly Times](https://www.weeklytimesnow.com.au)\
-[Townsville Bulletin](https://www.townsvillebulletin.com.au)\
+[Townsville Bulletin](https://www.townsvillebulletin.com.au)
 
 ### Sites with limited number of free articles
 The free article limit can normally be bypassed by removing cookies for the site.*
