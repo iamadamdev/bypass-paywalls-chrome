@@ -4,6 +4,18 @@
 
 // Cookies from this list are blocked by default
 var defaultSites = {
+  'The Advertiser': 'adelaidenow.com.au',
+  'The Daily Telegraph': 'dailytelegraph.com.au',
+  'The Courier Mail': 'couriermail.com.au',
+  'Herald Sun': 'heraldsun.com.au',
+  'The Mercury': 'themercury.com.au',
+  'NT News': 'ntnews.com.au',
+  'Geelong Avertiser': 'geelongadvertiser.com.au',
+  'Cairns Post': 'cairnspost.com.au',
+  'Gold Coast Bulletin': 'goldcoastbulletin.com.au',
+  'Noosa News': 'noosanews.com.au',
+  'The Weekly Times': 'weeklytimesnow.com.au',
+  'Townsville Bulletin': 'townsvillebulletin.com.au',
   'Algemeen Dagblad': 'ad.nl',
   'American Banker': 'americanbanker.com',
   'Baltimore Sun': 'baltimoresun.com',
@@ -107,6 +119,18 @@ const restrictions = {
 
 // Don't remove cookies before page load
 const allow_cookies = [
+'adelaidenow.com.au',
+'dailytelegraph.com.au',
+'couriermail.com.au',
+'heraldsun.com.au',
+'themercury.com.au',
+'ntnews.com.au',
+'geelongadvertiser.com.au',
+'cairnspost.com.au',
+'goldcoastbulletin.com.au',
+'noosanews.com.au',
+'weeklytimesnow.com.au',
+'townsvillebulletin.com.au',
 'ad.nl',
 'asia.nikkei.com',
 'bostonglobe.com',
@@ -188,6 +212,18 @@ const remove_cookies_select_drop = {
 
 // Override User-Agent with Googlebot
 const use_google_bot = [
+'adelaidenow.com.au',
+'dailytelegraph.com.au',
+'couriermail.com.au',
+'heraldsun.com.au',
+'themercury.com.au',
+'ntnews.com.au',
+'geelongadvertiser.com.au',
+'cairnspost.com.au',
+'goldcoastbulletin.com.au',
+'noosanews.com.au',
+'weeklytimesnow.com.au',
+'townsvillebulletin.com.au',
 'barrons.com',
 'mexiconewsdaily.com',
 'nytimes.com',
