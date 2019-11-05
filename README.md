@@ -95,6 +95,7 @@
 [The New Yorker](https://www.newyorker.com)\
 [The News-Gazette](https://www.news-gazette.com)\
 [The Philadelphia Inquirer](inquirer.com)\
+[The Real Deal](https://therealdeal.com)\
 [The Seattle Times](https://www.seattletimes.com)\
 [The Spectator](https://www.spectator.co.uk)\
 [The Sydney Morning Herald](https://www.smh.com.au)\

@@ -85,6 +85,7 @@ var defaultSites = {
   'The New York Times': 'nytimes.com',
   'The New Yorker': 'newyorker.com',
   'The Philadelphia Inquirer': 'inquirer.com',
+  'The Real Deal': 'therealdeal.com',
   'The Seattle Times': 'seattletimes.com',
   'The Spectator': 'spectator.co.uk',
   'The Sydney Morning Herald': 'smh.com.au',
