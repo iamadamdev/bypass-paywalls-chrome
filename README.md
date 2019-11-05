@@ -94,7 +94,7 @@
 [The New York Times](https://www.nytimes.com)\
 [The New Yorker](https://www.newyorker.com)\
 [The News-Gazette](https://www.news-gazette.com)\
-[The Philadelphia Inquirer](inquirer.com)\
+[The Philadelphia Inquirer](https://inquirer.com)\
 [The Real Deal](https://therealdeal.com)\
 [The Seattle Times](https://www.seattletimes.com)\
 [The Spectator](https://www.spectator.co.uk)\
