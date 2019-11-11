@@ -187,7 +187,6 @@ function removeClassesByPrefix(el, prefix) {
             el.classList.remove(el.classList[i]);
         }
     }
-}
 
 function pageContains(selector, text) {
 	let elements = document.querySelectorAll(selector);
