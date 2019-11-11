@@ -159,39 +159,6 @@ if (window.location.href.indexOf('lemonde.fr') !== -1) {
         removeDOMElement(paywall, friend_paywall, cookie_banner);
     });
 }
-	
-if (window.location.href.indexOf("canberratimes.com.au") !== -1) {
-    
-        const paywall = document.querySelector('.subscribe-article.news-article-body.article__body');
-        paywall.classList.remove('subscribe-article');
-
-        var subscribe = document.getElementsByClassName('subscriber-container')[0];
-        removeDOMElement(subscribe);
-    
-        var content = document.getElementsByClassName('subscriber-hider');
-        for (var i = 0; i < content.length; i++) {
-        content[i].classList.remove('subscriber-hider');
-    }
-}
-
-if (window.location.href.indexOf("ledevoir.com") !== -1) {
-
-        const counter = document.querySelector('.full.hidden-print.popup-msg');
-        removeDOMElement(counter);
-}
-
-if (window.location.href.indexOf("thehindu.com") !== -1) {
-  
-         const paywall = document.getElementById('test');
-        removeDOMElement(paywall);
-}
-
-if (window.location.href.indexOf("nytimes.com") !== -1) {
-
-    const preview_button = document.querySelector('.css-3s1ce0');
-        if (preview_button)
-            preview_button.click();
-}
 
 if (window.location.href.indexOf("leparisien.fr") !== -1) {
 		window.removeEventListener('scroll', this.scrollListener);

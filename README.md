@@ -31,7 +31,6 @@
 [De Volkskrant](https://www.volkskrant.nl)\
 [DeMorgen](https://demorgen.be)\
 [Denver Post](https://www.denverpost.com)\
-[Die Zeit](https://www.zeit.de)\
 [Dynamed Plus](https://dynamed.com)\
 [Eindhovens Dagblad](https://ed.nl)\
 [Encyclopedia Britannica](https://britannica.com)\
@@ -47,12 +46,12 @@
 [Hartford Courant](https://www.courant.com)\
 [Harvard Business Review](https://www.hbr.org)\
 [Inc.com](https://www.inc.com)\
+[Irish Times](https://www.irishtimes.com)\
 [L.A. Business Journal](https://labusinessjournal.com)\
 [La Nación](https://www.lanacion.com.ar)\
 [La Repubblica](https://www.repubblica.it)\
 [La Tercera](https://latercera.com)\
 [L'Écho](https://lecho.be)\
-[Le Devoir](https://www.ledevoir.com)\
 [Le Monde](https://www.lemonde.fr)\
 [Le Parisien](http://www.leparisien.fr)\
 [Les Échos](https://lesechos.fr)\
@@ -63,7 +62,7 @@
 [MIT Technology Review](https://www.technologyreview.com)\
 [Medium](https://www.medium.com)\
 [Mexicon News Daily](https://mexiconewsdaily.com)\
-[NRC Handelsblad](https://www.nrc.nl)\
+[NRC](https://www.nrc.nl)\
 [New York Magazine](https://www.nymag.com)\
 [New Zealand Herald](https://www.nzherald.co.nz)\
 [Newsrep](https://thenewsrep.com)\
@@ -86,11 +85,8 @@
 [The Australian](https://www.theaustralian.com.au)\
 [The Boston Globe](https://www.bostonglobe.com)\
 [The Business Journals](https://www.bizjournals.com)\
-[The Canberra Times](https://www.canberratimes.com.au)\
 [The Economist](https://www.economist.com)\
 [The Globe and Mail](https://www.theglobeandmail.com)\
-[The Hindu](https://www.thehindu.com)\
-[The Irish Times](https://www.irishtimes.com)\
 [The Japan Times](https://www.japantimes.co.jp)\
 [The Mercury News](https://www.mercurynews.com)\
 [The Morning Call](https://www.mcall.com)\
@@ -99,7 +95,7 @@
 [The New York Times](https://www.nytimes.com)\
 [The New Yorker](https://www.newyorker.com)\
 [The News-Gazette](https://www.news-gazette.com)\
-[The Philadelphia Inquirer](https://inquirer.com)\
+[The Philadelphia Inquirer](inquirer.com)\
 [The Seattle Times](https://www.seattletimes.com)\
 [The Spectator](https://www.spectator.co.uk)\
 [The Sydney Morning Herald](https://www.smh.com.au)\
@@ -113,7 +109,8 @@
 [Vanity Fair](https://www.vanityfair.com)\
 [Winston-Salem Journal](https://journalnow.com)\
 [Vrij Nederland](https://vn.nl)\
-[Wired](https://www.wired.com)
+[Wired](https://www.wired.com)\
+[Zeit Online](https://www.zeit.de)
 
 ### Sites with limited number of free articles
 The free article limit can normally be bypassed by removing cookies for the site.*
@@ -134,10 +131,8 @@ Usually premium articles cannot be bypassed as they are behind a hard paywall.
 
 ### Troubleshooting
 * This extension works best alongside [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm).
-* If a site doesn't work, try turning off uBlock and refreshing. Also try reinstalling the extension.
+* If a site doesn't work try turning off uBlock and refreshing.
 * Make sure the site is checked under Options (on macOS sometimes the sites are unselected).
-* Make sure you're running the last version of Bypass Paywalls. 
-* If none of these work, you can submit an issue [here](https://github.com/iamadamdev/bypass-paywalls-chrome/issues).
 
 ### Pull Requests
 * PRs are welcome.
