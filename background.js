@@ -140,6 +140,7 @@ const allow_cookies = [
 'the-american-interest.com',
 'theadvocate.com.au',
 'theage.com.au',
+'theatlantic.com',
 'theaustralian.com.au',
 'trouw.nl',
 'vn.nl',
@@ -175,6 +176,7 @@ const remove_cookies = [
 'telegraaf.nl',
 'theadvocate.com.au',
 'theage.com.au',
+'theatlantic.com',
 'vn.nl',
 'washingtonpost.com',
 'wsj.com'
