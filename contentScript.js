@@ -124,8 +124,9 @@ if (window.location.href.indexOf("firstthings.com") !== -1) {
 
 if (window.location.href.indexOf("bloomberg.com") !== -1) {
     document.addEventListener('DOMContentLoaded', () => {
-        const paywall = document.getElementById('paywall-banner');
-        removeDOMElement(paywall);
+		const fence = document.querySelector('.fence-body');
+		if (fence)
+			fence.classList.remove('fence-body');
     });
 }
 
