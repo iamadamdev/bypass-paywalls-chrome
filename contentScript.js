@@ -1,5 +1,8 @@
 window.localStorage.clear();
 
+
+window.onload = () => runAfterPageFinishesLoading();
+
 if (location.hostname.endsWith('rep.repubblica.it')) {
     if (location.href.includes('/pwa/')) {
         location.href = location.href.replace('/pwa/', '/ws/detail/');
@@ -137,7 +140,7 @@ if (window.location.href.indexOf("bloombergquint.com") !== -1) {
 
 if (window.location.href.indexOf("medium.com") !== -1) {
 	const bottomMessageText = 'Get one more story in your member preview when you sign up. It’s free.';
-	const DOMElementsToTextDiv = pageContains('div', bottomMessageText);
+    const DOMElementsToTextDiv = pageContains('div', bottomMessageText);
 
 	if (DOMElementsToTextDiv[2]) removeDOMElement(DOMElementsToTextDiv[2]);
 }
@@ -227,4 +230,47 @@ function pageContains(selector, text) {
 	return Array.prototype.filter.call(elements, function(element){
 		return RegExp(text).test(element.textContent);
 	});
+}
+
+function removeMediumPaywalls() {
+    if (metaContains('content', 'Medium')) {
+        const paywall = document.querySelectorAll('[tabindex="-1"]');
+    
+        if (paywall) removeNodeList(paywall);
+    }
+}
+/**
+ * Check metadata for specific key
+ * 
+ * Some providers *cough* Medium *cough* articles can be found in other domains. By checking meta tags we'll able to detect provider of the content and disable the paywall without knowing exact domain name.
+ * 
+ * @param {string} key - Metadata key to search for
+ * @param {string} value - Metadata key value
+ * 
+ * @returns {Boolean} Returns bool if key value pair is found or not
+ */
+function metaContains(key, value) {
+    const metaTags = document.getElementsByTagName('meta');
+    if(metaTags) {
+        let arr = [...metaTags].filter((mt) => {
+            return mt[key] == value;
+        })
+
+        return arr.some((e) => {
+            if (e[key] == value) return true;
+        });
+    }
+
+    return false;
+}
+
+function removeNodeList(list) {
+    list.forEach((node) => {
+        node.parentNode.removeChild(node);
+    });
+}
+
+function runAfterPageFinishesLoading() {
+    // Add functions to run after the page fully loads.
+    removeMediumPaywalls();
 }
