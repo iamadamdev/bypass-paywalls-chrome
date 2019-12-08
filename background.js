@@ -170,6 +170,7 @@ const remove_cookies = [
 'economist.com',
 'ed.nl',
 'examiner.com.au',
+'foreignpolicy.com',
 'ft.com',
 'harpers.org',
 'hbr.org',
