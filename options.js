@@ -131,9 +131,22 @@ function save_options() {
   });
 }
 
+function renderOptions() {
+	const url_sites = chrome.runtime.getURL('sites_custom.json');
+	fetch(url_sites)
+		.then(res => res.json())
+		.then((json) => {var defaultSites_merge = {...defaultSites, ...json }; 
+							defaultSites = defaultSites_merge;
+							renderOptions_default();
+							chrome.storage.sync.set({
+								sites_custom: json
+							}, function() {});
+						} );
+}
+
 // Restores checkbox input states using the preferences
 // stored in chrome.storage.
-function renderOptions() {
+function renderOptions_default() {
   chrome.storage.sync.get({
     sites: {}
   }, function(items) {

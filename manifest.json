@@ -21,5 +21,6 @@
 		"page": "options.html"
 	},
     "permissions": [ "cookies", "<all_urls>", "storage", "webRequest", "webRequestBlocking"],
+	"web_accessible_resources": ["sites_custom.json"],
 	"version": "1.6.1"
 }

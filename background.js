@@ -117,7 +117,7 @@ const restrictions = {
 }
 
 // Don't remove cookies before page load
-const allow_cookies = [
+var allow_cookies = [
 'ad.nl',
 'asia.nikkei.com',
 'bostonglobe.com',
@@ -161,7 +161,7 @@ const allow_cookies = [
 ]
 
 // Removes cookies after page load
-const remove_cookies = [
+var remove_cookies = [
 'ad.nl',
 'asia.nikkei.com',
 'bostonglobe.com',
@@ -267,6 +267,21 @@ chrome.storage.sync.get({
   enabledSites = Object.keys(items.sites).map(function(key) {
     return items.sites[key];
   });
+});
+
+var customSites = [];
+
+// Get the custom sites & add to allow/remove_cookies
+chrome.storage.sync.get({
+  sites_custom: {}
+}, function(items) {
+  var sites_custom = items.sites_custom;
+  customSites = Object.keys(items.sites_custom).map(function(key) {
+    return items.sites_custom[key];
+  });
+  customSites.shift(); // remove custom title
+  remove_cookies = remove_cookies.concat(customSites);
+  allow_cookies = allow_cookies.concat(customSites);
 });
 
 // Listen for changes to options
