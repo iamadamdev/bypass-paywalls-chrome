@@ -1,4 +1,4 @@
-var arr_localstorage_hold = ['sfchronicle.com'];
+var arr_localstorage_hold = ['sfchronicle.com', 'economist.com'];
 var localstorage_hold = arr_localstorage_hold.some(function(url) {
     return window.location.href.indexOf(url) !== -1;
 });
@@ -7,7 +7,6 @@ if (!localstorage_hold){
     window.localStorage.clear();
 }
 
-// Content workarounds/domain
 if (location.hostname.endsWith('rep.repubblica.it')) {
     if (location.href.includes('/pwa/')) {
         location.href = location.href.replace('/pwa/', '/ws/detail/');
@@ -72,9 +71,7 @@ if (window.location.href.indexOf("wsj.com") !== -1) {
 }
 
 if (window.location.href.indexOf("sloanreview.mit.edu") !== -1) {
-    const read_more = document.querySelector('.btn-read-more');
-        if(read_more)
-            read_more.click();
+    document.querySelector('#cboxClose').click();
 }
 
 if (window.location.href.indexOf("mexiconewsdaily.com") !== -1) {
@@ -83,6 +80,7 @@ if (window.location.href.indexOf("mexiconewsdaily.com") !== -1) {
         const subMessage = document.querySelector('.sub_message_container');
         const popup = document.querySelector('.popupally-pro-outer-full-width-7-fluid_qemskqa');
         const bgFocusRemoverId = document.getElementById('popup-box-pro-gfcr-7');
+
         removeDOMElement(sideNotification, subMessage, popup, bgFocusRemoverId);
     });
 }
@@ -100,8 +98,8 @@ if (window.location.href.indexOf("nzherald.co.nz") !== -1) {
         paywall.classList.remove('premium-content');
         paywall.classList.add('full-content');
         removeClassesByPrefix(paywall, 'QUnW');
-        let paras = paywall.querySelectorAll("p, span, h2, div");
-        for (let i = 0; i < paras.length; i++){     
+        var paras = paywall.querySelectorAll("p, span, h2, div");
+        for (var i = 0; i < paras.length; i++){     
             removeClassesByPrefix(paras[i], 'QUnW');
             paras[i].classList.remove("ellipsis");
             paras[i].removeAttribute('style');
@@ -128,9 +126,9 @@ if (window.location.href.indexOf("bloomberg.com") !== -1) {
         if (fence){
             fence.classList.remove('fence-body');
         }
+        const paywall = document.getElementById('paywall-banner');
+        removeDOMElement(paywall);
     });
-    const banner = document.getElementById('paywall-banner');
-    removeDOMElement(banner);
 }
 
 if (window.location.href.indexOf("bloombergquint.com") !== -1) {
@@ -166,16 +164,16 @@ if (window.location.href.indexOf('lemonde.fr') !== -1) {
 if (window.location.href.indexOf("canberratimes.com.au") !== -1) {
         const paywall = document.querySelector('.subscribe-article.news-article-body.article__body');
         paywall.classList.remove('subscribe-article');
-        let subscribe = document.getElementsByClassName('subscriber-container')[0];
+        var subscribe = document.getElementsByClassName('subscriber-container')[0];
         removeDOMElement(subscribe);
-        let content = document.getElementsByClassName('subscriber-hider');
-        for (let i = 0; i < content.length; i++) {
+        var content = document.getElementsByClassName('subscriber-hider');
+        for (var i = 0; i < content.length; i++) {
         content[i].classList.remove('subscriber-hider');
     }
 }
 
 if (window.location.href.indexOf("ledevoir.com") !== -1) {
-        const counter = document.querySelector('.popup-msg');
+        const counter = document.querySelector('.full.hidden-print.popup-msg');
         removeDOMElement(counter);
 }
 
@@ -191,23 +189,33 @@ if (window.location.href.indexOf("thehindu.com") !== -1) {
 
 if (window.location.href.indexOf("nytimes.com") !== -1) {
     const preview_button = document.querySelector('.css-3s1ce0');
-    if (preview_button)
-        preview_button.click();
+        if (preview_button)
+            preview_button.click();
+}
+
+if (window.location.href.indexOf("leparisien.fr") !== -1) {
+        window.removeEventListener('scroll', this.scrollListener);
+        const paywall = document.querySelector('.relative.piano-paywall.below_nav.sticky');
+        removeDOMElement(paywall);
+        setTimeout(function () {
+            var content = document.getElementsByClassName('content');
+            for (var i = 0; i < content.length; i++) {
+                content[i].removeAttribute("style");
+            }
+        }, 300); // Delay (in milliseconds)
 }
 
 if (window.location.href.indexOf("economist.com") !== -1) {
     document.addEventListener('DOMContentLoaded', () => {
-        const subscribe = document.querySelector('.subscription-proposition');
-        const advert = document.querySelector('.advert');
-        const wrapper = document.getElementById('bottom-page-wrapper');
-        removeDOMElement(subscribe, advert, wrapper);
-        setTimeout(function () {
-            const paywall = document.querySelector('.layout-article-regwall'); ;
-            if (paywall) {
-                window.location.reload(true);
-            }
-        }, 600); // Delay (in milliseconds)
-    });
+		const wrapper = document.getElementById('bottom-page-wrapper');
+		removeDOMElement(wrapper);
+		setTimeout(function () {
+			const paywall = document.querySelector('.layout-article-regwall');;
+			if (paywall) {
+				window.location.reload(true);
+			}
+		}, 300); // Delay (in milliseconds)
+	});
 }
 
 if (window.location.href.indexOf("bizjournals.com") !== -1) {
@@ -215,7 +223,7 @@ if (window.location.href.indexOf("bizjournals.com") !== -1) {
         const chunk_paywall = document.querySelector('.chunk--paywall');
         removeDOMElement(sheet_overlay, chunk_paywall);
         const overlaid = document.querySelectorAll('.is-overlaid');
-        for (let i = 0; i < overlaid.length; i++) {
+        for (var i = 0; i < overlaid.length; i++) {
             overlaid[i].classList.remove('is-overlaid');
         }
         const body_hidden = document.querySelector('.js-pre-chunks__story-body');
@@ -227,149 +235,6 @@ if (window.location.href.indexOf("the-tls.co.uk") !== -1) {
         removeDOMElement(paywall);
 }
 
-if (window.location.href.indexOf("caixinglobal.com") !== -1) {
-    const pay_tip = document.querySelectorAll('.cons-pay-tip');	
-    for (let i = 0; i < pay_tip.length; i++) {
-        pay_tip[i].removeAttribute('style');
-    }
-    const appContent = document.getElementById('appContent');
-    if (appContent) {
-        const p_hidden = document.querySelectorAll('p:not([style="display:block;"]');
-        for (let i = 0; i < p_hidden.length; i++) {
-            p_hidden[i].setAttribute('style', 'display:block;');
-        }
-    }
-}
-
-if (window.location.href.indexOf("nrc.nl") !== -1) {
-    const paywall = document.querySelector('.has-paywall');
-    if (paywall)
-        paywall.classList.remove("has-paywall");
-    const paywall_overlay = document.querySelector('.has-paywall-overlay');
-    if (paywall_overlay)
-        paywall_overlay.classList.remove("has-paywall-overlay");
-}
-
-if (window.location.href.indexOf("scribd.com") !== -1) {
-    const blur = document.querySelectorAll('.blurred_page');
-    for (let i = 0; i < blur.length; i++) {
-        blur[i].classList.remove('blurred_page');
-    }
-    const portal = document.querySelector('.between_page_portal_root');
-    const page_module = document.querySelector('.between_page_module');
-    const promo = document.querySelector('.auto__doc_page_webpack_doc_page_body_static_promo_study');
-    const ad = document.querySelector('.auto__explain_scribd_v2_advertisement');
-    removeDOMElement(portal, page_module, promo, ad);
-}
-
-if (window.location.href.indexOf("thetimes.co.uk") !== -1) {
-    const block = document.querySelector('.subscription-block');
-    removeDOMElement(block);
-}
-
-if (window.location.href.indexOf("technologyreview.com") !== -1) {
-    const read_story = document.querySelector('.storyExpanderButton');
-    if (read_story)
-        read_story.click();
-    const meter = document.querySelector('.meter');
-    removeDOMElement(meter);
-}
-
-if (window.location.href.indexOf("haaretz.com") !== -1) {
-    const popup = document.querySelector('.footer-ruler');
-    removeDOMElement(popup);
-}
-
-if (window.location.href.indexOf("asia.nikkei.com") !== -1) {
-    const popup = document.querySelector('.pw-widget--popup');
-    removeDOMElement(popup);
-}
-
-if (window.location.href.indexOf("hbr.org") !== -1) {
-    const popup = document.querySelector('.persistent-banner');
-    removeDOMElement(popup);
-}
-
-if (window.location.href.indexOf("techinasia.com") !== -1) {
-    const paywall = document.querySelector('.paywall-content');
-    if (paywall){
-        paywall.classList.remove('paywall-content');
-    }
-    const splash_subscribe = document.querySelector('.splash-subscribe');
-    const paywall_hard = document.querySelector('.paywall-hard');
-    removeDOMElement(splash_subscribe, paywall_hard);
-}
-
-if (window.location.href.indexOf("thestar.com") !== -1) {
-    const paywall = document.querySelector('.basic-paywall-new');
-    removeDOMElement(paywall);
-    const tbc = document.querySelectorAll('.text-block-container');	
-    for (let i = 0; i < tbc.length; i++) {
-        tbc[i].removeAttribute('style');
-    }
-}
-
-if (window.location.href.indexOf("afr.com") !== -1) {
-    document.addEventListener('DOMContentLoaded', () => {
-        const hidden_image = document.querySelectorAll('img');
-        for (let i = 0; i < hidden_image.length; i++) {
-            var src = hidden_image[i].src;
-            if ('src: ' + src.indexOf(".gif") !== -1) {
-                var data_src = hidden_image[i].getAttribute("data-src");
-                if (data_src)
-                    hidden_image[i].setAttribute('src', data_src);
-            }
-        }
-        const plista = document.querySelector('div[data-plista-placement="underArticle_Group"]');
-        removeDOMElement(plista);
-    });
-}
-
-if (window.location.href.indexOf("theglobeandmail.com") !== -1) {
-    document.addEventListener('DOMContentLoaded', () => {
-        const lazy_image = document.querySelectorAll('.js-lazyimage');
-        for (let i = 0; i < lazy_image.length; i++) {
-            lazy_image[i].classList.remove('js-lazyimage');
-        }
-        const hidden_image = document.querySelectorAll('img');
-        for (let i = 0; i < hidden_image.length; i++) {
-            var src = hidden_image[i].src;
-            if (src.indexOf("data:image/gif") !== -1) {
-                var data_src = hidden_image[i].getAttribute("data-src");
-                if (data_src)
-                    hidden_image[i].setAttribute('src', data_src);
-                var data_bg = hidden_image[i].getAttribute("data-bg");
-                if (data_bg)
-                    hidden_image[i].setAttribute('src', data_bg);
-            }
-        }
-    });
-}
-
-if (window.location.href.indexOf("newcastleherald.com.au") !== -1) {
-    const subscribe_truncate = document.querySelector('.subscribe-truncate');
-    if (subscribe_truncate)
-        subscribe_truncate.classList.remove('subscribe-truncate');
-    const subscriber_hider = document.querySelectorAll('.subscriber-hider');
-    for (let i = 0; i < subscriber_hider.length; i++) {
-        subscriber_hider[i].classList.remove('subscriber-hider');
-    }
-}
-
-if (window.location.href.indexOf("sofrep.com") !== -1) {
-    const banner = document.getElementById('scrollerCTA');
-    removeDOMElement(banner);
-}
-
-if (window.location.href.indexOf("theathletic.com") !== -1) {
-    const landing_banner = document.querySelector('.logged-out-landing-banner');
-    const sample_banner = document.querySelector('.main-sample-banner');
-    const bottom_banner = document.querySelector('.border-bottom-cc');
-    const subscribe = document.querySelector('.subscribe-ad-text');
-    removeDOMElement(landing_banner, sample_banner, bottom_banner, subscribe);
-}
-
-// General Functions
 function removeDOMElement(...elements) {
     for (let element of elements) {
         if (element)
@@ -378,7 +243,7 @@ function removeDOMElement(...elements) {
 }
 
 function removeClassesByPrefix(el, prefix) {
-    for (let i = 0; i < el.classList.length; i++){
+    for (var i = 0; i < el.classList.length; i++){
         if (el.classList[i].startsWith(prefix)) {
             el.classList.remove(el.classList[i]);
         }

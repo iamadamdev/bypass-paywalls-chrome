@@ -9,7 +9,7 @@
 	"description": "Bypass News Sites' Paywalls",
 	"homepage_url": "https://github.com/iamadamdev/bypass-paywalls-chrome/blob/master/README.md",
 	"icons": {
-		"128": "icon.png"
+		"128": "bypass.png"
 	},
 	"manifest_version": 2,
 	"key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3PRmcRnHFZwHUlCgoTAdBjc9nUjmJo8l8kvkl/OZV6biZFAGUQGdxF1xoGhRccWA7qfQrZdPwcM1VQoVS/1F+87XiutKTe/HNsTAFvOcVS0tjCSH6DOHpewkMUBZujwTIeo7UXUVmCPQ1UbVd6m8KmHYtSHYlaX0uXRcguWhLmO5hASxw4onvAD0uql/t/ntxsIATwn4hVApg0VZhy0QAbMany8/5ByKPa19mCQwsIdRkcpG+PNHTLWPDgeGoDL7S0DxIduraRhTlrDX/zy5ETu6NWq6r+/jRzmXAjx+vSDCU5Ps2YG8QwdCL4Zl+CNVdQrnqz4X1zfPFJ1FFmUSpwIDAQAB",
