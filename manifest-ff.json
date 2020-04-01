@@ -50,7 +50,7 @@
     "*://*.washingtonpost.com/*",
     "*://*.wsj.com/*"
     ],
-      "js": ["contentScript.js"]
+      "js": ["common.js", "contentScript.js"]
     }
   ],
   "applications": {

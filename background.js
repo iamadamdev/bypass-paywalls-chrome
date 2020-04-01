@@ -244,7 +244,7 @@ function getBadgeText(currentUrl) {
 /**
 // WSJ bypass
 extension_api.webRequest.onBeforeRequest.addListener(function (details) {
-  if (!isSiteEnabled(details) || details.url.indexOf("mod=rsswn") !== -1) {
+  if (details.url.includes('mod=rsswn') || !isSiteEnabled(details)) {
     return;
   }
 
@@ -268,9 +268,7 @@ extension_api.webRequest.onBeforeRequest.addListener(function (details) {
 
 // Disable javascript for these sites
 extension_api.webRequest.onBeforeRequest.addListener(function(details) {
-  if (!isSiteEnabled(details) && !enabledSites.some(function(enabledSite) {
-    return enabledSite.indexOf("generalpaywallbypass") !== -1
-  })) {
+  if (!isSiteEnabled(details) && !enabledSites.includes('generalpaywallbypass')) {
     return;
   }
   return {cancel: true};
@@ -296,96 +294,82 @@ extension_api.webRequest.onBeforeSendHeaders.addListener(function(details) {
   var requestHeaders = details.requestHeaders;
 
   var header_referer = '';
+  var header_referer_idx = -1;
+  var useUserAgentMobile = false;
+  var user_agent_idx = -1;
   for (var n in requestHeaders) {
     if (requestHeaders[n].name.toLowerCase() == 'referer') {
       header_referer = requestHeaders[n].value;
-      continue;
+      header_referer_idx = n;
+    }
+    if (requestHeaders[n].name.toLowerCase() == 'user-agent') {
+      useUserAgentMobile = requestHeaders[n].value.toLowerCase().includes('mobile');
+      user_agent_idx = n;
     }
   }
 
   // remove cookies for sites medium platform (mainfest.json needs in permissions: <all_urls>)
-  if (isSiteEnabled({url: '.medium.com'}) && details.url.indexOf('cdn-client.medium.com') !== -1 && header_referer.indexOf('.medium.com') === -1) {
-    var domainVar = new URL(header_referer).hostname;
-    extension_api.cookies.getAll({domain: domainVar}, function(cookies) {
+  if (isSiteEnabled({url: 'medium.com'}) && matchUrlDomain('cdn-client.medium.com', details.url) && !matchUrlDomain('medium.com', header_referer)) {
+    extension_api.cookies.getAll({domain: urlHost(header_referer)}, function(cookies) {
       for (var i=0; i<cookies.length; i++) {
         extension_api.cookies.remove({url: (cookies[i].secure ? "https://" : "http://") + cookies[i].domain + cookies[i].path, name: cookies[i].name});
       }
     });
   }
 
-  // check for blocked regular expression: domain enabled, match regex, block on an internal or external regex
-  for (var domain in blockedRegexes) {
-    if ((isSiteEnabled({url: '.'+ domain}) || isSiteEnabled({url: header_referer})) && details.url.match(blockedRegexes[domain])) {
-      // allow BG paywall-script to set cookies in homepage/sections (else no article-text)
-      if (details.url.indexOf(domain) !== -1 || header_referer.indexOf(domain) !== -1) {
-        if (details.url.indexOf('meter.bostonglobe.com/js/') !== -1 && (header_referer === 'https://www.bostonglobe.com/'
-            || header_referer.indexOf('/?p1=BGHeader_') !== -1  || header_referer.indexOf('/?p1=BGMenu_') !== -1)) {
-          extension_api.webRequest.handlerBehaviorChanged(function () {});
-          break;
-        } else if (header_referer.indexOf('theglobeandmail.com') !== -1 && !(header_referer.indexOf('/article-') !== -1)) {
-          extension_api.webRequest.handlerBehaviorChanged(function () {});
-          break;
-        }
-        return { cancel: true };
-      }
-    }
-  }
-
   if (!isSiteEnabled(details)) {
     return;
   }
 
+  // check for blocked regular expression: domain enabled, match regex, block on an internal or external regex
+  var domain;
+  var blockedDomains = Object.keys(blockedRegexes);
+  var blocked = true;
+  if (((domain = matchUrlDomain(blockedDomains, details.url)) ||
+       (domain = matchUrlDomain(blockedDomains, header_referer))) &&
+      isSiteEnabled({url: domain}) &&
+      details.url.match(blockedRegexes[domain]))
+  {
+    // allow BG paywall-script to set cookies in homepage/sections (else no article-text)
+    if (domain == 'bostonglobe.com' &&
+        (header_referer === 'https://www.bostonglobe.com/' ||
+         header_referer.includes('/?p1=BGHeader_') ||
+         header_referer.includes('/?p1=BGMenu_'))) {
+      blocked = false;
+    } else if (domain == 'theglobeandmail.com' && !(header_referer.includes('/article-'))) {
+      blocked = false;
+    }
+    if (blocked) return { cancel: true };
+  }
+
   var tabId = details.tabId;
 
-  var useUserAgentMobile = false;
   var setReferer = false;
 
-  // if referer exists, set it to google
-  requestHeaders = requestHeaders.map(function(requestHeader) {
-    if (requestHeader.name === 'Referer') {
-      if (details.url.indexOf("cooking.nytimes.com/api/v1/users/bootstrap") !== -1) {
-        // this fixes images not being loaded on cooking.nytimes.com main page
-        // referrer has to be *nytimes.com otherwise returns 403
-        requestHeader.value = 'https://cooking.nytimes.com';
-      } else if (details.url.indexOf("wsj.com") !== -1 || details.url.indexOf("ft.com") !== -1) {
-        requestHeader.value = 'https://www.facebook.com/';
-      } else {
-        requestHeader.value = 'https://www.google.com/';
-      }
-      setReferer = true;
-    }
-    if (requestHeader.name === 'User-Agent') {
-      useUserAgentMobile = requestHeader.value.toLowerCase().includes("mobile");
-    }
+  if (header_referer_idx == -1) {
+      header_referer_idx = requestHeaders.length;
+      requestHeaders.push({ name: 'Referer' });
+  }
 
-    return requestHeader;
-  });
-
-  // otherwise add it
-  if (!setReferer) {
-    if (details.url.indexOf("wsj.com") !== -1 || details.url.indexOf("ft.com") !== -1) {
-      requestHeaders.push({
-        name: 'Referer',
-        value: 'https://www.facebook.com/'
-      });
-    } else {
-      requestHeaders.push({
-        name: 'Referer',
-        value: 'https://www.google.com/'
-      });
-    }
+  // set Referer (which we might have added) to google
+  var requestHeader = requestHeaders[header_referer_idx];
+  if (details.url.includes('cooking.nytimes.com/api/v1/users/bootstrap')) {
+    // this fixes images not being loaded on cooking.nytimes.com main page
+    // referrer has to be *nytimes.com otherwise returns 403
+    requestHeader.value = 'https://cooking.nytimes.com';
+  } else if (matchUrlDomain(['wsj.com', 'ft.com'], details.url)) {
+    requestHeader.value = 'https://www.facebook.com/';
+  } else {
+    requestHeader.value = 'https://www.google.com/';
   }
 
   // override User-Agent to use Googlebot
-  var useGoogleBot = use_google_bot.filter(function(item) {
-    return typeof item == 'string' && details.url.indexOf(item) > -1;
-  }).length > 0;
-
-  if (useGoogleBot) {
-    requestHeaders.push({
-      "name": "User-Agent",
-      "value": useUserAgentMobile ? userAgentMobile : userAgentDesktop
-    })
+  if (matchUrlDomain(use_google_bot, details.url)) {
+    if (user_agent_idx == -1) {
+        user_agent_idx = requestHeaders.length;
+        requestHeaders.push({ name: 'User-Agent' });
+    }
+    requestHeaders[user_agent_idx].value = useUserAgentMobile ? userAgentMobile : userAgentDesktop;
     requestHeaders.push({
       "name": "X-Forwarded-For",
       "value": "66.249.66.1"
@@ -393,27 +377,24 @@ extension_api.webRequest.onBeforeSendHeaders.addListener(function(details) {
   }
 
   // remove cookies before page load
-  requestHeaders = requestHeaders.map(function(requestHeader) {
-    for (var siteIndex in allow_cookies) {
-      if (details.url.indexOf(allow_cookies[siteIndex]) !== -1) {
-        return requestHeader;
+  if (!matchUrlDomain(allow_cookies, details.url)) {
+    requestHeaders = requestHeaders.map(function(requestHeader) {
+      if (requestHeader.name === 'Cookie') {
+        requestHeader.value = '';
       }
-    }
-    if (requestHeader.name === 'Cookie') {
-      requestHeader.value = '';
-    }
-    return requestHeader;
-  });
+      return requestHeader;
+    });
+  }
 
   if (tabId !== -1) {
     // run contentScript inside tab
     extension_api.tabs.executeScript(tabId, {
+      file: 'common.js',
+      runAt: 'document_start'
+    });
+    extension_api.tabs.executeScript(tabId, {
       file: 'contentScript.js',
       runAt: 'document_start'
-    }, function(res) {
-      if (extension_api.runtime.lastError || res[0]) {
-        return;
-      }
     });
   }
 
@@ -424,36 +405,31 @@ extension_api.webRequest.onBeforeSendHeaders.addListener(function(details) {
 
 // remove cookies after page load
 extension_api.webRequest.onCompleted.addListener(function(details) {
-  for (var domainIndex in remove_cookies) {
-    var domainVar = remove_cookies[domainIndex];
-    if (!enabledSites.includes(domainVar) || details.url.indexOf(domainVar) === -1) {
-      continue; // don't remove cookies
-    }
-    extension_api.cookies.getAll({domain: domainVar}, function(cookies) {
-      for (var i=0; i<cookies.length; i++) {
-        var cookie = {
-          url: (cookies[i].secure ? "https://" : "http://") + cookies[i].domain + cookies[i].path,
-          name: cookies[i].name,
-          storeId: cookies[i].storeId
-        };
-        // .firstPartyDomain = undefined on Chrome (doesn't support it)
-        if (cookies[i].firstPartyDomain !== undefined) {
-          cookie.firstPartyDomain = cookies[i].firstPartyDomain;
-        }
-        var cookie_domain = cookies[i].domain;
-        var rc_domain = cookie_domain.replace(/^(\.?www\.|\.)/, '');
-        // hold specific cookie(s) from remove_cookies domains
-        if ((rc_domain in remove_cookies_select_hold) && remove_cookies_select_hold[rc_domain].includes(cookies[i].name)){
-          continue; // don't remove specific cookie
-        }
-        // drop only specific cookie(s) from remove_cookies domains
-        if ((rc_domain in remove_cookies_select_drop) && !(remove_cookies_select_drop[rc_domain].includes(cookies[i].name))){
-          continue; // only remove specific cookie
-        }
-        extension_api.cookies.remove(cookie);
+  var cookie_domain = matchUrlDomain(remove_cookies, details.url);
+  if (!cookie_domain || !enabledSites.includes(cookie_domain)) return;
+  extension_api.cookies.getAll({domain: cookie_domain}, function(cookies) {
+    for (var i=0; i<cookies.length; i++) {
+      var cookie = {
+        url: (cookies[i].secure ? 'https://' : 'http://') + cookies[i].domain + cookies[i].path,
+        name: cookies[i].name,
+        storeId: cookies[i].storeId
+      };
+      // .firstPartyDomain = undefined on Chrome (doesn't support it)
+      if (cookies[i].firstPartyDomain !== undefined) {
+        cookie.firstPartyDomain = cookies[i].firstPartyDomain;
       }
-    });
-  }
+      var rc_domain = cookies[i].domain.replace(/^(\.?www\.|\.)/, '');
+      // hold specific cookie(s) from remove_cookies domains
+      if ((rc_domain in remove_cookies_select_hold) && remove_cookies_select_hold[rc_domain].includes(cookies[i].name)){
+        continue; // don't remove specific cookie
+      }
+      // drop only specific cookie(s) from remove_cookies domains
+      if ((rc_domain in remove_cookies_select_drop) && !(remove_cookies_select_drop[rc_domain].includes(cookies[i].name))){
+        continue; // only remove specific cookie
+      }
+      extension_api.cookies.remove(cookie);
+    }
+  });
 }, {
   urls: ["<all_urls>"]
 });
@@ -473,14 +449,11 @@ function init_GA() {
 }
 
 function isSiteEnabled(details) {
-  var isEnabled = enabledSites.some(function(enabledSite) {
-    var useSite = (details.url.indexOf("." + enabledSite) !== -1 || details.url.indexOf("/" + enabledSite) !== -1);
-    if (enabledSite in restrictions) {
-      return useSite && details.url.match(restrictions[enabledSite]);
-    }
-    return useSite;
-  });
-  return isEnabled;
+  var enabledSite = matchUrlDomain(enabledSites, details.url);
+  if (enabledSite in restrictions) {
+    return restrictions[enabledSite].test(details.url);
+  }
+  return !!enabledSite;
 }
 
 function getParameterByName(name, url) {

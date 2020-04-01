@@ -1,4 +1,4 @@
-const extension_api =
+var extension_api =
     (typeof browser === 'object' &&
      typeof browser.runtime === 'object' &&
      typeof browser.runtime.getManifest === 'function') ? browser :
@@ -8,7 +8,7 @@ const extension_api =
     console.log('Cannot find extension_api under namespace "browser" or "chrome"');
 
 // Cookies from this list are blocked by default
-const defaultSites = {
+var defaultSites = {
     'Adweek': 'adweek.com',
     'Algemeen Dagblad': 'ad.nl',
     'American Banker': 'americanbanker.com',
@@ -135,3 +135,24 @@ const defaultSites = {
     'Wired': 'wired.com',
     '*General Paywall Bypass*': 'generalpaywallbypass',
 };
+
+function matchDomain(domains, hostname) {
+    var matched_domain = false;
+    if (!hostname)
+        hostname = window.location.hostname;
+    if (typeof domains === 'string')
+        domains = [domains];
+    domains.some(domain => (hostname === domain || hostname.endsWith('.' + domain)) && (matched_domain = domain));
+    return matched_domain;
+}
+
+function urlHost(url) {
+    try {
+        return new URL(url).hostname;
+    } catch(e) { e; }
+    return url;
+}
+
+function matchUrlDomain(domains, url) {
+    return matchDomain(domains, urlHost(url));
+}

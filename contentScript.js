@@ -1,7 +1,5 @@
 var arr_localstorage_hold = ['sfchronicle.com', 'cen.acs.org'];
-var localstorage_hold = arr_localstorage_hold.some(function(url) {
-    return window.location.href.indexOf(url) !== -1;
-});
+var localstorage_hold = matchDomain(arr_localstorage_hold);
 
 if (!localstorage_hold){
     window.localStorage.clear();
@@ -156,8 +154,7 @@ if (matchDomain('afr.com')) {
     document.addEventListener('DOMContentLoaded', () => {
         const hidden_image = document.querySelectorAll('img');
         for (let i = 0; i < hidden_image.length; i++) {
-            var src = hidden_image[i].src;
-            if ('src: ' + src.indexOf(".gif") !== -1) {
+            if (hidden_image[i].src.includes('.gif')) {
                 var data_src = hidden_image[i].getAttribute("data-src");
                 if (data_src)
                     hidden_image[i].setAttribute('src', data_src);
@@ -233,8 +230,7 @@ if (matchDomain('theglobeandmail.com')) {
         }
         const hidden_image = document.querySelectorAll('img');
         for (let i = 0; i < hidden_image.length; i++) {
-            var src = hidden_image[i].src;
-            if (src.indexOf("data:image/gif") !== -1) {
+            if (hidden_image[i].src.includes('data:image/gif')) {
                 var data_src = hidden_image[i].getAttribute("data-src");
                 if (data_src)
                     hidden_image[i].setAttribute('src', data_src);
@@ -400,13 +396,6 @@ if (matchDomain('techinasia.com')) {
     const splash_subscribe = document.querySelector('.splash-subscribe');
     const paywall_hard = document.querySelector('.paywall-hard');
     removeDOMElement(splash_subscribe, paywall_hard);
-}
-
-function matchDomain(domains) {
-    var hostname = window.location.hostname;
-    if (typeof domains === 'string')
-        domains = [domains];
-    return domains.some(domain => hostname === domain || hostname.endsWith('.' + domain));
 }
 
 function removeDOMElement(...elements) {
