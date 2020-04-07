@@ -7,9 +7,10 @@ if (!localstorage_hold){
 
 if (matchDomain('rep.repubblica.it')) {
     if (window.location.href.includes('/pwa/')) {
-        window.location.href = window.location.href.replace('/pwa/', '/ws/detail/');
+        setTimeout(function () {
+            window.location.href = window.location.href.replace('/pwa/', '/ws/detail/');
+        }, 400);
     }
-
     if (window.location.href.includes('/ws/detail/')) {
         const paywall = document.querySelector('.paywall[subscriptions-section="content"]');
         if (paywall) {
@@ -281,13 +282,18 @@ if (matchDomain('canberratimes.com.au')) {
     }
 }
 
+if (matchDomain('asia.nikkei.com')) {
+    const cookie_banner = document.querySelector('.pw-widget');
+    removeDOMElement(cookie_banner);
+}
+
 if (matchDomain('ledevoir.com')) {
         const counter = document.querySelector('.full.hidden-print.popup-msg');
         removeDOMElement(counter);
 }
 
 if (matchDomain('ft.com')) {
-    const cookie_banner = document.querySelector('.n-messaging-banner__outer');
+    const cookie_banner = document.querySelector('.cookie-banner');
     removeDOMElement(cookie_banner);
 }
 

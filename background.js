@@ -20,7 +20,6 @@ const allow_cookies = [
 'economist.com',
 'ed.nl',
 'examiner.com.au',
-'fd.nl',
 'ft.com',
 'harpers.org',
 'hbr.org',
@@ -119,6 +118,7 @@ const remove_cookies_select_drop = {
   'demorgen.be': ['TID_ID'],
   'economist.com': ['rvuuid'],
   'ed.nl': ['temptationTrackingId'],
+  'fd.nl': ['socialread'],
   'nrc.nl': ['counter'],
 }
 
@@ -309,7 +309,7 @@ extension_api.webRequest.onBeforeSendHeaders.addListener(function(details) {
   }
 
   // remove cookies for sites medium platform (mainfest.json needs in permissions: <all_urls>)
-  if (isSiteEnabled({url: 'medium.com'}) && matchUrlDomain('cdn-client.medium.com', details.url) && !matchUrlDomain('medium.com', header_referer)) {
+  if (isSiteEnabled({url: 'https://medium.com'}) && matchUrlDomain('cdn-client.medium.com', details.url) && !matchUrlDomain('medium.com', header_referer)) {
     extension_api.cookies.getAll({domain: urlHost(header_referer)}, function(cookies) {
       for (var i=0; i<cookies.length; i++) {
         extension_api.cookies.remove({url: (cookies[i].secure ? "https://" : "http://") + cookies[i].domain + cookies[i].path, name: cookies[i].name});
@@ -357,7 +357,7 @@ extension_api.webRequest.onBeforeSendHeaders.addListener(function(details) {
     // this fixes images not being loaded on cooking.nytimes.com main page
     // referrer has to be *nytimes.com otherwise returns 403
     requestHeader.value = 'https://cooking.nytimes.com';
-  } else if (matchUrlDomain(['wsj.com', 'ft.com'], details.url)) {
+  } else if (matchUrlDomain(['wsj.com', 'ft.com', 'fd.nl'], details.url)) {
     requestHeader.value = 'https://www.facebook.com/';
   } else {
     requestHeader.value = 'https://www.google.com/';

@@ -149,7 +149,9 @@ function matchDomain(domains, hostname) {
 function urlHost(url) {
     try {
         return new URL(url).hostname;
-    } catch(e) { e; }
+    } catch(e) {
+        console.log(`urlHost('${url}') fails: '${e}'`);
+    }
     return url;
 }
 
