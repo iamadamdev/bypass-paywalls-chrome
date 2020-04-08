@@ -88,6 +88,42 @@ if (matchDomain('washingtonpost.com')) {
             }
         }, 300); // Delay (in milliseconds)
     }
+
+    // the paywall doesn't appear immediately, so we do a couple attempts to kill it after initializetion
+    var attempts = 0;
+    var func = function(){
+        return function(){
+            try {
+                if(attempts++ > 10) return;
+
+                // Guys from WP assign a random class to the paywall block, we can get around this using the visible content search.
+                var xpath = '//h3[text()="We noticed you\'re blocking ads."]';
+                var matchingElement = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+                var bodyEl = document.getElementsByTagName('body')[0];
+                while(matchingElement != null &&
+                    matchingElement.parentElement != null &&
+                    matchingElement.parentElement != bodyEl) {
+                    matchingElement = matchingElement.parentElement;
+                }
+
+                if (matchingElement) {
+                    matchingElement.remove();
+                    
+                    // Make an article scrollable
+                    const htmlEl = document.getElementsByTagName('html')[0];
+                    if(htmlEl){
+                        htmlEl.style.overflow = 'scroll';
+                    }
+                } else {
+                    setTimeout(func(), 500); 
+                }
+            } catch (error) {
+                console.error('Something went wrong, please see exception details', error);
+            }
+        }   
+    }
+
+    setTimeout(func(), 500);
 }
 
 if (matchDomain('wsj.com')) {
