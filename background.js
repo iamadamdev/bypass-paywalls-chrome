@@ -129,6 +129,7 @@ const use_google_bot = [
 'fd.nl',
 'haaretz.co.il',
 'haaretz.com',
+'kansascity.com',
 'lemonde.fr',
 'mexiconewsdaily.com',
 'nytimes.com',

@@ -107,6 +107,7 @@ var defaultSites = {
     'The Hindu': 'thehindu.com',
     'The Irish Times (free articles only)': 'irishtimes.com',
     'The Japan Times': 'japantimes.co.jp',
+    'The Kansas City Star': 'kansascity.com',
     'TheMarker': 'themarker.com',
     'The Mercury News': 'mercurynews.com',
     'The Mercury Tasmania': 'themercury.com.au',
