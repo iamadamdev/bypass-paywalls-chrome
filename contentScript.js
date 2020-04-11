@@ -312,6 +312,12 @@ if (matchDomain('nytimes.com')) {
             preview_button.click();
 }
 
+if (matchDomain('technologyreview.com')) {
+    // The class of banner is like 'overlayFooter__wrapper--3DhFn', which is hard to select exactly
+    const subscribeBanner = document.querySelector('[class*=overlayFooter__wrapper]');
+    removeDOMElement(subscribeBanner);
+}
+
 if (matchDomain('leparisien.fr')) {
         window.removeEventListener('scroll', this.scrollListener);
         const paywall = document.querySelector('.relative.piano-paywall.below_nav.sticky');
