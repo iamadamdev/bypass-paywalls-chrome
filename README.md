@@ -155,10 +155,12 @@ When coming across a paywall click the cookie icon to remove the cookies then re
 _*May not always succeed_
 
 ### New site requests
+(Since people used the Issues tab to spam links, I dedicated all new site requests to other contributors, such as [kimkha](https://github.com/kimkha/bypass-paywalls-chrome/issues). So please ask if they're happy to work on it. Thanks!)
+
 Only large or major sites will be considered.
 1. Visit an article on the site you want to bypass the paywall for and copy the article title.
 2. Open up a new incognito window (Ctrl+Shift+N on Chrome) or Private window (Ctrl+Shift+P on Firefox), and paste the article title into Google.
-3. Click on the same article from the Google search results page. If it loads without a paywall you can [submit a request](https://github.com/iamadamdev/bypass-paywalls-chrome/issues/new) to add the site, otherwise my extension cannot bypass it either.
+3. Click on the same article from the Google search results page. If it loads without a paywall you can [submit a request](https://github.com/kimkha/bypass-paywalls-chrome/issues/new) to add the site, otherwise my extension cannot bypass it either.
 
 Usually premium articles cannot be bypassed as they are behind a hard paywall.
 
