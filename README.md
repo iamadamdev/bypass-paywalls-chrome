@@ -6,7 +6,7 @@
 
 ### Installation Instructions
 **Google Chrome**
-1. Download this repo as a [ZIP file from GitHub](https://github.com/iamadamdevHarvard Business/bypass-paywalls-chrome/archive/master.zip).
+1. Download this repo as a [ZIP file from GitHub](https://github.com/iamadamdev/bypass-paywalls-chrome/archive/master.zip).
 1. Unzip the file and you should have a folder named `bypass-paywalls-chrome-master`.
 1. In Chrome go to the extensions page (`chrome://extensions`).
 1. Enable Developer Mode.
