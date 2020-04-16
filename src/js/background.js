@@ -121,12 +121,16 @@ const remove_cookies_select_drop = {
 
 // Override User-Agent with Googlebot
 const use_google_bot = [
+'adelaidenow.com.au',
 'barrons.com',
+'couriermail.com.au',
 'dailytelegraph.com.au',
 'fd.nl',
 'haaretz.co.il',
 'haaretz.com',
+'heraldsun.com.au',
 'mexiconewsdaily.com',
+'ntnews.com.au',
 'nytimes.com',
 'quora.com',
 'seekingalpha.com',

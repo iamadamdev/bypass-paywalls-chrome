@@ -6,7 +6,7 @@
 
 ### Installation Instructions
 **Google Chrome**
-1. Download this repo as a [ZIP file from GitHub](https://github.com/iamadamdev/bypass-paywalls-chrome/archive/master.zip).
+1. Download this repo as a [ZIP file from GitHub](https://github.com/iamadamdevHarvard Business/bypass-paywalls-chrome/archive/master.zip).
 1. Unzip the file and you should have a folder named `bypass-paywalls-chrome-master`.
 1. In Chrome go to the extensions page (`chrome://extensions`).
 1. Enable Developer Mode.
@@ -59,6 +59,7 @@
 [Harper's Magazine](https://harpers.org)\
 [Hartford Courant](https://www.courant.com)\
 [Harvard Business Review](https://www.hbr.org)\
+[Herald Sun](https://www.heraldsun.com.au)\
 [Het Financieel Dagblad](https://fd.nl)\
 [Inc.com](https://www.inc.com)\
 [Investors Chronicle](https://www.investorschronicle.co.uk)\
@@ -80,6 +81,7 @@
 [Mexicon News Daily](https://mexiconewsdaily.com)\
 [Mountain View Voice](https://www.mv-voice.com)\
 [NRC Handelsblad](https://www.nrc.nl)\
+[NT News](https://www.ntnews.com.au)\
 [National Post](https://www.nationalpost.com)\
 [New York Magazine](https://www.nymag.com)\
 [New Zealand Herald](https://www.nzherald.co.nz)\
@@ -99,6 +101,7 @@
 [SunSentinel](https://www.sun-sentinel.com)\
 [Tech in Asia](https://www.techinasia.com)\
 [Telegraaf](https://www.telegraaf.nl)\
+[The Advertiser](https://www.adelaidenow.com.au)\
 [The Advocate](https://www.theadvocate.com.au)\
 [The Age](https://www.theage.com.au)\
 [The American Interest](https://www.the-american-interest.com)\
@@ -110,6 +113,7 @@
 [The Business Journals](https://www.bizjournals.com)\
 [The Canberra Times](https://www.canberratimes.com.au)\
 [The Courier](https://www.thecourier.com.au)\
+[The Courier Mail](https://www.couriermail.com.au)\
 [The Daily Telegraph](https://www.dailytelegraph.com.au)\
 [The Diplomat](https://www.thediplomat.com)\
 [The Economist](https://www.economist.com)\
