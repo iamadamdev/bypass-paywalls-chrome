@@ -121,6 +121,7 @@ const defaultSites = {
     'The Toronto Star': 'thestar.com',
     'The Wall Street Journal': 'wsj.com',
     'The Washington Post': 'washingtonpost.com',
+    'The Wrap': 'thewrap.com',
     'Times Literary Supplement': 'the-tls.co.uk',
     'Towards Data Science': 'towardsdatascience.com',
     'Trouw': 'trouw.nl',
