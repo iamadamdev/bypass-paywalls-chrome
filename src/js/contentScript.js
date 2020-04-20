@@ -414,6 +414,16 @@ if (matchDomain('techinasia.com')) {
     removeDOMElement(splash_subscribe, paywall_hard);
 }
 
+if (matchDomain('forbes.com')) {
+  const auth_container = document.querySelector('.fbs-auth__container');
+  const content_wrapper = document.querySelector('.fbs-ad--ntv-contentd-wrapper');
+  removeDOMElement(auth_container, content_wrapper);
+
+  const body_no_scroll = document.querySelector('body');
+  removeClassesByPrefix(body_no_scroll, 'body--no-scroll');
+  removeClassesByPrefix(body_no_scroll, 'adblock-on');
+}
+
 function matchDomain(domains) {
     var hostname = window.location.hostname;
     if (typeof domains === 'string')

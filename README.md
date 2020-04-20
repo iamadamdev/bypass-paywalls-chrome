@@ -50,6 +50,7 @@
 [Financial News](https://www.fnlondon.com)\
 [Financial Times](https://www.ft.com)\
 [First Things](https://www.firstthings.com)\
+[Forbes](https://www.forbes.com)\
 [Foreign Policy](https://www.foreignpolicy.com)\
 [Fortune](https://www.fortune.com)\
 [Glassdoor](https://www.glassdoor.com)\

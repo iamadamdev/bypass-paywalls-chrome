@@ -28,6 +28,7 @@ const defaultSites = {
     'Financial News': 'fnlondon.com',
     'Financial Times': 'ft.com',
     'First Things': 'firstthings.com',
+    'Forbes': 'forbes.com',
     'Foreign Policy': 'foreignpolicy.com',
     'Fortune': 'fortune.com',
     'Glassdoor': 'glassdoor.com',
