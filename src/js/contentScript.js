@@ -423,6 +423,7 @@ if (matchDomain('thewrap.com')) {
         embed.classList.remove('d-none');
     }
 }
+
 function matchDomain(domains) {
     var hostname = window.location.hostname;
     if (typeof domains === 'string')
