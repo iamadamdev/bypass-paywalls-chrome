@@ -142,6 +142,7 @@
 [The Toronto Star](https://www.thestar.com)\
 [The Wall Street Journal](https://www.wsj.com)\
 [The Washington Post](https://www.washingtonpost.com)\
+[The Wrap](https://www.thewrap.com)\
 [TheMarker](https://www.themarker.com)\
 [Times Literary Supplement](https://www.the-tls.co.uk)\
 [Towards Data Science](https://www.towardsdatascience.com)\
