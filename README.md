@@ -165,7 +165,7 @@ _*May not always succeed_
 Only large or major sites will be considered.
 1. Visit an article on the site you want to bypass the paywall for and copy the article title.
 2. Open up a new incognito window (Ctrl+Shift+N on Chrome) or Private window (Ctrl+Shift+P on Firefox), and paste the article title into Google.
-3. Click on the same article from the Google search results page. If it loads without a paywall you can [submit a request](https://github.com/iamadamdev/bypass-paywalls-chrome/issues/new) to add the site, otherwise my extension cannot bypass it either.
+3. Click on the same article from the Google search results page. If it loads without a paywall you can [submit a request](https://github.com/iamadamdev/bypass-paywalls-chrome/issues/new/choose) to add the site, otherwise my extension cannot bypass it either.
 
 Usually premium articles cannot be bypassed as they are behind a hard paywall.
 
@@ -175,7 +175,7 @@ Usually premium articles cannot be bypassed as they are behind a hard paywall.
 * Make sure the site is checked under Options (on macOS sometimes the sites get unselected).
 * Make sure you're running the latest version of Bypass Paywalls.
 * If a site is having problems try unchecking "\*General Paywall Bypass\*" in Options.
-* If none of these work, you can submit an issue [here](https://github.com/iamadamdev/bypass-paywalls-chrome/issues).
+* If none of these work, you can submit an issue [here](https://github.com/iamadamdev/bypass-paywalls-chrome/issues/new/choose).
 
 ### Pull Requests
 * PRs are welcome.
