@@ -114,7 +114,7 @@ if (matchDomain('mexiconewsdaily.com')) {
     });
 }
 
-if (matchDomain('theathletic.com')) {
+if (matchDomain('theathletic.com') || matchDomain('theathletic.co.uk')) {
     const landing_banner = document.querySelector('.logged-out-landing-banner');
     const sample_banner = document.querySelector('.main-sample-banner');
     const bottom_banner = document.querySelector('.border-bottom-cc');
