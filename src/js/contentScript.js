@@ -414,6 +414,16 @@ if (matchDomain('techinasia.com')) {
     removeDOMElement(splash_subscribe, paywall_hard);
 }
 
+if (matchDomain('thewrap.com')) {
+    const embed = document.querySelector('.embed');
+    if (embed) {
+        // Display feature video
+        const container = document.querySelector('.featured-image-container');
+        removeDOMElement(container);
+        embed.classList.remove('d-none');
+    }
+}
+
 function matchDomain(domains) {
     var hostname = window.location.hostname;
     if (typeof domains === 'string')

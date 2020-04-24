@@ -142,6 +142,7 @@
 [The Toronto Star](https://www.thestar.com)\
 [The Wall Street Journal](https://www.wsj.com)\
 [The Washington Post](https://www.washingtonpost.com)\
+[The Wrap](https://www.thewrap.com)\
 [TheMarker](https://www.themarker.com)\
 [Times Literary Supplement](https://www.the-tls.co.uk)\
 [Towards Data Science](https://www.towardsdatascience.com)\
@@ -163,9 +164,11 @@ _*May not always succeed_
 
 ### New site requests
 Only large or major sites will be considered.
-1. Visit an article on the site you want to bypass the paywall for and copy the article title.
-2. Open up a new incognito window (Ctrl+Shift+N on Chrome) or Private window (Ctrl+Shift+P on Firefox), and paste the article title into Google.
-3. Click on the same article from the Google search results page. If it loads without a paywall you can [submit a request](https://github.com/iamadamdev/bypass-paywalls-chrome/issues/new/choose) to add the site, otherwise my extension cannot bypass it either.
+1. First search 'Issues' to see if the site has been requested already.
+2. Visit an article on the site you want to bypass the paywall for and copy the article title.
+3. Open up a new incognito window (Ctrl+Shift+N on Chrome) or Private window (Ctrl+Shift+P on Firefox), and paste the article title into Google.
+4. Click on the same article from the Google search results page.
+5. If it loads without a paywall you can [submit a request](https://github.com/iamadamdev/bypass-paywalls-chrome/issues/new/choose) to add the site, otherwise my extension cannot bypass it either.
 
 Usually premium articles cannot be bypassed as they are behind a hard paywall.
 

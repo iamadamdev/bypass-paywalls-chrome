@@ -180,6 +180,7 @@ const blockedRegexes = {
 'thecourier.com.au': /.+cdn-au\.piano\.io\/api\/tinypass.+\.js/,
 'theglobeandmail.com': /theglobeandmail\.com\/pb\/resources\/scripts\/build\/chunk-bootstraps\/.+\.js/,
 'thenation.com': /thenation\.com\/.+\/paywall-script\.php/,
+'thewrap.com': /thewrap\.com\/.+\/wallkit\.js/,
 };
 
 const userAgentDesktop = "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
