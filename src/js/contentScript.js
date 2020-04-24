@@ -424,6 +424,17 @@ if (matchDomain('thewrap.com')) {
     }
 }
 
+if (matchDomain('forbes.com')) {
+    const paywall = document.querySelector('.fbs-auth__adblock');
+    if (paywall) {
+        const content_wrapper = document.querySelector('.fbs-ad--ntv-contentd-wrapper');
+        removeDOMElement(paywall, content_wrapper);
+        const body = document.body;
+        body.classList.remove('adblock-on');
+        body.classList.remove('body--no-scroll');
+    }
+}
+
 function matchDomain(domains) {
     var hostname = window.location.hostname;
     if (typeof domains === 'string')
