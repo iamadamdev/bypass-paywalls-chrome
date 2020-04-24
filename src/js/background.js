@@ -127,6 +127,7 @@ const use_google_bot = [
 'couriermail.com.au',
 'dailytelegraph.com.au',
 'fd.nl',
+'genomeweb.com',
 'haaretz.co.il',
 'haaretz.com',
 'heraldsun.com.au',

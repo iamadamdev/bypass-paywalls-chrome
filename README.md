@@ -52,6 +52,7 @@
 [First Things](https://www.firstthings.com)\
 [Foreign Policy](https://www.foreignpolicy.com)\
 [Fortune](https://www.fortune.com)\
+[Genomeweb](https://www.genomeweb.com)\
 [Glassdoor](https://www.glassdoor.com)\
 [Haaretz.co.il](https://www.haaretz.co.il)\
 [Haaretz.com](https://www.haaretz.com)\

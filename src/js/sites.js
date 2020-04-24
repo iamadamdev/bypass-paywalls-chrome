@@ -30,6 +30,7 @@ const defaultSites = {
     'First Things': 'firstthings.com',
     'Foreign Policy': 'foreignpolicy.com',
     'Fortune': 'fortune.com',
+    'Genomeweb': 'genomeweb.com',
     'Glassdoor': 'glassdoor.com',
     'Haaretz English': 'haaretz.com',
     'Haaretz': 'haaretz.co.il',
