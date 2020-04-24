@@ -21,6 +21,7 @@ const allow_cookies = [
 'ft.com',
 'harpers.org',
 'hbr.org',
+'investing.com',
 'lesechos.fr',
 'lrb.co.uk',
 'medium.com',

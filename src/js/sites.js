@@ -40,6 +40,7 @@ const defaultSites = {
     'Herald Sun': 'heraldsun.com.au',
     'Het Financieele Dagblad': 'fd.nl',
     'Inc.com': 'inc.com',
+    'Investing.com': 'investing.com',
     'Investors Chronicle': 'investorschronicle.co.uk',
     'La Nacion': 'lanacion.com.ar',
     'La Repubblica': 'repubblica.it',

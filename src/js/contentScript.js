@@ -424,6 +424,15 @@ if (matchDomain('thewrap.com')) {
     }
 }
 
+if (window.location.href.indexOf("investing.com") !== -1) {
+    setTimeout(function () {
+        const paywall = document.querySelector('#abPopup');
+
+        removeDOMElement(paywall);
+        document.body.removeAttribute('style');
+    }, 500); // Delay (in milliseconds)
+}
+
 function matchDomain(domains) {
     var hostname = window.location.hostname;
     if (typeof domains === 'string')
