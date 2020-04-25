@@ -37,6 +37,7 @@
 [Corriere Della Sera](https://www.corriere.it)\
 [Crain's Chicago Business](https://www.chicagobusiness.com)\
 [Daily Press](https://www.dailypress.com)\
+[Deal Street Asia](https://www.dealstreetasia.com)\
 [De Groene Amsterdammer](https://www.groene.nl)\
 [De Tijd](https://www.tijd.be)\
 [De Volkskrant](https://www.volkskrant.nl)\
