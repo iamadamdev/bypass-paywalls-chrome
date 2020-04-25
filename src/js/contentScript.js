@@ -145,12 +145,14 @@ if (matchDomain('nzherald.co.nz')) {
 }
 
 if (matchDomain('thestar.com')) {
-    const paywall = document.querySelector('.basic-paywall-new');
-    removeDOMElement(paywall);
-    const tbc = document.querySelectorAll('.text-block-container');
-    for (let i = 0; i < tbc.length; i++) {
-        tbc[i].removeAttribute('style');
-    }
+    setTimeout(function () {
+        const paywall = document.querySelector('.basic-paywall-new');
+        removeDOMElement(paywall);
+        const tbc = document.querySelectorAll('.text-block-container');
+        for (let i = 0; i < tbc.length; i++) {
+            tbc[i].removeAttribute('style');
+        }
+    }, 1000); // Delay (in milliseconds)
 }
 
 if (matchDomain('afr.com')) {
