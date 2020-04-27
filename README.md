@@ -82,6 +82,7 @@
 [MIT Technology Review](https://www.technologyreview.com)\
 [Medium](https://www.medium.com)\
 [Mexicon News Daily](https://mexiconewsdaily.com)\
+[Miami Herald](https://www.miamiherald.com)\
 [Mountain View Voice](https://www.mv-voice.com)\
 [NRC Handelsblad](https://www.nrc.nl)\
 [NT News](https://www.ntnews.com.au)\
