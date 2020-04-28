@@ -1,0 +1,15 @@
+
+New repo Bypass Paywalls Clean (magnolia1234)
+
+Spread the word, clean/refactored version of Bypass Paywalls Clean on BitBucket.
+https://bitbucket.org/magnolia1234/bypass-paywalls-chrome-clean
+
+new sites (170 in total)
+more EU & international sites
+add your own custom sites
+lots of bugfixes
+update check (in options)
+no tracking with Google Analytics (not now or in the future)
+
+PS no more need to wait for Adam to copy these fixes (since clean break) ;-)
+If you want to 'thank' Adam for getting magnolia1234 blocked, you can at iamadamdev@hotmail.com
