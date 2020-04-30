@@ -185,9 +185,7 @@ let enabledSites = [];
 extensionApi.storage.sync.get({
   sites: {}
 }, function (items) {
-  enabledSites = Object.keys(items.sites).map(function (key) {
-    return items.sites[key];
-  });
+  enabledSites = Object.values(items.sites);
   if (extensionApi === chrome) {
     initGA();
   }
@@ -195,15 +193,9 @@ extensionApi.storage.sync.get({
 
 // Listen for changes to options
 extensionApi.storage.onChanged.addListener(function (changes, namespace) {
-  let key;
-  for (key in changes) {
-    const storageChange = changes[key];
-    if (key === 'sites') {
-      const sites = storageChange.newValue;
-      enabledSites = Object.keys(sites).map(function (key) {
-        return sites[key];
-      });
-    }
+  if (changes.sites) {
+    const sites = changes.sites.newValue;
+    enabledSites = Object.values(sites);
   }
 });
 
@@ -216,20 +208,21 @@ extensionApi.runtime.onInstalled.addListener(function (details) {
   }
 });
 
-extensionApi.tabs.onUpdated.addListener(updateBadge);
-extensionApi.tabs.onActivated.addListener(updateBadge);
+extensionApi.tabs.onUpdated.addListener(function (tabId, info, tab) {
+  updateBadge(tab);
+});
+extensionApi.tabs.onActivated.addListener(function (activeInfo) {
+  extensionApi.tabs.get(activeInfo.tabId, updateBadge);
+});
 
-function updateBadge () {
-  extensionApi.tabs.query({
-    active: true,
-    currentWindow: true
-  }, function (arrayOfTabs) {
-    const activeTab = arrayOfTabs[0];
-    if (!activeTab) { return; }
-    const badgeText = getBadgeText(activeTab.url);
-    extensionApi.browserAction.setBadgeBackgroundColor({ color: 'blue' });
-    extensionApi.browserAction.setBadgeText({ text: badgeText });
-  });
+let cachedBadgeText = '';
+function updateBadge (activeTab) {
+  if (!activeTab) { return; }
+  const badgeText = getBadgeText(activeTab.url);
+  if (cachedBadgeText === badgeText) { return; }
+  cachedBadgeText = badgeText;
+  extensionApi.browserAction.setBadgeBackgroundColor({color: 'blue'});
+  extensionApi.browserAction.setBadgeText({text: badgeText});
 }
 
 function getBadgeText (currentUrl) {
@@ -238,9 +231,7 @@ function getBadgeText (currentUrl) {
 
 // Disable javascript for these sites
 extensionApi.webRequest.onBeforeRequest.addListener(function (details) {
-  if (!isSiteEnabled(details) && !enabledSites.some(function (enabledSite) {
-    return enabledSite.indexOf('generalpaywallbypass') !== -1;
-  })) {
+  if (!isSiteEnabled(details) && !enabledSites.includes('generalpaywallbypass')) {
     return;
   }
   return { cancel: true };
@@ -272,7 +263,7 @@ extensionApi.webRequest.onBeforeSendHeaders.addListener(function (details) {
   // check for blocked regular expression: domain enabled, match regex, block on an internal or external regex
   for (const domain in blockedRegexes) {
     if (isSiteEnabled({ url: '.' + domain }) && details.url.match(blockedRegexes[domain])) {
-      if (details.url.indexOf(domain) !== -1) {
+      if (details.url.includes(domain)) {
         return { cancel: true };
       }
     }
@@ -285,11 +276,11 @@ extensionApi.webRequest.onBeforeSendHeaders.addListener(function (details) {
   // if referer exists, set it to google
   requestHeaders = requestHeaders.map(function (requestHeader) {
     if (requestHeader.name === 'Referer') {
-      if (details.url.indexOf('cooking.nytimes.com/api/v1/users/bootstrap') !== -1) {
+      if (details.url.includes('cooking.nytimes.com/api/v1/users/bootstrap')) {
         // this fixes images not being loaded on cooking.nytimes.com main page
         // referrer has to be *nytimes.com otherwise returns 403
         requestHeader.value = 'https://cooking.nytimes.com';
-      } else if (details.url.indexOf('wsj.com') !== -1 || details.url.indexOf('ft.com') !== -1 || details.url.indexOf('fd.nl') !== -1) {
+      } else if (details.url.includes('wsj.com') || details.url.includes('ft.com') || details.url.includes('fd.nl')) {
         requestHeader.value = 'https://www.facebook.com/';
       } else {
         requestHeader.value = 'https://www.google.com/';
@@ -305,7 +296,7 @@ extensionApi.webRequest.onBeforeSendHeaders.addListener(function (details) {
 
   // otherwise add it
   if (!setReferer) {
-    if (details.url.indexOf('wsj.com') !== -1 || details.url.indexOf('ft.com') !== -1 || details.url.indexOf('fd.nl') !== -1) {
+    if (details.url.includes('wsj.com') || details.url.includes('ft.com') || details.url.includes('fd.nl')) {
       requestHeaders.push({
         name: 'Referer',
         value: 'https://www.facebook.com/'
@@ -319,9 +310,9 @@ extensionApi.webRequest.onBeforeSendHeaders.addListener(function (details) {
   }
 
   // override User-Agent to use Googlebot
-  const useGoogleBot = useGoogleBotSites.filter(function (item) {
-    return typeof item === 'string' && details.url.indexOf(item) > -1;
-  }).length > 0;
+  const useGoogleBot = useGoogleBotSites.some(function (item) {
+    return typeof item === 'string' && details.url.includes(item);
+  });
 
   if (useGoogleBot) {
     requestHeaders.push({
@@ -335,17 +326,17 @@ extensionApi.webRequest.onBeforeSendHeaders.addListener(function (details) {
   }
 
   // remove cookies before page load
-  requestHeaders = requestHeaders.map(function (requestHeader) {
-    for (const siteIndex in allowCookies) {
-      if (details.url.indexOf(allowCookies[siteIndex]) !== -1) {
-        return requestHeader;
-      }
-    }
-    if (requestHeader.name === 'Cookie') {
-      requestHeader.value = '';
-    }
-    return requestHeader;
+  const enabledCookies = allowCookies.some(function (site) {
+    return details.url.includes(site);
   });
+  if (!enabledCookies) {
+    requestHeaders = requestHeaders.map(function (requestHeader) {
+      if (requestHeader.name === 'Cookie') {
+        requestHeader.value = '';
+      }
+      return requestHeader;
+    });
+  }
 
   if (tabId !== -1) {
     // run contentScript inside tab
@@ -366,30 +357,34 @@ extensionApi.webRequest.onBeforeSendHeaders.addListener(function (details) {
 
 // remove cookies after page load
 extensionApi.webRequest.onCompleted.addListener(function (details) {
-  for (const domainIndex in removeCookies) {
-    const domainVar = removeCookies[domainIndex];
-    if (!enabledSites.includes(domainVar) || details.url.indexOf(domainVar) === -1) {
-      continue; // don't remove cookies
+  let domainToRemove;
+  for (let domain of removeCookies) {
+    if (enabledSites.includes(domain) && details.url.includes(domain)) {
+      domainToRemove = domain;
+      break;
     }
-    extensionApi.cookies.getAll({ domain: domainVar }, function (cookies) {
+  }
+  if (domainToRemove) {
+    extensionApi.cookies.getAll({ domain: domainToRemove }, function (cookies) {
       for (let i = 0; i < cookies.length; i++) {
+        const ck = ck;
         const cookie = {
-          url: (cookies[i].secure ? 'https://' : 'http://') + cookies[i].domain + cookies[i].path,
-          name: cookies[i].name,
-          storeId: cookies[i].storeId
+          url: (ck.secure ? 'https://' : 'http://') + ck.domain + ck.path,
+          name: ck.name,
+          storeId: ck.storeId
         };
         // .firstPartyDomain = undefined on Chrome (doesn't support it)
-        if (cookies[i].firstPartyDomain !== undefined) {
-          cookie.firstPartyDomain = cookies[i].firstPartyDomain;
+        if (ck.firstPartyDomain !== undefined) {
+          cookie.firstPartyDomain = ck.firstPartyDomain;
         }
-        const cookieDomain = cookies[i].domain;
+        const cookieDomain = ck.domain;
         const rcDomain = cookieDomain.replace(/^(\.?www\.|\.)/, '');
         // hold specific cookie(s) from removeCookies domains
-        if ((rcDomain in removeCookiesSelectHold) && removeCookiesSelectHold[rcDomain].includes(cookies[i].name)) {
+        if ((rcDomain in removeCookiesSelectHold) && removeCookiesSelectHold[rcDomain].includes(ck.name)) {
           continue; // don't remove specific cookie
         }
         // drop only specific cookie(s) from removeCookies domains
-        if ((rcDomain in removeCookiesSelectDrop) && !(removeCookiesSelectDrop[rcDomain].includes(cookies[i].name))) {
+        if ((rcDomain in removeCookiesSelectDrop) && !(removeCookiesSelectDrop[rcDomain].includes(ck.name))) {
           continue; // only remove specific cookie
         }
         extensionApi.cookies.remove(cookie);
@@ -420,7 +415,7 @@ function initGA () {
 
 function isSiteEnabled (details) {
   const isEnabled = enabledSites.some(function (enabledSite) {
-    const useSite = (details.url.indexOf('.' + enabledSite) !== -1 || details.url.indexOf('/' + enabledSite) !== -1);
+    const useSite = (details.url.includes('.' + enabledSite) || details.url.includes('/' + enabledSite));
     if (enabledSite in restrictions) {
       return useSite && details.url.match(restrictions[enabledSite]);
     }
