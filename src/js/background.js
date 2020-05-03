@@ -367,8 +367,7 @@ extensionApi.webRequest.onCompleted.addListener(function (details) {
   }
   if (domainToRemove) {
     extensionApi.cookies.getAll({ domain: domainToRemove }, function (cookies) {
-      for (let i = 0; i < cookies.length; i++) {
-        const ck = cookies[i];
+      for (const ck of cookies) {
         const cookie = {
           url: (ck.secure ? 'https://' : 'http://') + ck.domain + ck.path,
           name: ck.name,
