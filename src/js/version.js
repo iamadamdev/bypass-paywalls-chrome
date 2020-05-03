@@ -1,3 +1,3 @@
-var manifestData = extensionApi.runtime.getManifest();
-var versionString = 'v' + manifestData.version;
+const manifestData = extensionApi.runtime.getManifest();
+const versionString = 'v' + manifestData.version;
 document.getElementById('version').innerText = versionString;

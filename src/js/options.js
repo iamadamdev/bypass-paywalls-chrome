@@ -1,8 +1,8 @@
 // Saves options to extensionApi.storage
 function saveOptions () {
-  var inputEls = document.querySelectorAll('#bypass_sites input');
+  const inputEls = document.querySelectorAll('#bypass_sites input');
 
-  var sites = Array.from(inputEls).reduce(function (memo, inputEl) {
+  const sites = Array.from(inputEls).reduce(function (memo, inputEl) {
     if (inputEl.checked) {
       memo[inputEl.dataset.key] = inputEl.dataset.value;
     }
@@ -13,7 +13,7 @@ function saveOptions () {
     sites: sites
   }, function () {
     // Update status to let user know options were saved.
-    var status = document.getElementById('status');
+    const status = document.getElementById('status');
     status.textContent = 'Options saved.';
     setTimeout(function () {
       status.textContent = '';
@@ -28,16 +28,16 @@ function renderOptions () {
   extensionApi.storage.sync.get({
     sites: {}
   }, function (items) {
-    var sites = items.sites;
-    var sitesEl = document.getElementById('bypass_sites');
-    for (var key in defaultSites) {
+    const sites = items.sites;
+    const sitesEl = document.getElementById('bypass_sites');
+    for (const key in defaultSites) {
       if (!Object.prototype.hasOwnProperty.call(defaultSites, key)) {
         continue;
       }
 
-      var value = defaultSites[key];
-      var labelEl = document.createElement('label');
-      var inputEl = document.createElement('input');
+      const value = defaultSites[key];
+      const labelEl = document.createElement('label');
+      const inputEl = document.createElement('input');
       inputEl.type = 'checkbox';
       inputEl.dataset.key = key;
       inputEl.dataset.value = value;
@@ -51,14 +51,14 @@ function renderOptions () {
 }
 
 function selectAll () {
-  var inputEls = Array.from(document.querySelectorAll('input'));
+  const inputEls = Array.from(document.querySelectorAll('input'));
   inputEls.forEach(function (inputEl) {
     inputEl.checked = true;
   });
 }
 
 function selectNone () {
-  var inputEls = Array.from(document.querySelectorAll('input'));
+  const inputEls = Array.from(document.querySelectorAll('input'));
   inputEls.forEach(function (inputEl) {
     inputEl.checked = false;
   });
