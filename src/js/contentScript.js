@@ -141,10 +141,10 @@ if (matchDomain('nzherald.co.nz')) {
     paywall.classList.add('full-content');
     removeClassesByPrefix(paywall, 'QUnW');
     const paras = paywall.querySelectorAll('p, span, h2, div');
-    for (const para of paras) {
-      removeClassesByPrefix(para, 'QUnW');
-      para.classList.remove('ellipsis');
-      para.removeAttribute('style');
+    for (let i = 0; i < paras.length; i++) {
+      removeClassesByPrefix(paras[i], 'QUnW');
+      paras[i].classList.remove('ellipsis');
+      paras[i].removeAttribute('style');
     }
   }
 }
