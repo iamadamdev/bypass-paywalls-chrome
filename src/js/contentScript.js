@@ -1,5 +1,5 @@
-const localStorageHoldArray = ['sfchronicle.com', 'cen.acs.org'];
-const localStorageHold = localStorageHoldArray.some(function (url) {
+var localStorageHoldArray = ['sfchronicle.com', 'cen.acs.org'];
+var localStorageHold = localStorageHoldArray.some(function (url) {
   return window.location.href.includes(url);
 });
 
@@ -141,10 +141,10 @@ if (matchDomain('nzherald.co.nz')) {
     paywall.classList.add('full-content');
     removeClassesByPrefix(paywall, 'QUnW');
     const paras = paywall.querySelectorAll('p, span, h2, div');
-    for (let i = 0; i < paras.length; i++) {
-      removeClassesByPrefix(paras[i], 'QUnW');
-      paras[i].classList.remove('ellipsis');
-      paras[i].removeAttribute('style');
+    for (const para of paras) {
+      removeClassesByPrefix(para, 'QUnW');
+      para.classList.remove('ellipsis');
+      para.removeAttribute('style');
     }
   }
 }
