@@ -1,9 +1,4 @@
-var localStorageHoldArray = ['sfchronicle.com', 'cen.acs.org'];
-var localStorageHold = localStorageHoldArray.some(function (url) {
-  return window.location.href.includes(url);
-});
-
-if (!localStorageHold) {
+if (!matchDomain(['sfchronicle.com', 'cen.acs.org'])) {
   window.localStorage.clear();
 }
 
