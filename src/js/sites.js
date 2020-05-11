@@ -23,6 +23,7 @@ const defaultSites = {
   'Dynamed Plus': 'dynamed.com',
   'Eindhovens Dagblad': 'ed.nl',
   'El Pais': 'elpais.com',
+  'Elephant Journal': 'elephantjournal.com',
   'Encyclopedia Britannica': 'britannica.com',
   'Examiner': 'examiner.com.au',
   'Financial News': 'fnlondon.com',

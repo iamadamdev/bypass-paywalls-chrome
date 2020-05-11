@@ -68,6 +68,7 @@ const removeCookies = [
   'denverpost.com',
   'economist.com',
   'ed.nl',
+  'elephantjournal.com',
   'examiner.com.au',
   'ft.com',
   'harpers.org',

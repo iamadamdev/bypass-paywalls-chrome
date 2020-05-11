@@ -47,6 +47,7 @@
 [Dynamed Plus](https://www.dynamed.com)\
 [Eindhovens Dagblad](https://www.ed.nl)\
 [El Pais](https://www.elpais.com/)\
+[Elephant Journal](https://www.elephantjournal.com/)\
 [Encyclopedia Britannica](https://www.britannica.com)\
 [Examiner](https://www.examiner.com.au)\
 [Financial News](https://www.fnlondon.com)\
