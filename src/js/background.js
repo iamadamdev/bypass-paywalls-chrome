@@ -173,6 +173,11 @@ const blockedRegexes = {
   'thewrap.com': /thewrap\.com\/.+\/wallkit\.js/
 };
 
+// Allowed external scripts
+const allowedRegexes = {
+  'economist.com': /infographics.economist.com\/utils\/ai2html-resizer.*\.js/
+};
+
 const userAgentDesktop = 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)';
 const userAgentMobile = 'Chrome/41.0.2272.96 Mobile Safari/537.36 (compatible ; Googlebot/2.1 ; +http://www.google.com/bot.html)';
 
@@ -230,6 +235,12 @@ function getBadgeText (currentUrl) {
 extensionApi.webRequest.onBeforeRequest.addListener(function (details) {
   if (!isSiteEnabled(details) && !enabledSites.includes('generalpaywallbypass')) {
     return;
+  }
+  // Don't block allowed scripts
+  for (const domain in allowedRegexes) {
+    if (isSameDomain(details.url, domain) && details.url.match(allowedRegexes[domain])) {
+      return;
+    }
   }
   return { cancel: true };
 },
