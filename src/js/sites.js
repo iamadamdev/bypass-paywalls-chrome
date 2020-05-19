@@ -62,6 +62,7 @@ const defaultSites = {
   'Mountain View Voice': 'mv-voice.com',
   'National Post': 'nationalpost.com',
   'Neue Zürcher Zeitung': 'nzz.ch',
+  'Newsweek': 'newsweek.com',
   'New Statesman': 'newstatesman.com',
   'New York Magazine': 'nymag.com',
   'New Zealand Herald': 'nzherald.co.nz',

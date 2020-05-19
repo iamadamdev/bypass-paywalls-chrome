@@ -310,6 +310,9 @@ if (matchDomain('rep.repubblica.it')) {
 } else if (matchDomain('hbr.org')) {
   const banner = document.querySelector('.persistent-banner');
   removeDOMElement(banner);
+}else if(matchDomain('newsweek.com')){
+  const footerBanner = document.querySelector('.remaining-articles');
+  removeDOMElement(footerBanner);
 }
 
 function matchDomain (domains) {

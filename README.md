@@ -84,6 +84,7 @@
 [Mexicon News Daily](https://mexiconewsdaily.com)\
 [Miami Herald](https://www.miamiherald.com)\
 [Mountain View Voice](https://www.mv-voice.com)\
+[Newsweek](https://www.newsweek.com)\
 [NRC Handelsblad](https://www.nrc.nl)\
 [NT News](https://www.ntnews.com.au)\
 [National Post](https://www.nationalpost.com)\
