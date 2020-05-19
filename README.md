@@ -64,6 +64,7 @@
 [Harvard Business Review](https://www.hbr.org)\
 [Herald Sun](https://www.heraldsun.com.au)\
 [Het Financieel Dagblad](https://fd.nl)\
+[Il Manifesto](https://www.ilmanifesto.it)\
 [Inc.com](https://www.inc.com)\
 [Investors Chronicle](https://www.investorschronicle.co.uk)\
 [L'Écho](https://www.lecho.be)\
