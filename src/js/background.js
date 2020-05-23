@@ -127,7 +127,6 @@ const useGoogleBotSites = [
   'haaretz.com',
   'heraldsun.com.au',
   'mexiconewsdaily.com',
-  'miamiherald.com',
   'ntnews.com.au',
   'quora.com',
   'seekingalpha.com',
@@ -195,7 +194,7 @@ extensionApi.storage.sync.get({
 
 // Listen for changes to options
 extensionApi.storage.onChanged.addListener(function (changes, namespace) {
-  if (changes.sites) {
+  if (changes.sites && changes.sites.newValue) {
     const sites = changes.sites.newValue;
     enabledSites = Object.values(sites);
   }

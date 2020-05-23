@@ -90,12 +90,6 @@ if (matchDomain('rep.repubblica.it')) {
 
     removeDOMElement(sideNotification, subMessage, popup, bgFocusRemoverId);
   });
-} else if (matchDomain('miamiherald.com')) {
-  // Accept cookie to close the banner
-  const acceptBtn = document.querySelector('#onetrust-accept-btn-handler');
-  if (acceptBtn) {
-    acceptBtn.click();
-  }
 } else if (matchDomain(['theathletic.com','theathletic.co.uk'])) {
   const landingBanner = document.querySelector('.logged-out-landing-banner');
   const sampleBanner = document.querySelector('.main-sample-banner');

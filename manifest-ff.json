@@ -29,7 +29,6 @@
     "*://*.leparisien.fr/*",
     "*://*.medium.com/*",
     "*://*.mexiconewsdaily.com/*",
-    "*://*.miamiherald.com/*",
     "*://*.nytimes.com/*",
     "*://*.nzherald.co.nz/*",
     "*://*.parool.nl/*",
@@ -60,7 +59,7 @@
   "applications": {
     "gecko": {
       "id": "bypasspaywalls@bypasspaywalls.weebly.com",
-      "update_url": "https://raw.githubusercontent.com/iamadamdev/bypass-paywalls-firefox/master/updates.json"
+      "update_url": "https://raw.githubusercontent.com/iamadamdev/bypass-paywalls-chrome/master/src/updates/updates.json"
     }
   },
   "browser_action": {
@@ -222,5 +221,5 @@
     "*://*.wsj.com/*",
     "*://*.nzz.ch/*"
   ],
-  "version": "1.7.1"
+  "version": "1.7.2"
 }
