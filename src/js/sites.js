@@ -132,5 +132,6 @@ const defaultSites = {
   'Vrij Nederland': 'vn.nl',
   'Winston-Salem Journal': 'journalnow.com',
   'Wired': 'wired.com',
+  'World Politics Review': 'worldpoliticsreview.com',
   '*General Paywall Bypass*': 'generalpaywallbypass'
 };

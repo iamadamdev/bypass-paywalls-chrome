@@ -156,7 +156,8 @@
 [Vanity Fair](https://www.vanityfair.com)\
 [Vrij Nederland](https://www.vn.nl)\
 [Winston-Salem Journal](https://journalnow.com)\
-[Wired](https://www.wired.com)
+[Wired](https://www.wired.com)\
+[World Politics Review](https://www.worldpoliticsreview.com)
 
 ### Sites with limited number of free articles
 The free article limit can normally be bypassed by removing cookies for the site.*
