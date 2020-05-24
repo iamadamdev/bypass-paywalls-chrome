@@ -166,6 +166,7 @@ const blockedRegexes = {
   'repubblica.it': /scripts\.repubblica\.it\/pw\/pw\.js.+/,
   'spectator.co.uk': /.+\.tinypass\.com\/.+/,
   'spectator.com.au': /.+\.tinypass\.com\/.+/,
+  'telegraph.co.uk': /.+telegraph\.co\.uk.+martech.+/,
   'thecourier.com.au': /.+cdn-au\.piano\.io\/api\/tinypass.+\.js/,
   'theglobeandmail.com': /theglobeandmail\.com\/pb\/resources\/scripts\/build\/chunk-bootstraps\/.+\.js/,
   'thenation.com': /thenation\.com\/.+\/paywall-script\.php/,
