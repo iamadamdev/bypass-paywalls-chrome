@@ -1,19 +1,44 @@
+function $(sel, el = document) {
+  return el.querySelector(sel);
+}
+
+function $$(sel, el = document) {
+  return [...el.querySelectorAll(sel)];
+}
+
+function selectPane() {
+  const panes = $$('.pane');
+  for (const tab of $$('#tabs button')) {
+    tab.classList.toggle('active', tab == this);
+  }
+
+  for (const pane of panes) {
+    pane.classList.toggle('active', pane.id == this.dataset.pane);
+  }
+}
+
 // Saves options to extensionApi.storage
 function saveOptions () {
-  const inputEls = document.querySelectorAll('#bypass_sites input');
 
-  const sites = Array.from(inputEls).reduce(function (memo, inputEl) {
+  const sites = $$('#bypass_sites input').reduce(function (memo, inputEl) {
     if (inputEl.checked) {
       memo[inputEl.dataset.key] = inputEl.dataset.value;
     }
     return memo;
   }, {});
 
+  const customSites = $('#custom_sites').value
+    .split('\n')
+    .map(s => s.trim())
+    .filter(s => s);
+  console.log('customSites', customSites);
+
   extensionApi.storage.sync.set({
-    sites: sites
+    sites: sites,
+    customSites: customSites
   }, function () {
     // Update status to let user know options were saved.
-    const status = document.getElementById('status');
+    const status = $('#status');
     status.textContent = 'Options saved.';
     setTimeout(function () {
       status.textContent = '';
@@ -26,10 +51,10 @@ function saveOptions () {
 // stored in extensionApi.storage.
 function renderOptions () {
   extensionApi.storage.sync.get({
-    sites: {}
+    sites: {},
+    customSites: [],
   }, function (items) {
     const sites = items.sites;
-    const sitesEl = document.getElementById('bypass_sites');
     for (const key in defaultSites) {
       if (!Object.prototype.hasOwnProperty.call(defaultSites, key)) {
         continue;
@@ -44,27 +69,32 @@ function renderOptions () {
       inputEl.checked = (key in sites) || (key.replace(/\s\(.*\)/, '') in sites);
 
       labelEl.appendChild(inputEl);
-      labelEl.appendChild(document.createTextNode(' ' + key));
-      sitesEl.appendChild(labelEl);
+      labelEl.appendChild(document.createTextNode(key));
+      $('#bypass_sites').appendChild(labelEl);
     }
+
+    const customSites = items.customSites;
+    $('#custom_sites').value = customSites.join('\n');
   });
 }
 
 function selectAll () {
-  const inputEls = Array.from(document.querySelectorAll('input'));
-  inputEls.forEach(function (inputEl) {
-    inputEl.checked = true;
-  });
+  for (const el of $$('input')) {
+    el.checked = this.checked;
+  };
 }
 
-function selectNone () {
-  const inputEls = Array.from(document.querySelectorAll('input'));
-  inputEls.forEach(function (inputEl) {
-    inputEl.checked = false;
-  });
+function init() {
+  renderOptions();
+
+  $('#save').addEventListener('click', saveOptions);
+  $('#select-all input').addEventListener('click', selectAll);
+
+  for (const el of $$('#tabs button')) {
+    el.addEventListener('click', selectPane);
+  }
+
+  selectPane.apply($('#tabs button:first-child'));
 }
 
-document.addEventListener('DOMContentLoaded', renderOptions);
-document.getElementById('save').addEventListener('click', saveOptions);
-document.getElementById('select-all').addEventListener('click', selectAll);
-document.getElementById('select-none').addEventListener('click', selectNone);
+document.addEventListener('DOMContentLoaded', init);

@@ -4,35 +4,124 @@
   <meta charset="utf-8">
   <title>Bypass Paywalls Options</title>
   <style>
+    body {
+      width:350px;
+
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
     #bypass_sites label {
       display: block;
     }
-    body {
-      width:350px;
-      height:600px;
+
+    #tabs {
+      display: flex;
+      background-color: #ccc;
+    }
+    #tabs button {
+      flex-grow: 1;
+      background: #ddd;
+      text-shadow: none;
+      margin: 0;
+      padding: 0;
+      border: none;
+      padding-bottom: 3px;
+      border-bottom: 1px solid #666;
+      border-right: solid 1px #ccc;
+      border-radius: 0;
+    }
+    #tabs button:last-of-type {
+      border-right: none;
+    }
+    #tabs button.active {
+      background-color: #fff;
+      color: black;
+      padding-bottom: 0;
+      border-bottom: solid blue 4px;
+    }
+
+    .pane {
+      height: 450px;
+      display: none;
+      flex-direction: column;
+    }
+
+    p {
+      margin: 0;
+      padding: .5em 0;
+      line-height: 1.3em;
+    }
+
+    #select-all {
+      border-top: solid 1px #aaa;
+      background: #eee;
+      padding: 4px 0;
+    }
+
+    #bypass_sites {
+      border-bottom: solid 1px #aaa;
+      flex-grow: 1;
+      overflow-y: auto;
+    }
+
+    input[type=checkbox] {
+      margin: 0 .5em;
+    }
+
+    .pane, #controls {
+      padding: 0 1em;
+    }
+
+    #controls {
+      align-self: flex-end;
+      padding: 1em;
+    }
+
+    .pane.active {
+      display: flex;
+    }
+
+    #custom textarea {
+      flex-grow: 1;
     }
   </style>
 </head>
 <body>
-  <div>
-    Selected sites will have their cookies cleared and referer set to Google. You should
-    uncheck sites you are logged in to otherwise you will be logged out on every visit.
+  <div id="tabs">
+    <button data-pane="sites">Supported Sites</button>
+    <button data-pane="custom">Other Sites</button>
   </div>
-  <br/>
-  <div id='bypass_sites'>
+
+  <div id="sites" class="pane">
+    <p>
+      Selected sites will have their cookies cleared and referer set to Google. You should
+      uncheck sites you are logged in to otherwise you will be logged out on every visit.
+    </p>
+    <label id="select-all"><input checked type="checkbox"><em>Select all/none</em></label>
+    <div id='bypass_sites'></div>
   </div>
-  <br/>
-  <div id="status"></div>
-  <div id="error"></div>
-  <br/>
-  <span style='float:left;'>
+
+  <div id="custom" class="pane">
+    <p>
+      To try bypassing other sites, enter domain names here (one domain per line).
+    </p>
+    <p>
+    <span style="color: #900; font-weight: bold">This feature is provided "as
+      is", and will not work with many sites.</span>
+    Please do not report issues with sites entered here.  Support for new sites
+    is not being added at this time and requests for support will be ignored.
+    </p>
+    <textarea id="custom_sites" placeholder="e.g.&#10;dailybeast.com&#10;quohogherald.com&#10;blagdonbugle.com&#10;etc..." /></textarea>
+  </div>
+
+  <div id="controls">
+    <div id="status"></div>
     <button id="save">Save</button>
-  </span>
-  <span style='float:right;'>
-    <button id="select-all">Select all</button>
-    <button id="select-none">Select none</button>
-  </span>
-  <br/><br/>
+  </div>
+
   <script src="../js/common.js"></script>
   <script src="../js/sites.js"></script>
   <script src="../js/options.js"></script>

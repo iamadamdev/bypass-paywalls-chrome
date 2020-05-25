@@ -184,9 +184,10 @@ let enabledSites = [];
 
 // Get the enabled sites
 extensionApi.storage.sync.get({
-  sites: {}
+  sites: {},
+  customSites: []
 }, function (items) {
-  enabledSites = Object.values(items.sites);
+  enabledSites = Object.values(items.sites).concat(items.customSites);
   if (extensionApi === chrome) {
     initGA();
   }
