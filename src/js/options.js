@@ -1,11 +1,14 @@
+// Shortcut for document.querySelector()
 function $(sel, el = document) {
   return el.querySelector(sel);
 }
 
+// Shortcut for document.querySelectorAll()
 function $$(sel, el = document) {
   return [...el.querySelectorAll(sel)];
 }
 
+// Select UI pane
 function selectPane() {
   const panes = $$('.pane');
   for (const tab of $$('#tabs button')) {
@@ -54,6 +57,7 @@ function renderOptions () {
     sites: {},
     customSites: [],
   }, function (items) {
+    // Render supported sites
     const sites = items.sites;
     for (const key in defaultSites) {
       if (!Object.prototype.hasOwnProperty.call(defaultSites, key)) {
@@ -73,17 +77,20 @@ function renderOptions () {
       $('#bypass_sites').appendChild(labelEl);
     }
 
+    // Render custom sites
     const customSites = items.customSites;
     $('#custom_sites').value = customSites.join('\n');
   });
 }
 
+// Select/deselect all supported sites
 function selectAll () {
   for (const el of $$('input')) {
     el.checked = this.checked;
   };
 }
 
+// Initialize UI
 function init() {
   renderOptions();
 
