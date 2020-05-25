@@ -45,6 +45,10 @@ function saveOptions () {
     status.textContent = 'Options saved.';
     setTimeout(function () {
       status.textContent = '';
+
+      // Reload runtime so background script picks up changes
+      chrome.runtime.reload();
+
       window.close();
     }, 800);
   });
