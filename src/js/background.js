@@ -349,7 +349,6 @@ extensionApi.webRequest.onBeforeSendHeaders.addListener(function (details) {
   if (tabId !== -1) {
     extensionApi.tabs.get(tabId, function (currentTab) {
       // Validate url of current tab to avoid injecting script to unrelated sites
-      // See https://github.com/iamadamdev/bypass-paywalls-chrome/issues/652
       if (currentTab && isSiteEnabled(currentTab)) {
         // run contentScript inside tab
         extensionApi.tabs.executeScript(tabId, {
