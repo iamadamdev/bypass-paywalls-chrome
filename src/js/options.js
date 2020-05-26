@@ -34,7 +34,6 @@ function saveOptions () {
     .split('\n')
     .map(s => s.trim())
     .filter(s => s);
-  console.log('customSites', customSites);
 
   extensionApi.storage.sync.set({
     sites: sites,
