@@ -289,7 +289,7 @@ extensionApi.webRequest.onBeforeSendHeaders.addListener(function (details) {
         // this fixes images not being loaded on cooking.nytimes.com main page
         // referrer has to be *nytimes.com otherwise returns 403
         requestHeader.value = 'https://cooking.nytimes.com';
-      } else if (isSameDomain(details.url, 'wsj.com') || isSameDomain(details.url, 'ft.com') || isSameDomain(details.url, 'fd.nl')) {
+      } else if (isSameDomain(details.url, 'fd.nl')) {
         requestHeader.value = 'https://www.facebook.com/';
       } else {
         requestHeader.value = 'https://www.google.com/';
@@ -305,7 +305,7 @@ extensionApi.webRequest.onBeforeSendHeaders.addListener(function (details) {
 
   // otherwise add it
   if (!setReferer) {
-    if (isSameDomain(details.url, 'wsj.com') || isSameDomain(details.url, 'ft.com') || isSameDomain(details.url, 'fd.nl')) {
+    if (isSameDomain(details.url, 'fd.nl')) {
       requestHeaders.push({
         name: 'Referer',
         value: 'https://www.facebook.com/'
