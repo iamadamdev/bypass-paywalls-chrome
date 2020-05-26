@@ -5,18 +5,18 @@ function $(sel, el = document) {
 
 // Shortcut for document.querySelectorAll()
 function $$(sel, el = document) {
-  return [...el.querySelectorAll(sel)];
+  return Array.from(el.querySelectorAll(sel));
 }
 
 // Select UI pane
-function selectPane() {
+function selectPane(e) {
   const panes = $$('.pane');
   for (const tab of $$('#tabs button')) {
-    tab.classList.toggle('active', tab == this);
+    tab.classList.toggle('active', tab == e.target);
   }
 
   for (const pane of panes) {
-    pane.classList.toggle('active', pane.id == this.dataset.pane);
+    pane.classList.toggle('active', pane.id == e.target.dataset.pane);
   }
 }
 
@@ -105,7 +105,7 @@ function init() {
     el.addEventListener('click', selectPane);
   }
 
-  selectPane.apply($('#tabs button:first-child'));
+  selectPane({target: $('#tabs button:first-child')});
 }
 
 document.addEventListener('DOMContentLoaded', init);
