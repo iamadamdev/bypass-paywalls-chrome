@@ -169,6 +169,7 @@
     "*://*.volkskrant.nl/*",
     "*://*.washingtonpost.com/*",
     "*://*.wired.com/*",
+    "*://*.worldpoliticsreview.com/*",
     "*://*.wsj.com/*"
   ],
   "version": "1.7.2"
