@@ -350,7 +350,7 @@ extensionApi.webRequest.onBeforeSendHeaders.addListener(function (details) {
   if (tabId !== -1) {
     extensionApi.tabs.get(tabId, function (currentTab) {
       // Validate url of current tab to avoid injecting script to unrelated sites
-      if (currentTab && isSiteEnabled(currentTab)) {
+      if (currentTab && currentTab.url && isSiteEnabled(currentTab)) {
         // run contentScript inside tab
         extensionApi.tabs.executeScript(tabId, {
           file: 'src/js/contentScript.js',
