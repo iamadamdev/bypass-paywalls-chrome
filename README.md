@@ -15,7 +15,7 @@
 1. Drag the `bypass-paywalls-chrome-master` folder anywhere on the page to import it (do not delete the folder afterwards).
 
 **Mozilla Firefox**
-* [Download and install the latest version](https://github.com/iamadamdev/bypass-paywalls-chrome/releases/download/v1.7.2/bypass-paywalls-firefox.xpi)
+* [Download and install the latest version](https://github.com/iamadamdev/bypass-paywalls-chrome/releases/download/v1.7.3/bypass-paywalls-firefox.xpi)
 
 **Notes**
 * Every time you open Chrome it may warn you about running extensions in developer mode, just click 🗙 to keep the extension enabled.
@@ -156,7 +156,8 @@
 [Vanity Fair](https://www.vanityfair.com)\
 [Vrij Nederland](https://www.vn.nl)\
 [Winston-Salem Journal](https://journalnow.com)\
-[Wired](https://www.wired.com)
+[Wired](https://www.wired.com)\
+[World Politics Review](https://www.worldpoliticsreview.com)
 
 ### Sites with limited number of free articles
 The free article limit can normally be bypassed by removing cookies for the site.*
@@ -169,15 +170,15 @@ When coming across a paywall click the cookie icon to remove the cookies then re
 _*May not always succeed_
 
 ### New site requests
-Only large or major sites will be considered.
-Usually premium articles cannot be bypassed as they are behind a hard paywall.
+Only large or major sites will be considered. Usually premium articles cannot be bypassed as they are behind a hard paywall.
 
-1. Install the uBlock Origin extension if it hasn't been installed already. See if you are still getting a paywall. If so, continue to the next step.
-2. First search [Issues](https://github.com/iamadamdev/bypass-paywalls-chrome/issues) to see if the site has been requested already.
-3. Visit an article on the site you want to bypass the paywall for and copy the article title.
-4. Open up a new incognito window (Ctrl+Shift+N on Chrome) or Private window (Ctrl+Shift+P on Firefox), and paste the article title into Google.
-5. Click on the same article from the Google search results page.
-6. If it loads without a paywall you can [submit a request](https://github.com/iamadamdev/bypass-paywalls-chrome/issues/new/choose) and replace the entire template text with the word "Confirmed". Otherwise please do not submit an issue as this extension cannot bypass it either.
+1. Install the uBlock Origin extension if it hasn't been installed already. See if you are still getting a paywall.
+2. Check if using Cookie Remover ([Google Chrome version](https://chrome.google.com/webstore/detail/cookie-remover/kcgpggonjhmeaejebeoeomdlohicfhce) or [Mozilla Firefox version](https://addons.mozilla.org/en-US/firefox/addon/cookie-remover/)) can bypass the paywall. If not, continue to the next step.
+3. First search [Issues](https://github.com/iamadamdev/bypass-paywalls-chrome/issues) to see if the site has been requested already.
+4. Visit an article on the site you want to bypass the paywall for and copy the article title.
+5. Open up a new incognito window (Ctrl+Shift+N on Chrome) or Private window (Ctrl+Shift+P on Firefox), and paste the article title into Google.
+6. Click on the same article from the Google search results page.
+7. If it loads without a paywall you can [submit a request](https://github.com/iamadamdev/bypass-paywalls-chrome/issues/new/choose) and replace the entire template text with the word "Confirmed". Otherwise please do not submit an issue as this extension cannot bypass it either.
 
 ### Troubleshooting
 * This extension works best alongside uBlock Origin [for Google Chrome](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm) or [for Mozilla Firefox](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/).

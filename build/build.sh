@@ -9,6 +9,12 @@ sed 's/src\/.*\///g' ../manifest.json > temp-chrome-manifest.json
 # Strip subdirectories for Firefox manifest
 sed 's/src\/.*\///g' ../manifest-ff.json > temp-ff-manifest.json
 
+# Fix update url for Chrome manifest
+sed -i 's/updates\.xml/src\/updates\/updates.xml/g' temp-chrome-manifest.json
+
+# Fix update url for Firefox manifest
+sed -i 's/updates\.json/src\/updates\/updates.json/g' temp-ff-manifest.json
+
 # Strip subdirectories for background.js
 sed 's/src\/.*\///g' ../src/js/background.js > temp-background.js
 

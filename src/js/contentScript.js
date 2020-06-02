@@ -1,4 +1,4 @@
-if (!matchDomain(['sfchronicle.com', 'cen.acs.org'])) {
+if (!matchDomain(['seekingalpha.com', 'sfchronicle.com', 'cen.acs.org'])) {
   window.localStorage.clear();
 }
 
@@ -90,7 +90,7 @@ if (matchDomain('rep.repubblica.it')) {
 
     removeDOMElement(sideNotification, subMessage, popup, bgFocusRemoverId);
   });
-} else if (matchDomain(['theathletic.com','theathletic.co.uk'])) {
+} else if (matchDomain(['theathletic.com', 'theathletic.co.uk'])) {
   const landingBanner = document.querySelector('.logged-out-landing-banner');
   const sampleBanner = document.querySelector('.main-sample-banner');
   const bottomBanner = document.querySelector('.border-bottom-cc');
@@ -140,32 +140,15 @@ if (matchDomain('rep.repubblica.it')) {
   });
 } else if (matchDomain(['parool.nl', 'trouw.nl', 'volkskrant.nl', 'demorgen.be'])) {
   document.addEventListener('DOMContentLoaded', () => {
+    const topBanner = document.querySelector('div[data-temptation-position="PAGE_TOP"]');
     const paywall = document.querySelector('div[data-temptation-position="ARTICLE_BOTTOM"]');
     const hiddenSection = document.querySelector('div[data-temptation-position="ARTICLE_INLINE"]');
-    removeDOMElement(paywall, hiddenSection);
+    const overlay = document.querySelector('div[data-temptation-position="PAGE_BOTTOM"]');
+    removeDOMElement(topBanner, paywall, hiddenSection, overlay);
   });
 } else if (matchDomain('firstthings.com')) {
   const paywall = document.getElementsByClassName('paywall')[0];
   removeDOMElement(paywall);
-} else if (matchDomain('fortune.com')) {
-  document.addEventListener('DOMContentLoaded', () => {
-    const paywall = document.getElementById('freestar-instream-content');
-    if (paywall) {
-      paywall.classList.remove('tp-container-inner');
-    }
-    const paywallJunk = document.getElementById('article_overlay');
-    if (paywallJunk) {
-      paywallJunk.classList.remove('ntv-moap');
-    }
-    const ptags = paywallJunk.getElementsByTagName('p');
-    const h3tags = paywallJunk.getElementsByTagName('h3');
-    for (const ptag of ptags) {
-      ptag.removeAttribute('style');
-    }
-    for (const h3tag of h3tags) {
-      h3tag.removeAttribute('style');
-    }
-  });
 } else if (matchDomain('bloomberg.com')) {
   document.addEventListener('DOMContentLoaded', () => {
     const fence = document.querySelector('.fence-body');
@@ -304,6 +287,13 @@ if (matchDomain('rep.repubblica.it')) {
 } else if (matchDomain('hbr.org')) {
   const banner = document.querySelector('.persistent-banner');
   removeDOMElement(banner);
+} else if (matchDomain('spectator.co.uk')) {
+  const container = document.querySelector('.HardPayWallContainer-module__overlay');
+  window.setTimeout(function () {
+    if (container && window.location.href.includes('/www.spectator.co.uk/')) {
+      window.location.href = window.location.href + '/amp';
+    }
+  }, 500);
 }
 
 function matchDomain (domains) {

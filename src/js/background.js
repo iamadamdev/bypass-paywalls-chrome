@@ -2,7 +2,8 @@
 
 const restrictions = {
   'barrons.com': /.+barrons\.com\/articles\/.+/,
-  'wsj.com': /(.+wsj\.com\/(articles|graphics)\/.+|.+blogs\.wsj\.com\/.+)/
+  'wsj.com': /(.+wsj\.com\/(articles|graphics)\/.+|.+blogs\.wsj\.com\/.+)/,
+  'seekingalpha.com': /.+seekingalpha\.com\/article\/.+/
 };
 
 // Don't remove cookies before page load
@@ -157,6 +158,7 @@ const blockedRegexes = {
   'chicagotribune.com': /.+:\/\/.+\.tribdss\.com\//,
   'economist.com': /(.+\.tinypass\.com\/.+|economist\.com\/_next\/static\/runtime\/main.+\.js)/,
   'foreignpolicy.com': /.+\.tinypass\.com\/.+/,
+  'fortune.com': /.+\.tinypass\.com\/.+/,
   'haaretz.co.il': /haaretz\.co\.il\/htz\/js\/inter\.js/,
   'haaretz.com': /haaretz\.com\/hdc\/web\/js\/minified\/header-scripts-int.js.+/,
   'inquirer.com': /.+\.tinypass\.com\/.+/,
@@ -166,6 +168,7 @@ const blockedRegexes = {
   'repubblica.it': /scripts\.repubblica\.it\/pw\/pw\.js.+/,
   'spectator.co.uk': /.+\.tinypass\.com\/.+/,
   'spectator.com.au': /.+\.tinypass\.com\/.+/,
+  'telegraph.co.uk': /.+telegraph\.co\.uk.+martech.+/,
   'thecourier.com.au': /.+cdn-au\.piano\.io\/api\/tinypass.+\.js/,
   'theglobeandmail.com': /theglobeandmail\.com\/pb\/resources\/scripts\/build\/chunk-bootstraps\/.+\.js/,
   'thenation.com': /thenation\.com\/.+\/paywall-script\.php/,
@@ -288,7 +291,7 @@ extensionApi.webRequest.onBeforeSendHeaders.addListener(function (details) {
         // this fixes images not being loaded on cooking.nytimes.com main page
         // referrer has to be *nytimes.com otherwise returns 403
         requestHeader.value = 'https://cooking.nytimes.com';
-      } else if (isSameDomain(details.url, 'wsj.com') || isSameDomain(details.url, 'ft.com') || isSameDomain(details.url, 'fd.nl')) {
+      } else if (isSameDomain(details.url, 'fd.nl')) {
         requestHeader.value = 'https://www.facebook.com/';
       } else {
         requestHeader.value = 'https://www.google.com/';
@@ -304,7 +307,7 @@ extensionApi.webRequest.onBeforeSendHeaders.addListener(function (details) {
 
   // otherwise add it
   if (!setReferer) {
-    if (isSameDomain(details.url, 'wsj.com') || isSameDomain(details.url, 'ft.com') || isSameDomain(details.url, 'fd.nl')) {
+    if (isSameDomain(details.url, 'fd.nl')) {
       requestHeaders.push({
         name: 'Referer',
         value: 'https://www.facebook.com/'
@@ -347,13 +350,18 @@ extensionApi.webRequest.onBeforeSendHeaders.addListener(function (details) {
   }
 
   if (tabId !== -1) {
-    // run contentScript inside tab
-    extensionApi.tabs.executeScript(tabId, {
-      file: 'src/js/contentScript.js',
-      runAt: 'document_start'
-    }, function (res) {
-      if (extensionApi.runtime.lastError || res[0]) {
+    extensionApi.tabs.get(tabId, function (currentTab) {
+      // Validate url of current tab to avoid injecting script to unrelated sites
+      if (currentTab && currentTab.url && isSiteEnabled(currentTab)) {
+        // run contentScript inside tab
+        extensionApi.tabs.executeScript(tabId, {
+          file: 'src/js/contentScript.js',
+          runAt: 'document_start'
+        }, function (res) {
+          if (extensionApi.runtime.lastError || res[0]) {
 
+          }
+        });
       }
     });
   }
