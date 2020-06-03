@@ -253,6 +253,7 @@ extensionApi.webRequest.onBeforeRequest.addListener(function (details) {
     '*://*.piano.io/*',
     '*://*.poool.fr/*',
     '*://*.economist.com/*',
+    '*://*.qiota.com/*',
     '*://*.tinypass.com/*'
   ],
   types: ['script']
