@@ -25,7 +25,9 @@ if (matchDomain('rep.repubblica.it')) {
   const paywall = document.querySelector('.hk-paywall-container');
   if (paywall) {
     removeDOMElement(paywall);
-    document.getElementById("articleBody").style.height = "100%";
+    setTimeout(function () {
+      document.getElementById("articleBody").style.height = "100%";
+    }, 1000);
   }
 } else if (matchDomain('telegraaf.nl')) {
   if (window.location.href.startsWith('https://www.telegraaf.nl/error?ref=/')) {
