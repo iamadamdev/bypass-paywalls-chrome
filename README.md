@@ -28,6 +28,7 @@
 [Adweek](https://www.adweek.com)\
 [Algemeen Dagblad](https://www.ad.nl)\
 [American Banker](https://www.americanbanker.com)\
+[Apple Daily](https://hk.appledaily.com/)\
 [Baltimore Sun](https://www.baltimoresun.com)\
 [Barron's](https://www.barrons.com)\
 [Bloomberg Quint](https://www.bloombergquint.com)\

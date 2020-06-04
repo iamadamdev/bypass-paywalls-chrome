@@ -21,6 +21,12 @@ if (matchDomain('rep.repubblica.it')) {
 } else if (matchDomain('americanbanker.com')) {
   const paywall = document.getElementsByClassName('embargo-content')[0];
   if (paywall) { paywall.classList.remove('embargo-content'); }
+} else if (matchDomain('appledaily.com')) {
+  const paywall = document.querySelector('.hk-paywall-container');
+  if (paywall) {
+    removeDOMElement(paywall);
+    document.getElementById("articleBody").style.height = "100%";
+  }
 } else if (matchDomain('telegraaf.nl')) {
   if (window.location.href.startsWith('https://www.telegraaf.nl/error?ref=/')) {
     window.location.href = window.location.href.split('&')[0].replace('error?ref=/', '');
