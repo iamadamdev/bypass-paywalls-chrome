@@ -116,7 +116,7 @@ const removeCookiesSelectDrop = {
 };
 
 // Override User-Agent with Googlebot
-const useGoogleBotSites = [
+let useGoogleBotSites = [
   'adelaidenow.com.au',
   'barrons.com',
   'couriermail.com.au',
@@ -188,6 +188,10 @@ extensionApi.storage.sync.get({
   customSites: []
 }, function (items) {
   enabledSites = Object.values(items.sites).concat(items.customSites);
+
+  // Use googlebot UA for custom sites
+  useGoogleBotSites = useGoogleBotSites.concat(items.customSites).sort();
+
   if (extensionApi === chrome) {
     initGA();
   }
