@@ -446,7 +446,11 @@ function isSameDomain (url, domain) {
     // Not start with http or https, add a prefix
     url = 'http://' + url;
   }
-  const urlObj = new URL(url);
-  const hostname = urlObj.hostname;
-  return hostname === domain || hostname.endsWith('.' + domain);
+  try {
+    const urlObj = new URL(url);
+    const hostname = urlObj.hostname;
+    return hostname === domain || hostname.endsWith('.' + domain);
+  } catch (err) {
+    return false;
+  }
 }
