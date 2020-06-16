@@ -108,6 +108,7 @@
     "*://*.bloomberg.com/*",
     "*://*.bloombergquint.com/*",
     "*://*.bostonglobe.com/*",
+	"*://*.brisbanetimes.com.au/*",
     "*://*.britannica.com/*",
     "*://*.businessinsider.com/*",
     "*://*.caixinglobal.com/*",

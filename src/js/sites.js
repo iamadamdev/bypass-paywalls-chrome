@@ -7,6 +7,7 @@ const defaultSites = {
   'Barron\'s': 'barrons.com',
   'Bloomberg': 'bloomberg.com',
   'Bloomberg Quint': 'bloombergquint.com',
+  'Brisbane Times': 'brisbanetimes.com.au',
   'Business Insider': 'businessinsider.com',
   'Caixin': 'caixinglobal.com',
   'Central Western Daily': 'centralwesterndaily.com.au', // articles blanked
