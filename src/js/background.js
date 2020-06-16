@@ -10,6 +10,7 @@ const restrictions = {
 const allowCookies = [
   'ad.nl',
   'asia.nikkei.com',
+  'brisbanetimes.com.au',
   'canberratimes.com.au',
   'cen.acs.org',
   'chicagobusiness.com',
@@ -62,6 +63,7 @@ const removeCookies = [
   'ad.nl',
   'asia.nikkei.com',
   'bloombergquint.com',
+  'brisbanetimes.com.au',
   'canberratimes.com.au',
   'cen.acs.org',
   'chicagobusiness.com',
