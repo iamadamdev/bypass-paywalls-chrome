@@ -105,6 +105,10 @@ function init() {
   }
 
   selectPane({target: $('#tabs button:first-child')});
+
+  if (extensionApi === chrome) {
+    document.body.classList.add('customSitesEnabled');
+  }
 }
 
 document.addEventListener('DOMContentLoaded', init);

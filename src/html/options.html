@@ -5,8 +5,7 @@
   <title>Bypass Paywalls Options</title>
   <style>
     body {
-      width:350px;
-
+      min-width: 350px;
       margin: 0;
       padding: 0;
       display: flex;
@@ -18,7 +17,7 @@
     }
 
     #tabs {
-      display: flex;
+      display: none;
       background-color: #ccc;
     }
     #tabs button {
@@ -65,6 +64,7 @@
       border-bottom: solid 1px #aaa;
       flex-grow: 1;
       overflow-y: auto;
+      padding-bottom: 4px;
     }
 
     input[type=checkbox] {
@@ -87,12 +87,16 @@
     #custom textarea {
       flex-grow: 1;
     }
+
+    body.customSitesEnabled #tabs {
+      display: flex;
+    }
   </style>
 </head>
 <body>
   <div id="tabs">
     <button data-pane="sites">Supported Sites</button>
-    <button data-pane="custom">Other Sites</button>
+    <button data-pane="custom">Custom Sites</button>
   </div>
 
   <div id="sites" class="pane">
