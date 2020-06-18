@@ -141,7 +141,7 @@ let useGoogleBotSites = [
   'kansascity.com'
 ];
 
-// Contains google bot sites, above, plus any custom sitesk
+// Contains google bot sites, above, plus any custom sites
 let _useGoogleBotSites = useGoogleBotSites;
 
 function setDefaultOptions () {
