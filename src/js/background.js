@@ -141,6 +141,9 @@ let useGoogleBotSites = [
   'kansascity.com'
 ];
 
+// Contains google bot sites, above, plus any custom sitesk
+let _useGoogleBotSites = useGoogleBotSites;
+
 function setDefaultOptions () {
   extensionApi.storage.sync.set({
     sites: defaultSites
@@ -190,7 +193,7 @@ extensionApi.storage.sync.get({
   enabledSites = Object.values(items.sites).concat(items.customSites);
 
   // Use googlebot UA for custom sites
-  useGoogleBotSites = useGoogleBotSites.concat(items.customSites).sort();
+  _useGoogleBotSites = useGoogleBotSites.concat(items.customSites);
 
   if (extensionApi === chrome) {
     initGA();
@@ -323,7 +326,7 @@ extensionApi.webRequest.onBeforeSendHeaders.addListener(function (details) {
   }
 
   // override User-Agent to use Googlebot
-  const useGoogleBot = useGoogleBotSites.some(function (item) {
+  const useGoogleBot = _useGoogleBotSites.some(function (item) {
     return typeof item === 'string' && isSameDomain(details.url, item);
   });
 
