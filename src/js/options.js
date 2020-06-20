@@ -41,7 +41,7 @@ function saveOptions () {
   }, function () {
     // Update status to let user know options were saved.
     const status = $('#status');
-    status.textContent = 'Options saved.';
+    status.textContent = 'Options saved';
     setTimeout(function () {
       status.textContent = '';
 
@@ -49,7 +49,7 @@ function saveOptions () {
       chrome.runtime.reload();
 
       window.close();
-    }, 800);
+    }, 1200);
   });
 }
 
@@ -83,12 +83,19 @@ function renderOptions () {
     // Render custom sites
     const customSites = items.customSites;
     $('#custom_sites').value = customSites.join('\n');
+
+    // Set select all/none checkbox state.  Ideally we'd use the "indeterminate"
+    // state here, but that doesn't seem to be working this context.  See
+    // https://bugs.chromium.org/p/chromium/issues/detail?id=1097489
+    const nItems = $$('input[data-key]').length;
+    const nChecked = $$('input[data-key]').filter(el => el.checked).length;
+    $('#select-all input').checked = nChecked / nItems > 0.5;
   });
 }
 
 // Select/deselect all supported sites
 function selectAll () {
-  for (const el of $$('input')) {
+  for (const el of $$('input[data-key]')) {
     el.checked = this.checked;
   };
 }
