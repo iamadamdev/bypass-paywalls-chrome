@@ -84,12 +84,13 @@ function renderOptions () {
     const customSites = items.customSites;
     $('#custom_sites').value = customSites.join('\n');
 
-    // Set select all/none checkbox state.  Ideally we'd use the "indeterminate"
-    // state here, but that doesn't seem to be working this context.  See
+    // Set select all/none checkbox state.  Note: "indeterminate" checkboxes
+    // require `chrome_style: false` be set in manifest.json.  See
     // https://bugs.chromium.org/p/chromium/issues/detail?id=1097489
     const nItems = $$('input[data-key]').length;
     const nChecked = $$('input[data-key]').filter(el => el.checked).length;
     $('#select-all input').checked = nChecked / nItems > 0.5;
+    $('#select-all input').indeterminate = nChecked && nChecked != nItems;
   });
 }
 

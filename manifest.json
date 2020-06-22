@@ -24,7 +24,7 @@
   "update_url": "https://raw.githubusercontent.com/iamadamdev/bypass-paywalls-chrome/master/src/updates/updates.xml",
   "short_name": "Bypass Paywall",
   "options_ui": {
-    "chrome_style": true,
+    "chrome_style": false,
     "page": "src/html/options.html"
   },
   "permissions": [
