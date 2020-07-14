@@ -34,6 +34,7 @@
 [Bloomberg](https://www.bloomberg.com)\
 [Brisbane Times](https://www.brisbanetimes.com.au)\
 [Business Insider](https://www.businessinsider.com)\
+[Business of Fashion](https://www.businessoffashion.com)\
 [Caixin](https://www.caixinglobal.com)\
 [Central Western Daily](https://www.centralwesterndaily.com.au)\
 [Chemical & Engineering News](https://cen.acs.org)\
