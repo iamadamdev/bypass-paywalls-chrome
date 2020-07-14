@@ -347,10 +347,12 @@ if (matchDomain('estadao.com.br')) {
   if (paywall && paywallOverlay) {
     paywall.classList.remove('article-locked');
     paywallOverlay.classList.remove('article-locked-overlay');
-    removeDOMElement(paywallBox);
-  }
-  if (professionalMemberAd) {
-    removeDOMElement(professionalMemberAd);
+    if (paywallBox) {
+      removeDOMElement(paywallBox);
+    }
+    if (professionalMemberAd) {
+      removeDOMElement(professionalMemberAd);
+    }
   }
 }
 
