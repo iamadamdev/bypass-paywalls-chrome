@@ -9,6 +9,7 @@ const defaultSites = {
   'Bloomberg Quint': 'bloombergquint.com',
   'Brisbane Times': 'brisbanetimes.com.au',
   'Business Insider': 'businessinsider.com',
+  'Business of Fashion': 'businessoffashion.com',
   'Caixin': 'caixinglobal.com',
   'Central Western Daily': 'centralwesterndaily.com.au', // articles blanked
   'Chemical & Engineering News': 'cen.acs.org', // '2/3 free articles' banner, keeps asking about cookies
