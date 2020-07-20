@@ -339,21 +339,23 @@ if (matchDomain('estadao.com.br')) {
   const paywall = document.querySelector('.dynamic-regwall');
   removeDOMElement(paywall);
 } else if (matchDomain('businessoffashion.com')) {
-  const paywall = document.querySelector('.article-locked');
-  const paywallOverlay = document.querySelector('.article-locked-overlay');
-  // paywallBox & professionalMemberAd need cleaner selectors. Help appreciated.
-  const paywallBox = document.querySelector("#heading > div.col-md-12.col-xs-24.col-sm-offset-1.col-md-offset-0.col-sm-22.print-full-width.paywalled-content > div > div > wall-handler-subscription-wrapped > div > div.row.padding-horizontal-xs-2.margin-bottom-xs-5.margin-bottom-md-0 > div");
-  const professionalMemberAd = document.querySelector("#heading > div.col-md-12.col-xs-24.col-sm-offset-1.col-md-offset-0.col-sm-22.print-full-width.paywalled-content > div > div > wall-handler-subscription-wrapped > div > div.row");
-  if (paywall && paywallOverlay) {
-    paywall.classList.remove('article-locked');
-    paywallOverlay.classList.remove('article-locked-overlay');
-    if (paywallBox) {
-      removeDOMElement(paywallBox);
+  setTimeout(function() {
+    const paywall = document.querySelector('.article-locked');
+    const paywallOverlay = document.querySelector('.article-locked-overlay');
+    // paywallBox & professionalMemberAd need cleaner selectors. Help appreciated.
+    const paywallBox = document.querySelector("#heading > div.col-md-12.col-xs-24.col-sm-offset-1.col-md-offset-0.col-sm-22.print-full-width.paywalled-content > div > div > wall-handler-subscription-wrapped > div > div.row.padding-horizontal-xs-2.margin-bottom-xs-5.margin-bottom-md-0 > div");
+    const professionalMemberAd = document.querySelector("#heading > div.col-md-12.col-xs-24.col-sm-offset-1.col-md-offset-0.col-sm-22.print-full-width.paywalled-content > div > div > wall-handler-subscription-wrapped > div > div.row");
+    if (paywall && paywallOverlay) {
+      paywall.classList.remove('article-locked');
+      paywallOverlay.classList.remove('article-locked-overlay');
+      if (paywallBox) {
+        removeDOMElement(paywallBox);
+      }
+      if (professionalMemberAd) {
+        removeDOMElement(professionalMemberAd);
+      }
     }
-    if (professionalMemberAd) {
-      removeDOMElement(professionalMemberAd);
-    }
-  }
+  }, 500) // Delay (in milliseconds)
 }
 
 function matchDomain (domains) {
