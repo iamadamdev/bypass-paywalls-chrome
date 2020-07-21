@@ -51,6 +51,7 @@ const allowCookies = [
   'thestar.com',
   'towardsdatascience.com',
   'trouw.nl',
+  'unionleader.com',
   'vn.nl',
   'volkskrant.nl',
   'washingtonpost.com',
