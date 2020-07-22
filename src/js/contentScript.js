@@ -338,6 +338,36 @@ if (matchDomain('estadao.com.br')) {
 } else if (matchDomain('nzz.ch')) {
   const paywall = document.querySelector('.dynamic-regwall');
   removeDOMElement(paywall);
+} else if (matchDomain('unionleader.com')) {
+  setTimeout(function () {
+    const paywallModal = document.querySelector('.modal-dialog');
+    const modalBackdrop = document.querySelector('.modal-backdrop');
+    const scrollRestore = document.querySelector('.modal-open');
+    const loginLink = document.querySelector('.subscription-required');
+    const redactedOverlay = document.querySelector('.redacted-overlay');
+    const subscriberOnly = document.querySelectorAll('.subscriber-only.hide');
+    if (paywallModal) {
+      removeDOMElement(paywallModal);
+    }
+    if (modalBackdrop) {
+      removeDOMElement(modalBackdrop);
+    }
+    if (loginLink) {
+      removeDOMElement(loginLink);
+    }
+    if (redactedOverlay) {
+      removeDOMElement(redactedOverlay);
+    }
+    if (subscriberOnly) {
+      for (const el of subscriberOnly) {
+        el.classList.remove('subscriber-only', 'hide');
+        el.classList.add('subscriber-preview');
+      }
+    }
+    if (scrollRestore) {
+      scrollRestore.classList.remove('modal-open');
+    }
+  }, 300); // Delay (in milliseconds)
 }
 
 function matchDomain (domains) {
