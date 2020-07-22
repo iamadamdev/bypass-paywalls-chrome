@@ -348,11 +348,25 @@ if (matchDomain('estadao.com.br')) {
     const subscriberOnly = document.querySelectorAll('.subscriber-only.hide');
 
     if (paywallModal) {
-      removeDOMElement(paywallModal, modalBackdrop, loginLink, redactedOverlay);
+      removeDOMElement(paywallModal);
+    }
 
+    if (modalBackdrop) {
+      removeDOMElement(modalBackdrop);
+    }
+
+    if (loginLink) {
+      removeDOMElement(loginLink);
+    }
+
+    if (redactedOverlay) {
+      removeDOMElement(redactedOverlay);
+    }
+
+    if (subscriberOnly) {
       for (const el of subscriberOnly) {
         el.classList.remove('subscriber-only', 'hide');
-        el.classList.add('subscriber-preview')
+        el.classList.add('subscriber-preview');
       }
     }
 
