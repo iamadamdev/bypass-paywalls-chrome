@@ -48,6 +48,7 @@
 [Denver Post](https://www.denverpost.com)\
 [Dynamed Plus](https://www.dynamed.com)\
 [Eindhovens Dagblad](https://www.ed.nl)\
+[El Mercurio Inversiones](https://www.elmercurio.com/Inversiones)\
 [El Pais](https://www.elpais.com/)\
 [Encyclopedia Britannica](https://www.britannica.com)\
 [Estadão](https://www.estadao.com.br)\
