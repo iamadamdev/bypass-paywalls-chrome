@@ -2,7 +2,17 @@ if (!matchDomain(['seekingalpha.com', 'sfchronicle.com', 'cen.acs.org'])) {
   window.localStorage.clear();
 }
 
-if (matchDomain('estadao.com.br')) {
+if (matchDomain('elmercurio.com')) {
+   if (window.location.href.includes('/Inversiones/')) {
+     setTimeout(function () {
+     const paywall = document.querySelector('#modal_limit_articulos');
+     const body = document.querySelector('body');
+
+     removeDOMElement(paywall);
+     body.removeAttribute('class');
+    }, 300); // Delay (in milliseconds)
+  }
+} else if (matchDomain('estadao.com.br')) {
   setTimeout(function () {
     const paywall = document.querySelector('#paywall-wrapper-iframe-estadao');
     const body = document.querySelector('html');
