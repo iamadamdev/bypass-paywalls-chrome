@@ -23,7 +23,7 @@ const defaultSites = {
   'de Volkskrant': 'volkskrant.nl',
   'Dynamed Plus': 'dynamed.com',
   'Eindhovens Dagblad': 'ed.nl',
-  'El Mercurio Inversiones':'elmercurio.com',
+  'El Mercurio':'elmercurio.com',
   'El Pais': 'elpais.com',
   'Encyclopedia Britannica': 'britannica.com',
   'Estadão': 'estadao.com.br',
