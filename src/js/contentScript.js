@@ -3,14 +3,14 @@ if (!matchDomain(['seekingalpha.com', 'sfchronicle.com', 'cen.acs.org'])) {
 }
 
 if (matchDomain('elmercurio.com')) {
-   if (window.location.href.includes('/Inversiones/') || window.location.href.includes('/inversiones/')) {
-     setTimeout(function () {
-     const paywall = document.querySelector('#modal_limit_articulos');
-     const body = document.querySelector('body');
-
-     removeDOMElement(paywall);
-     body.removeAttribute('class');
-    }, 300); // Delay (in milliseconds)
+  if (window.location.href.toLowerCase().includes('/inversiones/') ) {
+    document.addEventListener('DOMContentLoaded', () => {
+      const paywall = document.querySelector('#modal_limit_articulos');
+      const body = document.querySelector('body');
+      removeDOMElement(paywall);
+        if(body.hasAttribute('class'))
+		{ body.removeAttribute('class'); }
+      });
   }
 } else if (matchDomain('estadao.com.br')) {
   setTimeout(function () {
