@@ -186,7 +186,8 @@ const blockedRegexes = {
   'historyextra.com': /.+\.evolok\.net\/.+\/authorize\/.+/,
   'barrons.com': /cdn\.ampproject\.org\/v\d\/amp-access-.+\.js/,
   'irishtimes.com': /cdn\.ampproject\.org\/v\d\/amp-access-.+\.js/,
-  'elmercurio.com': /(merreader\.emol\.cl\/assets\/js\/merPramV2.js|staticmer\.emol\.cl\/js\/inversiones\/PramModal.+\.js)/
+  'elmercurio.com': /(merreader\.emol\.cl\/assets\/js\/merPramV2.js|staticmer\.emol\.cl\/js\/inversiones\/PramModal.+\.js)/,
+  'sloanreview.mit.edu': /(.+\.tinypass\.com\/.+|.+\.netdna-ssl\.com\/wp-content\/themes\/smr\/assets\/js\/libs\/welcome-ad\.js)/
 };
 
 const userAgentDesktop = 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)';
@@ -236,12 +237,9 @@ extensionApi.tabs.onActivated.addListener(function (activeInfo) {
   extensionApi.tabs.get(activeInfo.tabId, updateBadge);
 });
 
-let cachedBadgeText = '';
 function updateBadge (activeTab) {
   if (!activeTab) { return; }
   const badgeText = getBadgeText(activeTab.url);
-  if (cachedBadgeText === badgeText) { return; }
-  cachedBadgeText = badgeText;
   extensionApi.browserAction.setBadgeBackgroundColor({ color: 'blue' });
   extensionApi.browserAction.setBadgeText({ text: badgeText });
 }

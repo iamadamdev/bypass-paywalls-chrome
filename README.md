@@ -7,14 +7,14 @@
 *Bypass Paywalls is a web browser extension to help bypass paywalls for selected sites.*
 
 ### Installation Instructions
-**Google Chrome**
+**Google Chrome** (Custom sites supported)
 1. Download this repo as a [ZIP file from GitHub](https://github.com/iamadamdev/bypass-paywalls-chrome/archive/master.zip).
 1. Unzip the file and you should have a folder named `bypass-paywalls-chrome-master`.
 1. In Chrome go to the extensions page (`chrome://extensions`).
 1. Enable Developer Mode.
 1. Drag the `bypass-paywalls-chrome-master` folder anywhere on the page to import it (do not delete the folder afterwards).
 
-**Mozilla Firefox**
+**Mozilla Firefox** (Custom sites not supported)
 * [Download and install the latest version](https://github.com/iamadamdev/bypass-paywalls-chrome/releases/latest/download/bypass-paywalls-firefox.xpi)
 
 **Notes**

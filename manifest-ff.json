@@ -227,7 +227,8 @@
     "*://*.wsj.com/*",
     "*://*.nzz.ch/*",
     "*://*.republic.ru/*",
-    "*://*.historyextra.com/*"
+    "*://*.historyextra.com/*",
+    "*://*.netdna-ssl.com/*"
   ],
-  "version": "1.7.4"
+  "version": "1.7.5"
 }

@@ -3,14 +3,13 @@ if (!matchDomain(['seekingalpha.com', 'sfchronicle.com', 'cen.acs.org'])) {
 }
 
 if (matchDomain('elmercurio.com')) {
-  if (window.location.href.toLowerCase().includes('/inversiones/') ) {
+  if (window.location.href.toLowerCase().includes('/inversiones/')) {
     document.addEventListener('DOMContentLoaded', () => {
       const paywall = document.querySelector('#modal_limit_articulos');
       const body = document.querySelector('body');
       removeDOMElement(paywall);
-        if(body.hasAttribute('class'))
-		{ body.removeAttribute('class'); }
-      });
+      if (body.hasAttribute('class')) { body.removeAttribute('class'); }
+    });
   }
 } else if (matchDomain('estadao.com.br')) {
   setTimeout(function () {
@@ -110,7 +109,10 @@ if (matchDomain('elmercurio.com')) {
     }
   });
 } else if (matchDomain('sloanreview.mit.edu')) {
-  document.querySelector('#cboxClose').click();
+  const readMore = document.querySelector('.btn-read-more');
+  if (readMore) {
+    readMore.click();
+  }
 } else if (matchDomain('mexiconewsdaily.com')) {
   document.addEventListener('DOMContentLoaded', () => {
     const sideNotification = document.querySelector('.pigeon-widget-prompt');
