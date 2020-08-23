@@ -312,7 +312,7 @@ if (matchDomain('elmercurio.com')) {
     removeDOMElement(container);
     embed.classList.remove('d-none');
   }
-} else if (matchDomain('hbr.org')) {full-page-takeover
+} else if (matchDomain('hbr.org')) {
   const banner = document.querySelector('.persistent-banner');
   removeDOMElement(banner);
 } else if (matchDomain('spectator.co.uk')) {
