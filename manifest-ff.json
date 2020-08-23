@@ -27,6 +27,7 @@
     "*://*.firstthings.com/*",
     "*://*.ft.com/*",
     "*://*.haaretz.co.il/*",
+    "*://*.hbr.org/*",
     "*://*.ledevoir.com/*",
     "*://*.leparisien.fr/*",
     "*://*.medium.com/*",
@@ -53,8 +54,7 @@
     "*://*.trouw.nl/*",
     "*://*.volkskrant.nl/*",
     "*://*.washingtonpost.com/*",
-    "*://*.wsj.com/*",
-    "*://*.hbr.org/*"
+    "*://*.wsj.com/*"
     ],
       "js": ["src/js/contentScript.js"]
     }
