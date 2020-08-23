@@ -84,6 +84,7 @@ const defaultSites = {
   'Scientific American': 'scientificamerican.com',
   'Seeking Alpha': 'seekingalpha.com',
   'SOFREP': 'sofrep.com',
+  'South China Morning Post': 'scmp.com',
   'Statista': 'statista.com',
   'SunSentinel': 'sun-sentinel.com',
   'Tech in Asia': 'techinasia.com',

@@ -312,7 +312,7 @@ if (matchDomain('elmercurio.com')) {
     removeDOMElement(container);
     embed.classList.remove('d-none');
   }
-} else if (matchDomain('hbr.org')) {
+} else if (matchDomain('hbr.org')) {full-page-takeover
   const banner = document.querySelector('.persistent-banner');
   removeDOMElement(banner);
 } else if (matchDomain('spectator.co.uk')) {
@@ -355,7 +355,10 @@ if (matchDomain('elmercurio.com')) {
 } else if (matchDomain('thesaturdaypaper.com.au')) {
   const paywall = document.querySelector('div.paywall-hard-always-show');
   removeDOMElement(paywall);
-}
+} else if (matchDomain('scmp.com')) {
+  const paywall = document.querySelector('.full-page-takeover');
+  removeDOMElement(paywall);
+} 
 
 function matchDomain (domains) {
   const hostname = window.location.hostname;
