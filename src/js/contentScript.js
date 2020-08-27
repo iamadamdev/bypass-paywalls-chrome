@@ -250,6 +250,8 @@ if (matchDomain('elmercurio.com')) {
   // The class of banner is like 'overlayFooter__wrapper--3DhFn', which is hard to select exactly
   const subscribeBanner = document.querySelector('[class*=overlayFooter__wrapper]');
   removeDOMElement(subscribeBanner);
+  const body = document.querySelector('body');
+  removeClassesByPrefix(body, 'body__obscureContent');
 } else if (matchDomain('leparisien.fr')) {
   window.removeEventListener('scroll', this.scrollListener);
   const paywall = document.querySelector('.relative.piano-paywall.below_nav.sticky');
