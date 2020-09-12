@@ -445,8 +445,19 @@ if (matchDomain("elmercurio.com")) {
 	document.querySelectorAll("div.ReactModalPortal").forEach(function (el) {
 		removeDOMElement(el);
 	});
+	//Enable Scroll. Reveal Hiddlen Paragraph
 	document.getElementsByTagName("body")[0].removeAttribute("class");
-} else if (
+} else if (matchDomain("theatlantic.com")) {
+	//Remove all nudge elements
+	document.querySelectorAll("div[class*='c-nudge']").forEach(function (el) {
+		removeDOMElement(el);
+	});
+	//Remove all FancyBox ads
+	document.querySelectorAll('div[class~="fancybox"]').forEach(function (el) {
+		removeDOMElement(el);
+	});
+} 
+else if (
 	matchDomain("lesechos.fr") &&
 	window.location.href.match(/-\d{6,}/)
 ) {
