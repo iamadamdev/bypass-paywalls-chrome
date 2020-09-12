@@ -84,6 +84,7 @@ const defaultSites = {
   'Scientific American': 'scientificamerican.com',
   'Seeking Alpha': 'seekingalpha.com',
   'SOFREP': 'sofrep.com',
+  'Star Tribune': 'startribune.com',
   'Statista': 'statista.com',
   'SunSentinel': 'sun-sentinel.com',
   'Tech in Asia': 'techinasia.com',
@@ -139,4 +140,5 @@ const defaultSites = {
   'Wired': 'wired.com',
   'World Politics Review': 'worldpoliticsreview.com',
   '*General Paywall Bypass*': 'generalpaywallbypass'
+
 };

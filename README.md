@@ -109,6 +109,7 @@
 [Seeking Alpha](https://seekingalpha.com)\
 [SOFREP](https://sofrep.com)\
 [Statista](https://www.statista.com)\
+[Star Tribune](https://www.startribune.com)\
 [SunSentinel](https://www.sun-sentinel.com)\
 [Tech in Asia](https://www.techinasia.com)\
 [Telegraaf](https://www.telegraaf.nl)\
