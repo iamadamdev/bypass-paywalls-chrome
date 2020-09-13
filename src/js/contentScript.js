@@ -447,6 +447,23 @@ if (matchDomain("elmercurio.com")) {
 	});
 	//Enable Scroll. Reveal Hiddlen Paragraph
 	document.getElementsByTagName("body")[0].removeAttribute("class");
+} else if (matchDomain("seattletimes.com")) {
+	window.setTimeout(function () {
+		// remove modal class from all elements
+		document.querySelectorAll("div.modal").forEach(function (el) {
+			removeDOMElement(el);
+		});
+		// Remove Blurred Style from all matching Divs
+		document.getElementById("container").removeAttribute("style");
+		document.querySelectorAll('div[style~="filter"]').forEach(function (el) {
+			el.removeAttribute("style");
+		});
+		document
+			.querySelectorAll('div[class~="NewsletterSignupSplash"]')
+			.forEach(function (el) {
+				el.removeAttribute("class");
+			});
+	}, 2000); // Delay (in milliseconds)
 } else if (matchDomain("theatlantic.com")) {
 	//Remove all nudge elements
 	document.querySelectorAll("div[class*='c-nudge']").forEach(function (el) {
@@ -456,8 +473,7 @@ if (matchDomain("elmercurio.com")) {
 	document.querySelectorAll('div[class~="fancybox"]').forEach(function (el) {
 		removeDOMElement(el);
 	});
-} 
-else if (
+} else if (
 	matchDomain("lesechos.fr") &&
 	window.location.href.match(/-\d{6,}/)
 ) {
