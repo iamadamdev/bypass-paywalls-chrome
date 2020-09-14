@@ -101,6 +101,14 @@ if (matchDomain("elmercurio.com")) {
 	);
 	removeDOMElement(paywall);
 } else if (matchDomain("washingtonpost.com")) {
+		//Remove all elements with the id contains 'paywall'
+		document.querySelectorAll("div[data-qa='paywall']").forEach(function (el) {
+			removeDOMElement(el);
+		});
+		const html = document.querySelector("html");
+		html.removeAttribute("style");
+		const body = document.querySelector("body");
+		body.removeAttribute("style");
 	if (window.location.href.includes("/gdpr-consent/")) {
 		const freeButton = document.querySelector(
 			".gdpr-consent-container .continue-btn.button.free"
