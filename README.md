@@ -72,6 +72,7 @@
 [Il Manifesto](https://www.ilmanifesto.it)\
 [Inc.com](https://www.inc.com)\
 [Investors Chronicle](https://www.investorschronicle.co.uk)\
+[Interest.co.nz](https://www.interest.co.nz)\
 [L'Écho](https://www.lecho.be)\
 [L.A. Business Journal](https://labusinessjournal.com)\
 [La Nación](https://www.lanacion.com.ar)\
@@ -110,6 +111,7 @@
 [SOFREP](https://sofrep.com)\
 [Statista](https://www.statista.com)\
 [Star Tribune](https://www.startribune.com)\
+[Stuff](https://www.stuff.co.nz)\
 [SunSentinel](https://www.sun-sentinel.com)\
 [Tech in Asia](https://www.techinasia.com)\
 [Telegraaf](https://www.telegraaf.nl)\
