@@ -87,6 +87,7 @@
 [MIT Sloan Management Review](https://sloanreview.mit.edu)\
 [MIT Technology Review](https://www.technologyreview.com)\
 [Medium](https://www.medium.com)\
+[Medscape](https://www.medscape.com)\
 [Mexicon News Daily](https://mexiconewsdaily.com)\
 [Mountain View Voice](https://www.mv-voice.com)\
 [NRC Handelsblad](https://www.nrc.nl)\
