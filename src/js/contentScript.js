@@ -154,6 +154,16 @@ if (matchDomain('elmercurio.com')) {
       el.removeAttribute('style');
     }
   }
+} else if (matchDomain('interest.co.nz')) {
+  const wrapper = document.getElementById('pp-ablock-banner-wrapper');
+  const overlay = document.querySelector('.black-overlay');
+  removeDOMElement(overlay, wrapper);
+} else if (matchDomain('stuff.co.nz')) {
+  const overlay = document.querySelector('.x0');
+  removeDOMElement(overlay);
+} else if (matchDomain('thenational.scot')) {
+  const overlay = document.querySelector('.template-container');
+  removeDOMElement(overlay);
 } else if (matchDomain('thestar.com')) {
   setTimeout(function () {
     const paywall = document.querySelector('.basic-paywall-new');
