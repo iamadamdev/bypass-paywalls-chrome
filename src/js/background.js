@@ -170,6 +170,7 @@ const blockedRegexes = {
   'fortune.com': /.+\.tinypass\.com\/.+/,
   'haaretz.co.il': /haaretz\.co\.il\/htz\/js\/inter\.js/,
   'haaretz.com': /haaretz\.com\/hdc\/web\/js\/minified\/header-scripts-int.js.+/,
+  'interest.co.nz': /.*interest\.co\.nz\/.+press_patron.+.js.*/,
   'inquirer.com': /.+\.tinypass\.com\/.+/,
   'lastampa.it': /.+\.repstatic\.it\/minify\/sites\/lastampa\/.+\/config\.cache\.php\?name=social_js/,
   'lrb.co.uk': /.+\.tinypass\.com\/.+/,

@@ -46,6 +46,7 @@ const defaultSites = {
   'History Extra': 'historyextra.com',
   'Il Manifesto': 'ilmanifesto.it',
   'Inc.com': 'inc.com',
+  'interest.co.nz': 'interest.co.nz',
   'Investors Chronicle': 'investorschronicle.co.uk',
   'La Nacion': 'lanacion.com.ar',
   'La Repubblica': 'repubblica.it',
