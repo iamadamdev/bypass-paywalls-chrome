@@ -71,6 +71,7 @@
 [History Extra](https://www.historyextra.com)\
 [Il Manifesto](https://www.ilmanifesto.it)\
 [Inc.com](https://www.inc.com)\
+[interest.co.nz](https://www.interest.co.nz/)\
 [Investors Chronicle](https://www.investorschronicle.co.uk)\
 [L'Écho](https://www.lecho.be)\
 [L.A. Business Journal](https://labusinessjournal.com)\
