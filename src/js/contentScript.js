@@ -208,6 +208,26 @@ if (matchDomain('elmercurio.com')) {
   if (DOMElementsToTextDiv[2]) removeDOMElement(DOMElementsToTextDiv[2]);
 } else if (matchDomain('theglobeandmail.com')) {
   document.addEventListener('DOMContentLoaded', () => {
+    const realArticle = document.querySelector('.js-c-article-body');
+    let decoyArticle = document.querySelector('.decoy-article');
+    if (realArticle && !decoyArticle) {
+      decoyArticle = document.createElement('div');
+      decoyArticle.classList.add('js-c-article-body');
+      decoyArticle.classList.add('decoy-article');
+      decoyArticle.hidden = true;
+      realArticle.parentElement.insertBefore(decoyArticle, realArticle);
+      for(var child=realArticle.firstChild; child !== null; child=child.nextSibling) {
+        if (child.style) {
+          child.style.display = "block";
+        }
+      }
+    }
+    const regWall = document.querySelector('#regwall');
+    const lightBox = document.querySelector('.c-lightbox');
+    if (regWall && lightBox) {
+      regWall.hidden = true;
+      lightBox.hidden = true;
+    }
     const subscribed = document.querySelector('html.story-subscribed');
     if (subscribed && !window.location.href.includes('?ref=premium')) {
       window.setTimeout(function () {
