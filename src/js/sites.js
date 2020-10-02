@@ -22,6 +22,7 @@ const defaultSites = {
   'De Tijd': 'tijd.be',
   'de Volkskrant': 'volkskrant.nl',
   'Diario Financiero': 'df.cl',
+  'Domani': 'editorialedomani.it',
   'Dynamed Plus': 'dynamed.com',
   'Eindhovens Dagblad': 'ed.nl',
   'El Mercurio':'elmercurio.com',
