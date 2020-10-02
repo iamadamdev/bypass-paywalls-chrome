@@ -182,7 +182,7 @@ if (matchDomain('elmercurio.com')) {
     const plista = document.querySelector('div[data-plista-placement="underArticle_Group"]');
     removeDOMElement(plista);
   });
-} else if (matchDomain(['parool.nl', 'trouw.nl', 'volkskrant.nl', 'demorgen.be'])) {
+} else if (matchDomain(['parool.nl', 'trouw.nl', 'volkskrant.nl', 'demorgen.be', 'humo.be'])) {
   document.addEventListener('DOMContentLoaded', () => {
     const topBanner = document.querySelector('div[data-temptation-position="PAGE_TOP"]');
     const paywall = document.querySelector('div[data-temptation-position="ARTICLE_BOTTOM"]');

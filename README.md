@@ -72,6 +72,7 @@
 [Herald Sun](https://www.heraldsun.com.au)\
 [Het Financieel Dagblad](https://fd.nl)\
 [History Extra](https://www.historyextra.com)\
+[Humo](https://www.humo.be)\
 [Il Manifesto](https://www.ilmanifesto.it)\
 [Inc.com](https://www.inc.com)\
 [Interest.co.nz](https://www.interest.co.nz)\

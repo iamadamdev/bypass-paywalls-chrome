@@ -21,6 +21,7 @@ const allowCookies = [
   'ft.com',
   'harpers.org',
   'hbr.org',
+  'humo.be',
   'lesechos.fr',
   'lrb.co.uk',
   'medium.com',
@@ -75,6 +76,7 @@ const removeCookies = [
   'globes.co.il',
   'harpers.org',
   'hbr.org',
+  'humo.be',
   'lesechos.fr',
   'medium.com',
   'mercurynews.com',
@@ -114,6 +116,7 @@ const removeCookiesSelectDrop = {
   'ad.nl': ['temptationTrackingId'],
   'ed.nl': ['temptationTrackingId'],
   'demorgen.be': ['TID_ID'],
+  'humo.be': ['TID_ID'],
   'fd.nl': ['socialread'],
   'nrc.nl': ['counter']
 };

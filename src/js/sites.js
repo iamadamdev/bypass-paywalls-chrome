@@ -47,6 +47,7 @@ const defaultSites = {
   'Herald Sun': 'heraldsun.com.au',
   'Het Financieele Dagblad': 'fd.nl',
   'History Extra': 'historyextra.com',
+  'Humo': 'humo.be',
   'Il Manifesto': 'ilmanifesto.it',
   'Inc.com': 'inc.com',
   'Interest NZ': 'interest.co.nz',
