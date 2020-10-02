@@ -169,7 +169,7 @@ const blockedRegexes = {
   'businessinsider.com': /(.+\.tinypass\.com\/.+|cdn\.onesignal\.com\/sdks\/.+\.js)/,
   'chicagotribune.com': /.+:\/\/.+\.tribdss\.com\//,
   'economist.com': /(.+\.tinypass\.com\/.+|economist\.com\/engassets\/_next\/static\/chunks\/framework.+\.js)/,
-  'editorialedomani.it': /(js.pelcro.com\/.+|editorialedomani.it\/pelcro\.js)/,
+  'editorialedomani.it': /(js\.pelcro\.com\/.+|editorialedomani.it\/pelcro\.js)/,
   'foreignpolicy.com': /.+\.tinypass\.com\/.+/,
   'fortune.com': /.+\.tinypass\.com\/.+/,
   'haaretz.co.il': /haaretz\.co\.il\/htz\/js\/inter\.js/,
