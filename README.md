@@ -135,6 +135,7 @@
 [The Daily Telegraph](https://www.dailytelegraph.com.au)\
 [The Diplomat](https://www.thediplomat.com)\
 [The Economist](https://www.economist.com)\
+[The Epoch Times](https://www.theepochtimes.com/)\
 [The Globe and Mail](https://www.theglobeandmail.com)\
 [The Herald](https://www.theherald.com.au)\
 [The Hindu](https://www.thehindu.com)\

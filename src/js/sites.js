@@ -111,6 +111,7 @@ const defaultSites = {
   'The Daily Telegraph': 'dailytelegraph.com.au',
   'The Diplomat': 'thediplomat.com',
   'The Economist': 'economist.com',
+  'The Epoch Times': 'theepochtimes.com',
   'The Globe and Mail': 'theglobeandmail.com',
   'The Herald': 'theherald.com.au',
   'The Hindu': 'thehindu.com',

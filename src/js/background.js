@@ -186,6 +186,7 @@ const blockedRegexes = {
   'spectator.com.au': /.+\.tinypass\.com\/.+/,
   'telegraph.co.uk': /.+telegraph\.co\.uk.+martech.+/,
   'thecourier.com.au': /.+cdn-au\.piano\.io\/api\/tinypass.+\.js/,
+  'theepochtimes.com': /subs\.youmaker\.com\/.+/,
   'thenation.com': /thenation\.com\/.+\/paywall-script\.php/,
   'thenational.scot': /(.+\.tinypass\.com\/.+|.+thenational\.scot.+omniture\.js|.+thenational\.scot.+responsive-sync.+)/,
   'thewrap.com': /thewrap\.com\/.+\/wallkit\.js/,
