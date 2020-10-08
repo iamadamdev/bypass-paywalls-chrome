@@ -44,6 +44,7 @@
 [De Groene Amsterdammer](https://www.groene.nl)\
 [De Tijd](https://www.tijd.be)\
 [De Volkskrant](https://www.volkskrant.nl)\
+[DELFI](https://www.delfi.ee)\
 [DeMorgen](https://www.demorgen.be)\
 [Denver Post](https://www.denverpost.com)\
 [Diario Financiero](https://www.df.cl)\
@@ -52,6 +53,7 @@
 [Eindhovens Dagblad](https://www.ed.nl)\
 [El Mercurio](https://www.elmercurio.com)\
 [El Pais](https://www.elpais.com/)\
+[Elu24](https://www.elu24.ee)\
 [Encyclopedia Britannica](https://www.britannica.com)\
 [Estadão](https://www.estadao.com.br)\
 [Examiner](https://www.examiner.com.au)\
@@ -107,6 +109,7 @@
 [Orlando Sentinel](https://www.orlandosentinel.com)\
 [Palo Alto Online](https://www.paloaltoonline.com)\
 [Parool](https://www.parool.nl)\
+[Postimees](https://www.postimees.ee)\
 [Quartz](https://qz.com)\
 [Quora](https://www.quora.com)\
 [Republic.ru](https://republic.ru)\

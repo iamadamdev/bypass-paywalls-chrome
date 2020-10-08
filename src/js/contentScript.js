@@ -479,6 +479,17 @@ if (matchDomain('elmercurio.com')) {
 } else if (matchDomain('newyorker.com')) {
   const paywall = document.querySelector('.paywall-bar');
   removeDOMElement(paywall);
+} else if (matchDomain('delfi.ee')) {
+  // Remove 'adblocker-detected' notification overlay
+  document.body.classList.remove('adb-curtain');
+  const el = document.getElementById('ab--notification-header');
+  removeDOMElement(el);
+} else if (matchDomain(['postimees.ee', 'elu24.ee'])) {
+  setTimeout(function () {
+    // Remove 'adblocker-detected' footer notification
+    const adblockNotif = document.querySelector('.adblock-notif');
+    removeDOMElement(adblockNotif);
+  }, 800); // Delay (in milliseconds)
 }
 
 function matchDomain (domains) {
