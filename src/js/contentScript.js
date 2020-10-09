@@ -135,9 +135,17 @@ if (matchDomain('elmercurio.com')) {
   removeDOMElement(counter);
 } else if (matchDomain('nzherald.co.nz')) {
   const childItems = document.querySelector('.article__body').getElementsByTagName('*');
+  let classHidden = '';
   for (const el of childItems) {
-    el.removeAttribute('class');
-    el.removeAttribute('style');
+    if (el.getAttribute('class')!=null && classHidden=='') {
+        classHidden = el.getAttribute('class');
+    }
+  }
+  if (classHidden!='') {
+    for (const el of childItems) {
+      el.classList.remove(classHidden);
+      el.removeAttribute('style');
+    }
   }
   const overlay = document.querySelector('#premium-toaster');
   removeDOMElement(overlay);
