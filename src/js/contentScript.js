@@ -476,6 +476,9 @@ if (matchDomain('elmercurio.com')) {
   document.querySelectorAll('div[class*="fancybox"]').forEach(function (el) {
     removeDOMElement(el);
   });
+} else if (matchDomain('newyorker.com')) {
+  const paywall = document.querySelector('.paywall-bar');
+  removeDOMElement(paywall);
 }
 
 function matchDomain (domains) {
