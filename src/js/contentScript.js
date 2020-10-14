@@ -479,6 +479,33 @@ if (matchDomain('elmercurio.com')) {
 } else if (matchDomain('newyorker.com')) {
   const paywall = document.querySelector('.paywall-bar');
   removeDOMElement(paywall);
+} else if (matchDomain('nymag.com')) {
+  // Prevent paywall from appearing
+  new MutationObserver(function(mutations) {
+    for(let mutation of mutations) {
+      for(let node of mutation.addedNodes) {
+        if (node instanceof HTMLElement) {
+          if (node.matches(".cliff-takeover")) {	
+            removeDOMElement(node);
+            this.disconnect();
+          }
+        }
+      }
+    }
+  }).observe(document, {subtree: true, childList: true});
+
+  // Prevent not being able to scroll page
+  new MutationObserver(function(mutations) {
+    for(let mutation of mutations) {
+      if (mutation.type === 'attributes') {
+          let node = mutation.target;
+          if (node instanceof HTMLElement) {
+            node.removeAttribute("style"); // Prevent style='overflow-y: hidden' from being set
+            this.disconnect();
+          }
+        }
+      }
+  }).observe(document.querySelector('html'), {attributes: true, attributeFilter: [ "style" ]});
 }
 
 function matchDomain (domains) {
