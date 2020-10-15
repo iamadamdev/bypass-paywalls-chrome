@@ -269,6 +269,19 @@ if (matchDomain('elmercurio.com')) {
 } else if (matchDomain('nytimes.com')) {
   const previewButton = document.querySelector('.css-3s1ce0');
   if (previewButton) { previewButton.click(); }
+  // Prevent bottom dock from appearing
+  new MutationObserver(function(mutations) {
+    for(let mutation of mutations) {
+      for(let node of mutation.addedNodes) {
+        if (node instanceof HTMLElement) {
+          if (node.matches(".css-3fbowa")) {	
+            removeDOMElement(node);
+            this.disconnect();
+          }
+        }
+      }
+    }
+  }).observe(document, {subtree: true, childList: true});
 } else if (matchDomain('technologyreview.com')) {
   // The class of banner is like 'overlayFooter__wrapper--3DhFn', which is hard to select exactly
   const subscribeBanner = document.querySelector('[class*=overlayFooter__wrapper]');
