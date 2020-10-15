@@ -178,6 +178,7 @@ const blockedRegexes = {
   'inquirer.com': /.+\.tinypass\.com\/.+/,
   'lastampa.it': /.+\.repstatic\.it\/minify\/sites\/lastampa\/.+\/config\.cache\.php\?name=social_js/,
   'lrb.co.uk': /.+\.tinypass\.com\/.+/,
+  'nzherald.co.nz': /(.+nzherald\.co\.nz\/.+\/subs\/p\.js|.+nzherald\.co\.nz\/.+\/react\.js|.+nzherald\.co\.nz\/.+\/appear\.js|.+nzherald\.co\.nz\/.+\/tracking\/.+|.+nzherald\.co\.nz\/.+\/default\.js|.+\/newsbarscript\.js)/,
   'medscape.com': /.+\.medscapestatic\.com\/.*medscape-library\.js/,
   'interest.co.nz': /(.+\.presspatron\.com.+|.+interest\.co\.nz.+pp-ablock-banner\.js)/,
   'repubblica.it': /scripts\.repubblica\.it\/pw\/pw\.js.+/,
