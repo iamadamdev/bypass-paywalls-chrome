@@ -479,7 +479,16 @@ if (matchDomain('elmercurio.com')) {
 } else if (matchDomain('newyorker.com')) {
   const paywall = document.querySelector('.paywall-bar');
   removeDOMElement(paywall);
-} else if (matchDomain('nymag.com')) {
+} 
+else if (matchDomain('nymag.com') || matchDomain('thecut.com') || matchDomain('vulture.com') || matchDomain('grubstreet.com')) {
+  // Save article content children before some get deleted
+  let children;
+  let articleContent;
+  document.addEventListener('DOMContentLoaded', () => {
+    articleContent = document.querySelector('.article-content');
+    children = articleContent.querySelectorAll('.article-content > *');
+  });
+
   // Prevent paywall from appearing
   new MutationObserver(function(mutations) {
     for(let mutation of mutations) {
@@ -506,6 +515,15 @@ if (matchDomain('elmercurio.com')) {
         }
       }
   }).observe(document.querySelector('html'), {attributes: true, attributeFilter: [ "style" ]});
+
+  // Add back article content children
+  document.addEventListener('readystatechange', event => { 
+    if (event.target.readyState === "complete") {
+      // Remove existing children
+      articleContent.querySelectorAll('.article-content > *').forEach(child => child.remove());
+      children.forEach(child => articleContent.appendChild(child));
+    }
+  })
 }
 
 function matchDomain (domains) {
