@@ -496,6 +496,32 @@ function pageContains (selector, text) {
 }
 
 function NZHerald () {
+  const video = document.querySelector('.video-js');
+  if (video) {
+    const s = document.getElementsByTagName('script')[0];
+    if (s.src === '') {
+      const vId = video.getAttribute('data-account');
+      const vPlay = video.getAttribute('data-player');
+      const vScript = document.createElement("script");
+      vScript.type = 'text/javascript';
+      vScript.async = true;
+      vScript.src = 'https://players.brightcove.net/' + vId + '/' + vPlay + '_default/index.min.js';
+      s.parentNode.insertBefore(vScript, s);
+      const ticker = document.querySelector('.vcTicker');
+      if (ticker) {
+        ticker.style.display = 'none';
+      }
+      const msg = document.querySelector('.vcMsg');
+      if (msg) {
+        msg.style.display = 'none';
+      }
+      const overlay = document.querySelector('.vcOverlay');
+      if (overlay) {
+        overlay.style.display = 'none';
+      }
+    }
+  }
+    
   window.setTimeout(function () {
     const articleBody = document.querySelector('.article__body');
     if (articleBody) {
