@@ -117,6 +117,7 @@
 [San Francisco Chronicle](https://www.sfchronicle.com)\
 [Scientific American](https://www.scientificamerican.com)\
 [Seeking Alpha](https://seekingalpha.com)\
+[Slate](https://slate.com)\
 [SOFREP](https://sofrep.com)\
 [Statista](https://www.statista.com)\
 [Star Tribune](https://www.startribune.com)\
