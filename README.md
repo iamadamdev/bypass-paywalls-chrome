@@ -98,6 +98,7 @@
 [Medscape](https://www.medscape.com)\
 [Mexicon News Daily](https://mexiconewsdaily.com)\
 [Mountain View Voice](https://www.mv-voice.com)\
+[New York Daily News](https://www.nydailynews.com/)\
 [NRC Handelsblad](https://www.nrc.nl)\
 [NT News](https://www.ntnews.com.au)\
 [National Post](https://www.nationalpost.com)\

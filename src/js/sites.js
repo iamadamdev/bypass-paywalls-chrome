@@ -76,6 +76,7 @@ const defaultSites = {
   'National Post': 'nationalpost.com',
   'Neue Zürcher Zeitung': 'nzz.ch',
   'New Statesman': 'newstatesman.com',
+  'New York Daily News': 'nydailynews.com',
   'New York Magazine': 'nymag.com',
   'New Zealand Herald': 'nzherald.co.nz',
   'Nikkei Asian Review': 'asia.nikkei.com',
