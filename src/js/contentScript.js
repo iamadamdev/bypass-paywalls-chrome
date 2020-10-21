@@ -468,6 +468,9 @@ if (matchDomain('elmercurio.com')) {
 } else if (matchDomain('newyorker.com')) {
   const paywall = document.querySelector('.paywall-bar');
   removeDOMElement(paywall);
+} else if (matchDomain('vanityfair.com')) {
+  const paywall = document.querySelector('.paywall-bar');
+  removeDOMElement(paywall);
 } else if (matchDomain('delfi.ee')) {
   // Remove 'adblocker-detected' notification overlay
   document.body.classList.remove('adb-curtain');
