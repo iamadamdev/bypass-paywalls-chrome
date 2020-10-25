@@ -78,7 +78,7 @@ if (matchDomain('elmercurio.com')) {
   removeDOMElement(paywall);
 } else if (matchDomain('washingtonpost.com')) {
   // Remove all elements with the id contains 'paywall'
-  document.querySelectorAll('div[data-qa="paywall"]').forEach(function (el) {
+  document.querySelectorAll('div[id^="paywall"]').forEach(function (el) {
     removeDOMElement(el);
   });
   const html = document.querySelector('html');
