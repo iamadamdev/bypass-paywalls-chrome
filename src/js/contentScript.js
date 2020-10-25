@@ -1,3 +1,28 @@
+if (matchDomain('latimes.com')) {
+  window.setTimeout(function () {
+    document.querySelector("body").style.overflow = "";
+    document.querySelector("html").style.overflow = "";
+    var newsletter = document.querySelector("newsletter-campaign");
+    var paywall = document.querySelector(".fc-ab-root");
+    removeDOMElement(paywall, newsletter);
+  }, 700);
+}
+
+if (matchDomain('usatoday.com')) {
+  window.setTimeout(function () {
+    document.querySelector("body").style.overflow = "";
+    document.querySelector("html").style.overflow = "";
+    var header = document.querySelector("header");
+    header.style.margin = '0px';
+    header.style.top = '0px';
+    var gannet = document.querySelector("#destination_publishing_iframe_gannett_0");
+    var overlay = document.querySelector('[class^="sp_veil"]');
+    var paywall = document.querySelector('[id^="sp_message_id"]');
+    paywall.style.display = 'none';
+    removeDOMElement(gannet, overlay, paywall);
+  }, 700);
+}
+
 if (!matchDomain(['seekingalpha.com', 'sfchronicle.com', 'cen.acs.org'])) {
   window.localStorage.clear();
 }
@@ -556,6 +581,7 @@ function NZHerald () {
   }
 
   window.setTimeout(function () {
+
     const articleBody = document.querySelector('.article__body');
     if (articleBody) {
       const childItems = articleBody.getElementsByTagName('*');

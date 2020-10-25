@@ -148,6 +148,7 @@ const defaultSites = {
   'Times Literary Supplement': 'the-tls.co.uk',
   'Towards Data Science': 'towardsdatascience.com',
   'Trouw': 'trouw.nl',
+  'USA Today': 'usatoday.com',
   'Vanity Fair': 'vanityfair.com',
   'Vrij Nederland': 'vn.nl',
   'Vulture': 'vulture.com',
