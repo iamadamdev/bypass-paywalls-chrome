@@ -275,23 +275,6 @@ if (matchDomain('elmercurio.com')) {
       }
     }
   }).observe(document, { subtree: true, childList: true });
-  // Reload iframes after window is loaded to fix iframes not loading
-  document.addEventListener('readystatechange', event => {
-    if (event.target.readyState === 'complete') {
-      const iframes = document.querySelectorAll('iframe');
-      iframes.forEach(iframe =>
-        window.fetch(iframe.src).then(function (response) {
-          // The API call was successful!
-          return response.text();
-        }).then(function (html) {
-          // This is the HTML from our response as a text string
-          iframe.outerHTML = html;
-        }).catch(function (err) {
-          // There was an error
-          console.warn('Something went wrong.', err);
-        }));
-    }
-  });
 } else if (matchDomain('technologyreview.com')) {
   window.setTimeout(function () {
     const bodyObscured = document.querySelector('body[class*="body__obscureContent"]');
