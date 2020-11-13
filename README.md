@@ -28,10 +28,12 @@
 [Adweek](https://www.adweek.com)\
 [Algemeen Dagblad](https://www.ad.nl)\
 [American Banker](https://www.americanbanker.com)\
+[BN De Stem](https://www.bndestem.nl)\
 [Baltimore Sun](https://www.baltimoresun.com)\
 [Barron's](https://www.barrons.com)\
 [Bloomberg Quint](https://www.bloombergquint.com)\
 [Bloomberg](https://www.bloomberg.com)\
+[Brabands Dagblad (BD)](https://www.bd.nl)\
 [Brisbane Times](https://www.brisbanetimes.com.au)\
 [Business Insider](https://www.businessinsider.com)\
 [Caixin](https://www.caixinglobal.com)\
@@ -41,7 +43,9 @@
 [Corriere Della Sera](https://www.corriere.it)\
 [Crain's Chicago Business](https://www.chicagobusiness.com)\
 [Daily Press](https://www.dailypress.com)\
+[De Gelderlander](https://www.gelderlander.nl)\
 [De Groene Amsterdammer](https://www.groene.nl)\
+[De Stentor](https://www.destentor.nl)\
 [De Tijd](https://www.tijd.be)\
 [De Volkskrant](https://www.volkskrant.nl)\
 [DELFI](https://www.delfi.ee)\
@@ -109,6 +113,7 @@
 [Nikkei Asian Review](https://asia.nikkei.com)\
 [Orange County Register](https://www.ocregister.com)\
 [Orlando Sentinel](https://www.orlandosentinel.com)\
+[PZC](https://www.pzc.nl)\
 [Palo Alto Online](https://www.paloaltoonline.com)\
 [Parool](https://www.parool.nl)\
 [Postimees](https://www.postimees.ee)\
@@ -173,6 +178,7 @@
 [Times Literary Supplement](https://www.the-tls.co.uk)\
 [Towards Data Science](https://www.towardsdatascience.com)\
 [Trouw](https://www.trouw.nl)\
+[Tubantia](https://www.tubantia.nl)\
 [Vanity Fair](https://www.vanityfair.com)\
 [Vrij Nederland](https://www.vn.nl)\
 [Vulture](https://www.vulture.com/)\

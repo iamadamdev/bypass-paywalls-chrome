@@ -249,7 +249,13 @@
     "*://*.netdna-ssl.com/*",
     "*://*.startribune.com/*",
     "*://*.df.cl/*",
-    "*://*.financialpost.com/*"
+    "*://*.financialpost.com/*",
+    "*://*.gelderlander.nl/*",
+    "*://*.bndestem.nl/*",
+    "*://*.bd.nl/*",
+    "*://*.tubantia.nl/*",
+    "*://*.pzc.nl/*",
+    "*://*.destentor.nl/*"
   ],
   "version": "1.7.7"
 }
