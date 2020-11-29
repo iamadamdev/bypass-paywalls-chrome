@@ -262,19 +262,15 @@ if (matchDomain('elmercurio.com')) {
 } else if (matchDomain('nytimes.com')) {
   const previewButton = document.querySelector('.css-3s1ce0');
   if (previewButton) { previewButton.click(); }
-  // Prevent bottom dock from appearing
-  new window.MutationObserver(function (mutations) {
-    for (const mutation of mutations) {
-      for (const node of mutation.addedNodes) {
-        if (node instanceof window.HTMLElement) {
-          if (node.matches('.css-3fbowa')) {
-            removeDOMElement(node);
-            this.disconnect();
-          }
-        }
-      }
+  blockElement('.css-3fbowa'); // Prevent bottom dock from appearing
+  blockElement('#gateway-content'); // Remove paywall
+  blockElement('.css-1bd8bfl'); // Remove filter
+  // Restore scrolling
+  document.onreadystatechange = function () {
+    if (document.readyState === 'complete') {
+      document.querySelector('.css-mcm29f').setAttribute('style', 'position:relative');
     }
-  }).observe(document, { subtree: true, childList: true });
+  };
 } else if (matchDomain('technologyreview.com')) {
   window.setTimeout(function () {
     const bodyObscured = document.querySelector('body[class*="body__obscureContent"]');
@@ -512,6 +508,22 @@ function pageContains (selector, text) {
   return Array.prototype.filter.call(elements, function (element) {
     return RegExp(text).test(element.textContent);
   });
+}
+
+// Prevent element from being added to the DOM
+function blockElement (selector) {
+  new window.MutationObserver(function (mutations) {
+    for (const mutation of mutations) {
+      for (const node of mutation.addedNodes) {
+        if (node instanceof window.HTMLElement) {
+          if (node.matches(selector)) {
+            removeDOMElement(node);
+            this.disconnect(); // Stop watching for element being added after one removal
+          }
+        }
+      }
+    }
+  }).observe(document, { subtree: true, childList: true });
 }
 
 function NZHerald () {
