@@ -91,6 +91,7 @@
 [La Repubblica](https://www.repubblica.it)\
 [La Stampa](https://www.lastampa.it)\
 [La Tercera](https://www.latercera.com)\
+[La Voix du Nord](https://www.lavoixdunord.fr/)\
 [Le Devoir](https://www.ledevoir.com)\
 [Le Parisien](http://www.leparisien.fr)\
 [Les Échos](https://www.lesechos.fr)\

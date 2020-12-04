@@ -64,6 +64,7 @@ const defaultSites = {
   'La Repubblica': 'repubblica.it',
   'La Stampa': 'lastampa.it',
   'La Tercera': 'latercera.com',
+  'La Voix du Nord': 'lavoixdunord.fr',
   'L\'Echo': 'lecho.be',
   'Le Devoir': 'ledevoir.com',
   'Le Parisien': 'leparisien.fr',
