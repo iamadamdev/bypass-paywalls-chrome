@@ -174,14 +174,7 @@ if (matchDomain('elmercurio.com')) {
   const paywall = document.getElementsByClassName('paywall')[0];
   removeDOMElement(paywall);
 } else if (matchDomain('bloomberg.com')) {
-  document.addEventListener('DOMContentLoaded', () => {
-    const fence = document.querySelector('.fence-body');
-    if (fence) {
-      fence.classList.remove('fence-body');
-    }
-    const paywall = document.getElementById('paywall-banner');
-    removeDOMElement(paywall);
-  });
+  blockElement('#graphics-paywall-overlay', true);
 } else if (matchDomain('bloombergquint.com')) {
   const articlesLeftModal = document.getElementsByClassName('paywall-meter-module__story-paywall-container__1UgCE')[0];
   const paywall = document.getElementById('paywallDmp');
@@ -513,15 +506,17 @@ function pageContains (selector, text) {
   });
 }
 
-// Prevent element from being added to the DOM
-function blockElement (selector) {
+// Prevent element from being added the first time to the DOM
+function blockElement (selector, blockAlways = false) {
   new window.MutationObserver(function (mutations) {
     for (const mutation of mutations) {
       for (const node of mutation.addedNodes) {
         if (node instanceof window.HTMLElement) {
           if (node.matches(selector)) {
             removeDOMElement(node);
-            this.disconnect(); // Stop watching for element being added after one removal
+            if (!blockAlways) {
+              this.disconnect(); // Stop watching for element being added after one removal
+            }
           }
         }
       }
