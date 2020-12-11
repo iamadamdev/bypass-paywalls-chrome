@@ -456,7 +456,7 @@ if (matchDomain('elmercurio.com')) {
     removeDOMElement(el);
   });
 } else if (matchDomain('newyorker.com')) {
-  blockElement('.paywall-bar');
+  blockElement('.paywall-bar', true);
   blockElement('.paywall-modal');
 } else if (matchDomain('vanityfair.com')) {
   const paywall = document.querySelector('.paywall-bar');
