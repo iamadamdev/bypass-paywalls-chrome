@@ -105,6 +105,7 @@ const defaultSites = {
   'SOFREP': 'sofrep.com',
   'Star Tribune': 'startribune.com',
   'Statista': 'statista.com',
+  'St. Catharines Standard': 'stcatharinesstandard.ca',
   'Stuff': 'stuff.co.nz',
   'SunSentinel': 'sun-sentinel.com',
   'Tech in Asia': 'techinasia.com',

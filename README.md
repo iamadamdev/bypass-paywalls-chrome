@@ -129,6 +129,7 @@
 [SOFREP](https://sofrep.com)\
 [Statista](https://www.statista.com)\
 [Star Tribune](https://www.startribune.com)\
+[St. Catherines Standard](St. Catharines Standard)\
 [Stuff](https://www.stuff.co.nz)\
 [SunSentinel](https://www.sun-sentinel.com)\
 [Tech in Asia](https://www.techinasia.com)\
