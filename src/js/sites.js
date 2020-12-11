@@ -103,6 +103,7 @@ const defaultSites = {
   'Seeking Alpha': 'seekingalpha.com',
   'Slate': 'slate.com',
   'SOFREP': 'sofrep.com',
+  'South China Morning Post': 'scmp.com',
   'Star Tribune': 'startribune.com',
   'Statista': 'statista.com',
   'Stuff': 'stuff.co.nz',

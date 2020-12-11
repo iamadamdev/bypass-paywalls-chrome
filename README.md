@@ -127,6 +127,7 @@
 [Seeking Alpha](https://seekingalpha.com)\
 [Slate](https://slate.com)\
 [SOFREP](https://sofrep.com)\
+[South China Morning Post](https://www.scmp.com/)\
 [Statista](https://www.statista.com)\
 [Star Tribune](https://www.startribune.com)\
 [Stuff](https://www.stuff.co.nz)\
