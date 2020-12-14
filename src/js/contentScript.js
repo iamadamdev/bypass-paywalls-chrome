@@ -261,7 +261,7 @@ if (matchDomain('elmercurio.com')) {
   // Restore scrolling
   document.onreadystatechange = function () {
     if (document.readyState === 'complete') {
-      document.querySelector('.css-mcm29f').setAttribute('style', 'position:relative');
+      document.querySelector('.css-mcm29f')?.setAttribute('style', 'position:relative');
     }
   };
 } else if (matchDomain('technologyreview.com')) {
