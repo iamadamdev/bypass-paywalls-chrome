@@ -477,12 +477,26 @@ if (matchDomain('elmercurio.com')) {
   const adBlock = document.getElementById('ad-article-inline');
   const adHeader = document.getElementById('sticky-ad-header');
   removeDOMElement(block, adBlock, adHeader);
-} else if (matchDomain('themarker.com') || matchDomain('haaretz.co.il')) {
+} else if (matchDomain('themarker.com')) {
+  setTimeout(function() {
+    const paywall = document.querySelector('[data-test="bottomStrip"]');
+    const notifications = document.querySelector('#pwSubscribePopup');
+    const banner = document.querySelector('#themarker\\.com\\.billboard\\.desktop');
+    const newsBanner = document.querySelector('#themarker\\.com\\.news\\.banner');
+    const midBanner = document.querySelector('#themarker\\.com.headline\\.banner\\.desktop');
+    const financeBanner = document.querySelector('#themarker\\.com\\.finance\\.banner');
+    const topStrip = document.querySelector('[data-test="topStrip"]');
+    removeDOMElement(paywall, notifications, banner, topStrip, midBanner, newsBanner, financeBanner);
+  }, 500);
+} else if (matchDomain('haaretz.co.il')) {
   setTimeout(function() {
     const notifications = document.querySelector('#pwSubscribePopup');
     const paywall = document.querySelector('[data-test="bottomStrip"]');
     const banner = document.querySelector('#haaretz\\.co\\.il\\.billboard\\.desktop');
-    removeDOMElement(paywall, notifications, banner);
+    const editorsBanner = document.querySelector('#haaretz\\.co\\.il\\.editors\\.banner');
+    const headlinesBanner = document.querySelector('#haaretz\\.co\\.il\\.headline\\.box\\.desktop');
+    const topStrip = document.querySelector('[data-test="topStrip"]');
+    removeDOMElement(paywall, notifications, banner, editorsBanner, topStrip, headlinesBanner);
   }, 500);
 }
 
