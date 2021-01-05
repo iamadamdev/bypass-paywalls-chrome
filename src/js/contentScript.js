@@ -481,7 +481,8 @@ if (matchDomain('elmercurio.com')) {
   setTimeout(function() {
     const notifications = document.querySelector('#pwSubscribePopup');
     const paywall = document.querySelector('[data-test="bottomStrip"]');
-    removeDOMElement(paywall, notifications);
+    const banner = document.querySelector('#haaretz\\.co\\.il\\.billboard\\.desktop');
+    removeDOMElement(paywall, notifications, banner);
   }, 500);
 }
 
