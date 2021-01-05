@@ -486,7 +486,8 @@ if (matchDomain('elmercurio.com')) {
     const midBanner = document.querySelector('#themarker\\.com.headline\\.banner\\.desktop');
     const financeBanner = document.querySelector('#themarker\\.com\\.finance\\.banner');
     const topStrip = document.querySelector('[data-test="topStrip"]');
-    removeDOMElement(paywall, notifications, banner, topStrip, midBanner, newsBanner, financeBanner);
+    const otherBanners = Array.from(document.querySelectorAll('[data-audtarget]'));
+    removeDOMElement(paywall, notifications, banner, topStrip, midBanner, newsBanner, financeBanner, ...otherBanners);
   }, 500);
 } else if (matchDomain('haaretz.co.il')) {
   setTimeout(function() {
@@ -496,7 +497,8 @@ if (matchDomain('elmercurio.com')) {
     const editorsBanner = document.querySelector('#haaretz\\.co\\.il\\.editors\\.banner');
     const headlinesBanner = document.querySelector('#haaretz\\.co\\.il\\.headline\\.box\\.desktop');
     const topStrip = document.querySelector('[data-test="topStrip"]');
-    removeDOMElement(paywall, notifications, banner, editorsBanner, topStrip, headlinesBanner);
+    const otherBanners = Array.from(document.querySelectorAll('[data-audtarget]'));
+    removeDOMElement(paywall, notifications, banner, editorsBanner, topStrip, headlinesBanner, ...otherBanners);
   }, 500);
 }
 
