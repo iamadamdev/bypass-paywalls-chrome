@@ -477,7 +477,7 @@ if (matchDomain('elmercurio.com')) {
   const adBlock = document.getElementById('ad-article-inline');
   const adHeader = document.getElementById('sticky-ad-header');
   removeDOMElement(block, adBlock, adHeader);
-} else if (matchDomain('themarker.com')) {
+} else if (matchDomain('themarker.com') || matchDomain('haaretz.co.il')) {
   setTimeout(function() {
     const notifications = document.querySelector('#pwSubscribePopup');
     const paywall = document.querySelector('[data-test="bottomStrip"]');
