@@ -137,6 +137,7 @@ const removeCookiesSelectHold = {
 // select only specific cookie(s) to drop from removeCookies domains
 const removeCookiesSelectDrop = {
   'ad.nl': ['temptationTrackingId'],
+  'ambito.com': ['TDNotesRead'],
   'bd.nl': ['temptationTrackingId'],
   'bndestem.nl': ['temptationTrackingId'],
   'demorgen.be': ['TID_ID'],

@@ -12,6 +12,7 @@
     "*://*.ad.nl/*",
     "*://*.afr.com/*",
     "*://*.americanbanker.com/*",
+    "*://*.ambito.com/*",
     "*://*.bizjournals.com/*",
     "*://*.bloomberg.com/*",
     "*://*.bloombergquint.com/*",
@@ -257,7 +258,8 @@
     "*://*.bd.nl/*",
     "*://*.tubantia.nl/*",
     "*://*.pzc.nl/*",
-    "*://*.destentor.nl/*"
+    "*://*.destentor.nl/*",
+    "*://*.ambito/*"
   ],
   "version": "1.7.8"
 }

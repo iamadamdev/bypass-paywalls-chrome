@@ -2,6 +2,7 @@
 const defaultSites = {
   'Adweek': 'adweek.com',
   'Algemeen Dagblad': 'ad.nl',
+  '\u00C1mbito': 'ambito.com',
   'American Banker': 'americanbanker.com',
   'Baltimore Sun': 'baltimoresun.com',
   'Barron\'s': 'barrons.com',
