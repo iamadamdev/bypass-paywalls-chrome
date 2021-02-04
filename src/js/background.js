@@ -98,7 +98,6 @@ const removeCookies = [
   'hbr.org',
   'humo.be',
   'lesechos.fr',
-  'medium.com',
   'mercurynews.com',
   'mexiconewsdaily.com',
   'newstatesman.com',
@@ -359,6 +358,8 @@ extensionApi.webRequest.onBeforeSendHeaders.addListener(function (details) {
         requestHeader.value = 'https://cooking.nytimes.com';
       } else if (matchUrlDomain('fd.nl', details.url)) {
         requestHeader.value = 'https://www.facebook.com/';
+      } else if (matchUrlDomain('medium.com', details.url)) {
+        requestHeader.value = 'https://t.co/x?amp=1'
       } else {
         requestHeader.value = 'https://www.google.com/';
       }
@@ -377,6 +378,11 @@ extensionApi.webRequest.onBeforeSendHeaders.addListener(function (details) {
       requestHeaders.push({
         name: 'Referer',
         value: 'https://www.facebook.com/'
+      });
+    } else if (matchUrlDomain('medium.com', details.url)) {
+      requestHeaders.push({
+        name: 'Referer',
+        value: 'https://t.co/x?amp=1'
       });
     } else {
       requestHeaders.push({
