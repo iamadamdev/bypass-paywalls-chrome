@@ -121,6 +121,7 @@
 [Postimees](https://www.postimees.ee)\
 [Quartz](https://qz.com)\
 [Quora](https://www.quora.com)\
+[Quotidiani Gelocal](https://quotidiani.gelocal.it)\
 [Republic.ru](https://republic.ru)\
 [San Diego Union Tribune](https://www.sandiegouniontribune.com)\
 [San Francisco Chronicle](https://www.sfchronicle.com)\

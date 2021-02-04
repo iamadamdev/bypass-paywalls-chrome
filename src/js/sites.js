@@ -97,6 +97,7 @@ const defaultSites = {
   'PZC': 'pzc.nl',
   'Quartz (free articles only)': 'qz.com',
   'Quora': 'quora.com',
+  'Quotidiani Gelocal': 'gelocal.it',
   'Republic.ru': 'republic.ru',
   'San Diego Union Tribune': 'sandiegouniontribune.com',
   'San Francisco Chronicle': 'sfchronicle.com',

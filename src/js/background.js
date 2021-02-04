@@ -23,6 +23,7 @@ const allowCookies = [
   'ed.nl',
   'examiner.com.au',
   'ft.com',
+  'gelocal.it',
   'gelderlander.nl',
   'grubstreet.com',
   'harpers.org',

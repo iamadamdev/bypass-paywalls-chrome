@@ -30,6 +30,7 @@
     "*://*.examiner.com.au/*",
     "*://*.firstthings.com/*",
     "*://*.ft.com/*",
+    "*://*.gelocal.it/*",
     "*://*.grubstreet.com/*",
     "*://*.haaretz.co.il/*",
     "*://*.humo.be/*",
@@ -152,6 +153,7 @@
     "*://*.fortune.com/*",
     "*://*.ft.com/*",
     "*://*.genomeweb.com/*",
+    "*://*.gelocal.it/*",
     "*://*.glassdoor.com/*",
     "*://*.globes.co.il/*",
     "*://*.groene.nl/*",
@@ -265,5 +267,5 @@
     "*://*.spectator.us/*",
     "*://*.humo.be/*"
   ],
-  "version": "1.7.8"
+  "version": "1.7.9"
 }

@@ -528,6 +528,17 @@ if (matchDomain('elmercurio.com')) {
     bodySingle.classList.remove('single');
     window.location.href = ampHtml.href;
   }
+} else if (matchDomain('gelocal.it')) {
+  const paywallAdagio = document.querySelector('.paywall-adagio');
+  const articleBody = document.getElementById('article-body');
+  console.log(paywallAdagio)
+  console.log(articleBody)
+  if (paywallAdagio) {
+    removeDOMElement(paywallAdagio);
+  }
+  if (articleBody) {
+    articleBody.style.maxHeight = null;
+  }
 }
 
 function matchDomain (domains) {
