@@ -266,7 +266,7 @@ if (matchDomain('elmercurio.com')) {
   const counter = document.querySelector('.full.hidden-print.popup-msg');
   removeDOMElement(counter);
 } else if (matchDomain('ft.com')) {
-  const cookieBanner = document.querySelector('.cookie-banner');
+  const cookieBanner = document.querySelectorAll('div[class*="cookie-message"]');
   removeDOMElement(cookieBanner);
 } else if (matchDomain('thehindu.com')) {
   document.addEventListener('DOMContentLoaded', () => {
