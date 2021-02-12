@@ -15,19 +15,20 @@
 1. Drag the `bypass-paywalls-chrome-master` folder anywhere on the page to import it (do not delete the folder afterwards).
 
 **Mozilla Firefox** (Custom sites not supported)
-* [Download and install the latest version](https://github.com/iamadamdev/bypass-paywalls-chrome/releases/latest/download/bypass-paywalls-firefox.xpi)
+* [Download the latest version from the Firefox add-ons store](https://addons.mozilla.org/en-US/firefox/addon/bypass-paywalls-firefox/)
 
 **Notes**
 * Every time you open Chrome it may warn you about running extensions in developer mode, just click &#10005; to keep the extension enabled.
 * You will be logged out for any site you have checked.
 * This extension works best alongside the adblocker uBlock Origin.
-* On the Firefox version automatic updates are enabled.
+* The Firefox version supports automatic updates.
 
 ### Bypass the following sites' paywalls with this extension:
 
 [Adweek](https://www.adweek.com)\
 [Algemeen Dagblad](https://www.ad.nl)\
 [American Banker](https://www.americanbanker.com)\
+[Ámbito](https://www.ambito.com/)\
 [Baltimore Sun](https://www.baltimoresun.com)\
 [Barron's](https://www.barrons.com)\
 [Bloomberg Quint](https://www.bloombergquint.com)\
@@ -191,7 +192,6 @@
 The free article limit can normally be bypassed by removing cookies for the site.*
 
 Install the Cookie Remover extension [for Google Chrome](https://chrome.google.com/webstore/detail/cookie-remover/kcgpggonjhmeaejebeoeomdlohicfhce) or [for Mozilla Firefox](https://addons.mozilla.org/en-US/firefox/addon/cookie-remover/). Please rate it 5 stars if you find it useful.
-
 
 When coming across a paywall click the cookie icon to remove the cookies then refresh the page.
 

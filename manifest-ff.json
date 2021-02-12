@@ -12,6 +12,7 @@
     "*://*.ad.nl/*",
     "*://*.afr.com/*",
     "*://*.americanbanker.com/*",
+    "*://*.ambito.com/*",
     "*://*.bizjournals.com/*",
     "*://*.bloomberg.com/*",
     "*://*.bloombergquint.com/*",
@@ -65,14 +66,15 @@
     "*://*.washingtonpost.com/*",
     "*://*.wsj.com/*",
     "*://*.hbr.org/*",
-    "*://*.financialpost.com/*"
+    "*://*.financialpost.com/*",
+    "*://*.sueddeutsche.de/*"
     ],
       "js": ["src/js/contentScript.js"]
     }
   ],
   "applications": {
     "gecko": {
-      "id": "bypasspaywalls@bypasspaywalls.weebly.com",
+      "id": "bypasspaywalls@bypasspaywalls",
       "update_url": "https://raw.githubusercontent.com/iamadamdev/bypass-paywalls-chrome/master/src/updates/updates.json"
     }
   },
@@ -257,7 +259,11 @@
     "*://*.bd.nl/*",
     "*://*.tubantia.nl/*",
     "*://*.pzc.nl/*",
-    "*://*.destentor.nl/*"
+    "*://*.destentor.nl/*",
+    "*://*.ambito/*",
+    "*://*.sueddeutsche.de/*",
+    "*://*.spectator.us/*",
+    "*://*.humo.be/*"
   ],
   "version": "1.7.8"
 }

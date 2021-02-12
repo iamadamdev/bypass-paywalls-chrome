@@ -127,7 +127,30 @@ if (matchDomain('elmercurio.com')) {
   const counter = document.getElementById('article-counter');
   removeDOMElement(counter);
 } else if (matchDomain('nzherald.co.nz')) {
-  NZHerald();
+  const articleContent = document.querySelector('.article__content');
+  if (articleContent) {
+    const articleOffer = document.querySelector('.article-offer');
+    if (articleOffer) {
+      const cssSelector = articleContent.querySelectorAll('p')[5].getAttribute('class');
+      const hiddenNotPars = articleContent.querySelectorAll('.' + cssSelector + ':not(p)');
+      for (const hiddenNotPar of hiddenNotPars) {
+        hiddenNotPar.classList.remove(cssSelector);
+        hiddenNotPar.removeAttribute('style');
+      }
+      const hiddenPars = articleContent.querySelectorAll('p.' + cssSelector);
+      const parser = new DOMParser();
+      for (const hiddenPar of hiddenPars) {
+        const parHtml = parser.parseFromString('<div style="margin: 10px 0px; font-size: 17px">' + hiddenPar.innerHTML + '</div>', 'text/html');
+        const parDom = parHtml.querySelector('div');
+        articleContent.insertBefore(parDom, hiddenPar);
+      }
+      const firstSpan = document.querySelector('p > span');
+      if (firstSpan) { firstSpan.removeAttribute('class'); }
+      removeDOMElement(articleOffer);
+    }
+  }
+  const premiumToaster = document.querySelector('#premium-toaster');
+  removeDOMElement(premiumToaster);
 } else if (matchDomain('interest.co.nz')) {
   const wrapper = document.getElementById('pp-ablock-banner-wrapper');
   const overlay = document.querySelector('.black-overlay');
@@ -243,7 +266,7 @@ if (matchDomain('elmercurio.com')) {
   const counter = document.querySelector('.full.hidden-print.popup-msg');
   removeDOMElement(counter);
 } else if (matchDomain('ft.com')) {
-  const cookieBanner = document.querySelector('.cookie-banner');
+  const cookieBanner = document.querySelectorAll('div[class*="cookie-message"]');
   removeDOMElement(cookieBanner);
 } else if (matchDomain('thehindu.com')) {
   document.addEventListener('DOMContentLoaded', () => {
@@ -261,7 +284,7 @@ if (matchDomain('elmercurio.com')) {
   // Restore scrolling
   document.onreadystatechange = function () {
     if (document.readyState === 'complete') {
-      document.querySelector('.css-mcm29f')?.setAttribute('style', 'position:relative');
+      document.querySelector('.css-mcm29f').setAttribute('style', 'position:relative');
     }
   };
 } else if (matchDomain('technologyreview.com')) {
@@ -500,6 +523,34 @@ if (matchDomain('elmercurio.com')) {
     const otherBanners = Array.from(document.querySelectorAll('[data-audtarget]'));
     removeDOMElement(paywall, notifications, banner, editorsBanner, topStrip, headlinesBanner, ...otherBanners);
   }, 500);
+} else if (matchDomain('sueddeutsche.de')) {
+  const url = window.location.href;
+  document.addEventListener('DOMContentLoaded', () => {
+    const offerPage = document.querySelector('div.offer-page');
+    if (url.startsWith('https://www.sueddeutsche.de') && (url.includes('reduced=true') || offerPage)) { window.location.href = url.split('?')[0].replace('www.', 'amphtml.'); } else if (url.startsWith('https://sz-magazin.sueddeutsche.de')) {
+      if (url.includes('reduced=true') || offerPage) { window.location.href = new URL(url).pathname + '!amp'; }
+    }
+  });
+  window.setTimeout(function () {
+    if (url.includes('!amp')) {
+      const paragraphReduced = document.querySelector('.paragraph--reduced');
+      if (paragraphReduced) { paragraphReduced.classList.remove('paragraph--reduced'); }
+      const paragraphHidden = document.querySelectorAll('.paragraph--hidden');
+      for (const parHidden of paragraphHidden) { parHidden.classList.remove('paragraph--hidden'); }
+      const paragraphDynamic = document.querySelector('.paragraph--dynamic');
+      if (paragraphDynamic) { paragraphDynamic.classList.remove('paragraph--dynamic'); }
+      const ampOfferpage = document.querySelector('.amp-offerpage');
+      removeDOMElement(ampOfferpage);
+    }
+  }, 500); // Delay (in milliseconds)
+} else if (matchDomain('adweek.com')) {
+  const url = window.location.href;
+  const bodySingle = document.querySelector('body.single');
+  const ampHtml = document.querySelector('link[rel="amphtml"]');
+  if (bodySingle && ampHtml) {
+    bodySingle.classList.remove('single');
+    window.location.href = ampHtml.href;
+  }
 }
 
 function matchDomain (domains) {
@@ -545,82 +596,4 @@ function blockElement (selector, blockAlways = false) {
       }
     }
   }).observe(document, { subtree: true, childList: true });
-}
-
-function NZHerald () {
-  const video = document.querySelector('.video-js');
-  if (video) {
-    const s = document.getElementsByTagName('script')[0];
-    if (s.src === '') {
-      const vId = video.getAttribute('data-account');
-      const vPlay = video.getAttribute('data-player');
-      const vScript = document.createElement('script');
-      vScript.type = 'text/javascript';
-      vScript.async = true;
-      vScript.src = 'https://players.brightcove.net/' + vId + '/' + vPlay + '_default/index.min.js';
-      s.parentNode.insertBefore(vScript, s);
-      const ticker = document.querySelector('.vcTicker');
-      if (ticker) {
-        ticker.style.display = 'none';
-      }
-      const msg = document.querySelector('.vcMsg');
-      if (msg) {
-        msg.style.display = 'none';
-      }
-      const overlay = document.querySelector('.vcOverlay');
-      if (overlay) {
-        overlay.style.display = 'none';
-      }
-    }
-  }
-
-  window.setTimeout(function () {
-    const articleBody = document.querySelector('.article__body');
-    if (articleBody) {
-      const childItems = articleBody.getElementsByTagName('*');
-      let classHidden = '';
-      for (const el of childItems) {
-        if (el.getAttribute('class') !== null && el.getAttribute('style') !== null && classHidden === '') {
-          classHidden = el.getAttribute('class');
-        }
-      }
-      if (classHidden !== '') {
-        for (const el of childItems) {
-          el.classList.remove(classHidden);
-          el.removeAttribute('style');
-        }
-      }
-    }
-    const overlay = document.querySelector('#premium-toaster');
-    if (overlay) {
-      overlay.style.display = 'none';
-    }
-    const advert = document.querySelector('.section-iframe.both');
-    if (advert) {
-      advert.style.display = 'none';
-    }
-    const els = document.querySelectorAll('.header__navigation-toggle-button');
-    for (let i = 0; i < els.length; i++) {
-      els[i].addEventListener('click', function (ev) {
-        document.querySelector('.container').classList.toggle('container--sidebar-is-active');
-        ev.stopImmediatePropagation();
-      });
-    }
-    const subEls = document.querySelectorAll('.subnavigation');
-    for (let i = 0; i < subEls.length; i++) {
-      subEls[i].addEventListener('mouseover', function () {
-        this.childNodes[1].classList.add('subnavigation__item-wrapper--is-active');
-      });
-      subEls[i].addEventListener('mouseleave', function () {
-        this.childNodes[1].classList.remove('subnavigation__item-wrapper--is-active');
-      });
-    }
-    const accEls = document.querySelectorAll('.accordion__button');
-    for (let i = 0; i < accEls.length; i++) {
-      accEls[i].addEventListener('click', function (ev) {
-        this.parentNode.classList.toggle('accordion--is-expanded');
-        ev.stopImmediatePropagation();
-      });
-    }
-  }, 1000);
 }

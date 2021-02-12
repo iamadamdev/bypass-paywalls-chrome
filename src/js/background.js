@@ -1,6 +1,7 @@
 'use strict';
 
 const restrictions = {
+  'adweek.com': /^((?!\.adweek\.com\/(.+\/)?(amp|agencyspy|tvnewser|tvspy)\/).)*$/,
   'barrons.com': /.+barrons\.com\/(amp\/)?article(s)?\/.+/,
   'economist.com': /.+economist\.com\/.+\/\d{1,4}\/\d{1,2}\/\d{2}\/.+/,
   'seekingalpha.com': /.+seekingalpha\.com\/article\/.+/
@@ -69,7 +70,8 @@ const allowCookies = [
   'financialpost.com',
   'haaretz.co.il',
   'haaretz.com',
-  'themarker.com'
+  'themarker.com',
+  'sueddeutsche.de'
 ];
 
 // Removes cookies after page load
@@ -96,7 +98,6 @@ const removeCookies = [
   'hbr.org',
   'humo.be',
   'lesechos.fr',
-  'medium.com',
   'mercurynews.com',
   'mexiconewsdaily.com',
   'newstatesman.com',
@@ -137,6 +138,7 @@ const removeCookiesSelectHold = {
 // select only specific cookie(s) to drop from removeCookies domains
 const removeCookiesSelectDrop = {
   'ad.nl': ['temptationTrackingId'],
+  'ambito.com': ['TDNotesRead'],
   'bd.nl': ['temptationTrackingId'],
   'bndestem.nl': ['temptationTrackingId'],
   'demorgen.be': ['TID_ID'],
@@ -211,7 +213,6 @@ const blockedRegexes = {
   'inquirer.com': /.+\.tinypass\.com\/.+/,
   'lastampa.it': /.+\.repstatic\.it\/minify\/sites\/lastampa\/.+\/config\.cache\.php\?name=social_js/,
   'lrb.co.uk': /.+\.tinypass\.com\/.+/,
-  'nzherald.co.nz': /(.+nzherald\.co\.nz\/.+\/subs\/p\.js|.+nzherald\.co\.nz\/.+\/react\.js|.+nzherald\.co\.nz\/.+\/appear\.js|.+nzherald\.co\.nz\/.+\/tracking\/.+|.+nzherald\.co\.nz\/.+\/default\.js|.+\/newsbarscript\.js)/,
   'medscape.com': /.+\.medscapestatic\.com\/.*medscape-library\.js/,
   'interest.co.nz': /(.+\.presspatron\.com.+|.+interest\.co\.nz.+pp-ablock-banner\.js)/,
   'repubblica.it': /scripts\.repubblica\.it\/pw\/pw\.js.+/,
@@ -232,7 +233,8 @@ const blockedRegexes = {
   'lesechos.fr': /.+\.tinypass\.com\/.+/,
   'washingtonpost.com': /.+\.washingtonpost\.com\/.+\/pwapi-proxy\.min\.js/,
   'thehindu.com': /ajax\.cloudflare\.com\/cdn-cgi\/scripts\/.+\/cloudflare-static\/rocket-loader\.min\.js/,
-  'technologyreview.com': /.+\.blueconic\.net\/.+/
+  'technologyreview.com': /.+\.blueconic\.net\/.+/,
+  'spectator.us': /(cdn\.cxense\.com\/.+|\.tinypass\.com\/.+)/
 };
 
 const userAgentDesktop = 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)';
@@ -356,6 +358,8 @@ extensionApi.webRequest.onBeforeSendHeaders.addListener(function (details) {
         requestHeader.value = 'https://cooking.nytimes.com';
       } else if (matchUrlDomain('fd.nl', details.url)) {
         requestHeader.value = 'https://www.facebook.com/';
+      } else if (matchUrlDomain('medium.com', details.url)) {
+        requestHeader.value = 'https://t.co/x?amp=1'
       } else {
         requestHeader.value = 'https://www.google.com/';
       }
@@ -374,6 +378,11 @@ extensionApi.webRequest.onBeforeSendHeaders.addListener(function (details) {
       requestHeaders.push({
         name: 'Referer',
         value: 'https://www.facebook.com/'
+      });
+    } else if (matchUrlDomain('medium.com', details.url)) {
+      requestHeaders.push({
+        name: 'Referer',
+        value: 'https://t.co/x?amp=1'
       });
     } else {
       requestHeaders.push({

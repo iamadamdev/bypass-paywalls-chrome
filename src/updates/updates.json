@@ -1,6 +1,6 @@
 {
   "addons": {
-    "bypasspaywalls@bypasspaywalls.weebly.com": {
+    "bypasspaywalls@bypasspaywalls": {
       "updates": [
         { "version": "1.7.8",
             "update_link": "https://github.com/iamadamdev/bypass-paywalls-chrome/releases/download/v1.7.8/bypass-paywalls-firefox.xpi" }
