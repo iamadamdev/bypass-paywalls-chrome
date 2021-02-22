@@ -33,6 +33,7 @@ const defaultSites = {
   'Eindhovens Dagblad': 'ed.nl',
   'El Mercurio':'elmercurio.com',
   'El Pais': 'elpais.com',
+  'El Periodico': 'elperiodico.com',
   'Elu24': 'elu24.ee',
   'Encyclopedia Britannica': 'britannica.com',
   'Estadão': 'estadao.com.br',

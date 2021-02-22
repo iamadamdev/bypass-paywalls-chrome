@@ -344,7 +344,19 @@ if (matchDomain('elmercurio.com')) {
     removeDOMElement(paywall);
     body.removeAttribute('style');
   }, 500); // Delay (in milliseconds)
-} else if (matchDomain('techinasia.com')) {
+} else if (matchDomain('elperiodico.com')) {
+  setTimeout(function () {
+    const unavailableArea = document.querySelector(".closed");
+    const infoBox = document.querySelector(".ep-masPeriodico-info");
+    if (unavailableArea) {
+      unavailableArea.classList.remove("closed");
+    }
+    if (infoBox) {
+      infoBox.parentNode.removeChild(infoBox);
+    }  
+}, 2000);
+} 
+  else if (matchDomain('techinasia.com')) {
   const paywall = document.querySelector('.paywall-content');
   if (paywall) {
     paywall.classList.remove('paywall-content');

@@ -58,6 +58,7 @@
 [Eindhovens Dagblad](https://www.ed.nl)\
 [El Mercurio](https://www.elmercurio.com)\
 [El Pais](https://www.elpais.com/)\
+[El Periodico](https://www.elperiodico.com/)\
 [Elu24](https://www.elu24.ee)\
 [Encyclopedia Britannica](https://www.britannica.com)\
 [Estadão](https://www.estadao.com.br)\
