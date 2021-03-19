@@ -23,6 +23,7 @@ const defaultSites = {
   'De Groene Amsterdammer': 'groene.nl',
   'DeMorgen': 'demorgen.be',
   'Denver Post': 'denverpost.com',
+  'De Speld': 'speld.nl',
   'De Stentor': 'destentor.nl',
   'De Tijd': 'tijd.be',
   'de Volkskrant': 'volkskrant.nl',

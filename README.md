@@ -47,6 +47,7 @@
 [De Gelderlander](https://www.gelderlander.nl)\
 [De Groene Amsterdammer](https://www.groene.nl)\
 [De Stentor](https://www.destentor.nl)\
+[De Speld](https://speld.nl)\
 [De Tijd](https://www.tijd.be)\
 [De Volkskrant](https://www.volkskrant.nl)\
 [DELFI](https://www.delfi.ee)\

@@ -591,6 +591,9 @@ if (matchDomain('elmercurio.com')) {
     const advertising = document.querySelectorAll('.advertising, amp-embed');
     removeDOMElement(...advertising);
   }
+} else if (matchDomain('speld.nl')) {
+    const paywallPopup = document.querySelector('.c-paywall-notice');
+    removeDOMelement(paywallPopup);
 }
 
 function matchDomain (domains) {

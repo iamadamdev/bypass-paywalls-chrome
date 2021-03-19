@@ -47,6 +47,7 @@ const allowCookies = [
   'seekingalpha.com',
   'sofrep.com',
   'spectator.co.uk',
+  'speld.nl',
   'tubantia.nl',
   'techinasia.com',
   'telegraaf.nl',
@@ -153,7 +154,8 @@ const removeCookiesSelectDrop = {
   'humo.be': ['TID_ID'],
   'nrc.nl': ['counter'],
   'pzc.nl': ['temptationTrackingId'],
-  'tubantia.nl': ['temptationTrackingId']
+  'tubantia.nl': ['temptationTrackingId'],
+  'speld.nl': ['speld-paywall']
 };
 
 // Override User-Agent with Googlebot
