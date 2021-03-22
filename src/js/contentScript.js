@@ -593,7 +593,7 @@ if (matchDomain('elmercurio.com')) {
   }
 } else if (matchDomain('speld.nl')) {
     const paywallPopup = document.querySelector('.c-paywall-notice');
-    removeDOMelement(paywallPopup);
+    removeDOMElement(paywallPopup);
 }
 
 function matchDomain (domains) {
