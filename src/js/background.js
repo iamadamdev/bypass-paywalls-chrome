@@ -115,6 +115,7 @@ const removeCookies = [
   'seattletimes.com',
   'sofrep.com',
   'spectator.co.uk',
+  'speld.nl',
   'telegraaf.nl',
   'theadvocate.com.au',
   'theage.com.au',
