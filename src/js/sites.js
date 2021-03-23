@@ -18,6 +18,7 @@ const defaultSites = {
   'Chicago Tribune': 'chicagotribune.com',
   'Corriere Della Sera': 'corriere.it',
   'Crain\'s Chicago Business': 'chicagobusiness.com',
+  'Daily Liberal': 'dailyliberal.com.au',
   'Daily Press': 'dailypress.com',
   'De Gelderlander': 'gelderlander.nl',
   'De Groene Amsterdammer': 'groene.nl',
