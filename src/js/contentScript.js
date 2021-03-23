@@ -596,6 +596,20 @@ if (matchDomain('elmercurio.com')) {
 } else if (matchDomain('speld.nl')) {
   const paywallPopup = document.querySelector('.c-paywall-notice');
   removeDOMElement(paywallPopup);
+} else if (matchDomain('centralwesterndaily.com.au')) {
+  const subscriberHider = document.querySelector('.subscriber-hider');
+  if (subscriberHider) {
+    subscriberHider.classList.remove('subscriber-hider');
+  }
+  const subscribeTruncate = document.querySelector('.subscribe-truncate');
+  removeDOMElement(subscribeTruncate);
+} else if (matchDomain('dailyliberal.com.au')) {
+  const subscriberHider = document.querySelector('.subscriber-hider');
+  if (subscriberHider) {
+    subscriberHider.classList.remove('subscriber-hider');
+  }
+  const subscribeTruncate = document.querySelector('.subscribe-truncate');
+  removeDOMElement(subscribeTruncate);
 }
 
 function matchDomain (domains) {
