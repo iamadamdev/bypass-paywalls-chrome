@@ -141,9 +141,9 @@ if (matchDomain('elmercurio.com')) {
         const parDom = parHtml.querySelector('div');
         articleContent.insertBefore(parDom, hiddenPar);
       }
+      removeDOMElement(articleOffer);
       const firstSpan = document.querySelector('p > span');
       if (firstSpan) { firstSpan.removeAttribute('class'); }
-      removeDOMElement(articleOffer);
     }
   }
   const premiumToaster = document.querySelector('#premium-toaster');
