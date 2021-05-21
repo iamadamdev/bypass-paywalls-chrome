@@ -96,7 +96,7 @@
 [La Tercera](https://www.latercera.com)\
 [La Voix du Nord](https://www.lavoixdunord.fr/)\
 [Le Devoir](https://www.ledevoir.com)\
-[Le Parisien](http://www.leparisien.fr)\
+[Le Parisien](https://www.leparisien.fr)\
 [Les Échos](https://www.lesechos.fr)\
 [Loeb Classical Library](https://www.loebclassics.com)\
 [London Review of Books](https://www.lrb.co.uk)\
