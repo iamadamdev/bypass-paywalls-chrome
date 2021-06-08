@@ -645,14 +645,12 @@ if (matchDomain('elmercurio.com')) {
   }
 } else if (matchDomain('latimes.com')) {
   const paywall = document.querySelector('metering-modal');
+  const incognitoWall = document.querySelector('metering-toppanel');
   if (paywall) {
     removeDOMElement(paywall);
-  } else {
-    const incognitoWall = document.querySelector('metering-toppanel');
-    if (incognitoWall) {
+  } else if (incognitoWall) {
       removeDOMElement(incognitoWall);
     }
-  }
   if (paywall || incognitoWall) {
     document.body.removeAttribute('style');
   }
