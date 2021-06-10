@@ -44,6 +44,7 @@ const defaultSites = {
   'Financial Post':'financialpost.com',
   'Financial Times': 'ft.com',
   'First Things': 'firstthings.com',
+  'Foreign Affairs': 'Foreign Affairs',
   'Foreign Policy': 'foreignpolicy.com',
   'Fortune': 'fortune.com',
   'Genomeweb': 'genomeweb.com',

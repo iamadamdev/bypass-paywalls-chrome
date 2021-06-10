@@ -461,6 +461,19 @@ if (matchDomain('elmercurio.com')) {
   });
   // Enable Scroll. Reveal Hiddlen Paragraph
   document.getElementsByTagName('body')[0].removeAttribute('class');
+} else if(matchDomain('foreignaffairs.com')){
+  window.setTimeout(function () {
+    document.querySelectorAll('[data-fa-message-dismiss-counter]').forEach(function (el) {
+      removeDOMElement(el);
+    });
+    const body = document.querySelector('body');
+    if (body) {
+      body.removeAttribute('no-scroll');
+    }
+    document.querySelectorAll('[class^="paywall"],[class*="paywall"]').forEach(function (el) {
+      removeDOMElement(el);
+    });
+  }, 2000); // Delay (in milliseconds)  
 } else if (matchDomain('seattletimes.com')) {
   window.setTimeout(function () {
     // remove modal class from all elements

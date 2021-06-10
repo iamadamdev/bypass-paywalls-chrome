@@ -68,6 +68,7 @@
 [Financial Post](https://www.financialpost.com)\
 [Financial Times](https://www.ft.com)\
 [First Things](https://www.firstthings.com)\
+[Foreign Affairs](https://www.foreignaffairs.com)\
 [Foreign Policy](https://www.foreignpolicy.com)\
 [Fortune](https://www.fortune.com)\
 [Genomeweb](https://www.genomeweb.com)\
