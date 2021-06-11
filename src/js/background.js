@@ -319,6 +319,26 @@ extensionApi.webRequest.onBeforeRequest.addListener(function (details) {
 ['blocking']
 );
 
+// Redirect for Foreign Affairs
+extensionApi.webRequest.onBeforeRequest.addListener(
+	function (details) {
+		if (!isSiteEnabled(details)) {
+			return;
+		}
+		const today = new Date();
+		const utm_content = `${today.getFullYear()}${today.getMonth()}${today.getDate()}`;
+		const queryString = `utm_medium=promo_email&utm_source=lo_flows&utm_campaign=registered_user_welcome&utm_term=email_1&utm_content=${utm_content}`;
+		const updatedUrl = `${details.url}?${queryString}`;
+    chrome.tabs.update({ url: updatedUrl });
+		return { redirectUrl: updatedUrl };
+	},
+	{
+		urls: ['*://www.foreignaffairs.com/articles/*'], // or <all_urls>
+		types: ['main_frame', 'sub_frame'],
+	},
+	['blocking']
+);
+
 // Disable javascript for these sites
 extensionApi.webRequest.onBeforeRequest.addListener(function (details) {
   if (!isSiteEnabled(details) && !enabledSites.includes('generalpaywallbypass')) {
