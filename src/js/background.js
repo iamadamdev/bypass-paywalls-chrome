@@ -325,8 +325,10 @@ extensionApi.webRequest.onBeforeRequest.addListener(
 		if (!isSiteEnabled(details)) {
 			return;
 		}
-		const today = new Date();
-		const utm_content = `${today.getFullYear()}${today.getMonth()}${today.getDate()}`;
+		const today = new Date()
+    const tomorrow = new Date(today)
+    tomorrow.setDate(tomorrow.getDate() + 1)
+		const utm_content = `${tomorrow.getFullYear()}${tomorrow.getMonth()}${tomorrow.getDate()}`;
 		const queryString = `utm_medium=promo_email&utm_source=lo_flows&utm_campaign=registered_user_welcome&utm_term=email_1&utm_content=${utm_content}`;
 		const updatedUrl = `${details.url}?${queryString}`;
     chrome.tabs.update({ url: updatedUrl });
