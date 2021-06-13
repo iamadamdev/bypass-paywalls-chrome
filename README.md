@@ -34,6 +34,7 @@
 [Bloomberg Quint](https://www.bloombergquint.com)\
 [Bloomberg](https://www.bloomberg.com)\
 [BN De Stem](https://www.bndestem.nl)\
+[Boston Globe](https://www.bostonglobe.com)\
 [Brabants Dagblad](https://www.bd.nl)\
 [Brisbane Times](https://www.brisbanetimes.com.au)\
 [Business Insider](https://www.businessinsider.com)\

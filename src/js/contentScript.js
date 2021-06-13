@@ -661,6 +661,25 @@ if (matchDomain('elmercurio.com')) {
   if (contentGated) {
     contentGated.classList.remove('content-gated');
   }
+} else if (matchDomain('bostonglobe.com')) {
+  // Remove the portion covering the paywall
+  const paywall = document.querySelector('div.meter-paywall')
+  if (paywall) {
+    removeDOMElement(paywall)
+  }
+  // Re-enable scrolling
+  const body = document.querySelector('body')
+  if (body) {
+    document.body.removeAttribute('style')
+  }
+  // Click the button to reveal the rest of the article
+  const buttonDiv = document.querySelector('[id="continue_button"]')
+  if (buttonDiv) {
+    const button = buttonDiv.querySelector('button')
+    if (button) {
+      button.click()
+    }
+  }
 }
 
 function matchDomain (domains) {

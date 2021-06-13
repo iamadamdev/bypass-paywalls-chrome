@@ -72,7 +72,8 @@
     "*://*.elmundo.es/*",
     "*://*.time.com/*",
     "*://*.expansion.com/*",
-    "*://*.foreignpolicy.com/*"
+    "*://*.foreignpolicy.com/*",
+    "*://*.bostonglobe.com/*"
     ],
       "js": ["src/js/contentScript.js"]
     }

@@ -9,6 +9,7 @@ const defaultSites = {
   'Bloomberg': 'bloomberg.com',
   'Bloomberg Quint (free articles only)': 'bloombergquint.com',
   'BN De Stem': 'bndestem.nl',
+  'Boston Globe': 'bostonglobe.com',
   'Brabants Dagblad': 'bd.nl',
   'Brisbane Times': 'brisbanetimes.com.au',
   'Business Insider': 'businessinsider.com',
