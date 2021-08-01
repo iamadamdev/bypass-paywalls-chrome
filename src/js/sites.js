@@ -84,6 +84,7 @@ const defaultSites = {
   'MIT Sloan Management Review': 'sloanreview.mit.edu',
   'MIT Technology Review': 'technologyreview.com',
   'Mountain View Voice': 'mv-voice.com',
+  'National Geographic': 'nationalgeographic.com',
   'National Post': 'nationalpost.com',
   'Neue Zürcher Zeitung': 'nzz.ch',
   'New Statesman': 'newstatesman.com',

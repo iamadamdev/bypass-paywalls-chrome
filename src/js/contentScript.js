@@ -687,6 +687,27 @@ if (matchDomain('elmercurio.com')) {
       button.click();
     }
   }
+} else if (matchDomain('nationalgeographic.com')) {
+  //prevent modal from showing up, then remove scroll-locking, and article blur
+  new window.MutationObserver(function (mutations) {
+    for (const mutation of mutations) {
+      for (const node of mutation.addedNodes) {
+        if (node instanceof window.HTMLElement) {
+          if (node.matches('#fittPortal_0')) {
+            removeDOMElement(node);
+            const body = document.body;
+            body.removeAttribute('class');
+            body.removeAttribute('style');
+            body.removeAttribute('overflow');
+            const blur = document.querySelector('#natgeo-template1-frame-1-module-1 > div > div > section > article > section > div.Article__Content__Overlay--gated');
+            if (blur) removeDOMElement(blur);
+
+            this.disconnect(); // Stop watching for element being added after one removal
+          }
+        }
+      }
+    }
+  }).observe(document, { subtree: true, childList: true });
 }
 
 function matchDomain (domains) {
@@ -735,7 +756,7 @@ function pageContains (selector, text) {
 }
 
 // Prevent element from being added the first time to the DOM
-function blockElement (selector, blockAlways = false) {
+function blockElement (selector, blockAlways = false, callback = null) {
   new window.MutationObserver(function (mutations) {
     for (const mutation of mutations) {
       for (const node of mutation.addedNodes) {
