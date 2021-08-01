@@ -756,7 +756,7 @@ function pageContains (selector, text) {
 }
 
 // Prevent element from being added the first time to the DOM
-function blockElement (selector, blockAlways = false, callback = null) {
+function blockElement (selector, blockAlways = false) {
   new window.MutationObserver(function (mutations) {
     for (const mutation of mutations) {
       for (const node of mutation.addedNodes) {
