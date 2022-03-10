@@ -485,8 +485,9 @@ if (matchDomain('elmercurio.com')) {
 } else if (matchDomain(['postimees.ee', 'elu24.ee'])) {
   setTimeout(function () {
     // Remove 'adblocker-detected' footer notification
-    const adblockNotif = document.querySelector('.adblock-notif');
+    const adblockNotif = document.querySelector('.ad-block-notification-overlay');
     removeDOMElement(adblockNotif);
+    document.body.removeAttribute('style');
   }, 800); // Delay (in milliseconds)
 } else if (matchDomain('themarker.com')) {
   setTimeout(function () {
