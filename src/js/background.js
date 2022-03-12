@@ -81,6 +81,7 @@ const allowCookies = [
 const removeCookies = [
   'ad.nl',
   'bd.nl',
+  'bloomberg.com',
   'bloombergquint.com',
   'bndestem.nl',
   'brisbanetimes.com.au',
