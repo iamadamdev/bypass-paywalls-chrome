@@ -489,6 +489,14 @@ if (matchDomain('elmercurio.com')) {
     removeDOMElement(adblockNotif);
     document.body.removeAttribute('style');
   }, 800); // Delay (in milliseconds)
+} else if (matchDomain('theolivepress.es')) {
+  const modalBackdrop = document.querySelector('.modal-backdrop');
+  const paywall = document.querySelector('.ev-open-modal-paywall-REQUIRE_LOGIN');
+  removeDOMElement(modalBackdrop, paywall);
+
+  for (const clazz of ['ev-modals', 'modal-open']) {
+    document.body.classList.remove(clazz);
+  }
 } else if (matchDomain('themarker.com')) {
   setTimeout(function () {
     const paywall = document.querySelector('[data-test="bottomStrip"]');
