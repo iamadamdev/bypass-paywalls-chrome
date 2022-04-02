@@ -150,6 +150,7 @@ const defaultSites = {
   'The News-Gazette': 'news-gazette.com',
   'The New Yorker': 'newyorker.com',
   'The New York Times': 'nytimes.com',
+  'The Olive Press': 'theolivepress.es',
   'The Philadelphia Inquirer': 'inquirer.com',
   'The Saturday Paper': 'thesaturdaypaper.com.au',
   'The Seattle Times': 'seattletimes.com',
