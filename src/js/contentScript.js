@@ -19,23 +19,16 @@ if (matchDomain('elmercurio.com')) {
     removeDOMElement(paywall);
     body.removeAttribute('style');
   }, 300); // Delay (in milliseconds)
-} else if (matchDomain('repubblica.it')) {
-  document.addEventListener('DOMContentLoaded', () => {
-    if (document.querySelector('#paywall')) {
-      const url = window.location.href.split('?')[0];
-      window.location.href = url + 'amp';
-    } else if (window.location.href.includes('/pwa/')) {
-      setTimeout(function () {
-        window.location.href = window.location.href.replace('/pwa/', '/ws/detail/');
-      }, 400);
+} else if (matchDomain('rep.repubblica.it')) {
+  window.setTimeout(function () {
+    if (window.location.href.includes('/pwa/')) {
+      window.location.href = window.location.href.replace('/pwa/', '/ws/detail/');
     }
-  });
-  const paywall = document.querySelector('[subscriptions-section="content"]');
-  if (paywall) {
-    paywall.removeAttribute('subscriptions-section');
-    const preview = document.querySelector('div[subscriptions-section="content-not-granted"]');
-    if (preview) {
-      preview.remove();
+  }, 500);
+  if (window.location.href.includes('/ws/detail/')) {
+    const paywall = document.querySelector('.paywall');
+    if (paywall) {
+      ampUnhideSubscriptionsSection();
     }
   }
 } else if (matchDomain('americanbanker.com')) {
@@ -476,6 +469,21 @@ if (matchDomain('elmercurio.com')) {
   document.querySelectorAll('div[class*="fancybox"]').forEach(function (el) {
     removeDOMElement(el);
   });
+} else if (matchDomain(['theathletic.com', 'theathletic.co.uk'])) {
+  if (!window.location.href.includes('?amp')) {
+    const paywall = document.querySelectorAll('div#paywall-container, div[subscriptions-action="subscribe"], a.headline-paywall');
+    const amphtml = document.querySelector('link[rel="amphtml"]');
+    if (paywall.length && amphtml) {
+      removeDOMElement(...paywall);
+      window.setTimeout(function () {
+        window.location.href = amphtml.href;
+      }, 500);
+    }
+  } else {
+    ampUnhideSubscriptionsSection();
+    const subscriptionsActions = document.querySelectorAll('[subscriptions-actions]');
+    removeDOMElement(...subscriptionsActions);
+  }
 } else if (matchDomain('newyorker.com')) {
   blockElement('.paywall-bar', true);
   blockElement('.paywall-modal');
@@ -485,8 +493,9 @@ if (matchDomain('elmercurio.com')) {
 } else if (matchDomain(['postimees.ee', 'elu24.ee'])) {
   setTimeout(function () {
     // Remove 'adblocker-detected' footer notification
-    const adblockNotif = document.querySelector('.adblock-notif');
+    const adblockNotif = document.querySelector('.ad-block-notification-overlay');
     removeDOMElement(adblockNotif);
+    document.body.removeAttribute('style');
   }, 800); // Delay (in milliseconds)
 } else if (matchDomain('themarker.com')) {
   setTimeout(function () {
@@ -741,4 +750,15 @@ function blockElement (selector, blockAlways = false) {
       }
     }
   }).observe(document, { subtree: true, childList: true });
+}
+
+function ampUnhideSubscriptionsSection (ampAdsSel = 'amp-ad, .ad') {
+  const preview = document.querySelector('[subscriptions-section="content-not-granted"]');
+  removeDOMElement(preview);
+  const subscriptionsSection = document.querySelectorAll('[subscriptions-section="content"]');
+  for (const elem of subscriptionsSection) {
+    elem.removeAttribute('subscriptions-section');
+  }
+  const ampAds = document.querySelectorAll(ampAdsSel);
+  removeDOMElement(...ampAds);
 }

@@ -73,7 +73,9 @@
     "*://*.time.com/*",
     "*://*.expansion.com/*",
     "*://*.foreignpolicy.com/*",
-    "*://*.bostonglobe.com/*"
+    "*://*.bostonglobe.com/*",
+    "*://*.theathletic.com/*",
+    "*://*.theathletic.co.uk/*"
     ],
       "js": ["src/js/contentScript.js"]
     }
@@ -276,7 +278,9 @@
     "*://*.zeit.de/*",
     "*://*.ampproject.org/*",
     "*://*.reuters.com/*",
-    "*://*.expansion.com/*"
+    "*://*.expansion.com/*",
+    "*://*.theathletic.com/*",
+    "*://*.theathletic.co.uk/*"
   ],
   "version": "1.7.9"
 }

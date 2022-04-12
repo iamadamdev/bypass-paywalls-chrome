@@ -143,6 +143,8 @@
 [The Advocate](https://www.theadvocate.com.au)\
 [The Age](https://www.theage.com.au)\
 [The American Interest](https://www.the-american-interest.com)\
+[The Athletic](https://www.theathletic.com)\
+[The Athletic (UK)](https://www.theathletic.co.uk)\
 [The Atlantic](https://www.theatlantic.com)\
 [The Australian Financial Review](https://www.afr.com)\
 [The Australian](https://www.theaustralian.com.au)\

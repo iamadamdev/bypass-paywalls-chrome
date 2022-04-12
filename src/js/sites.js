@@ -122,6 +122,8 @@ const defaultSites = {
   'The Advocate': 'theadvocate.com.au',
   'The Age': 'theage.com.au',
   'The American Interest': 'the-american-interest.com',
+  'The Athletic': 'theathletic.com',
+  'The Athletic (UK)': 'theathletic.co.uk',
   'The Atlantic': 'theatlantic.com',
   'The Australian Financial Review': 'afr.com',
   'The Australian': 'theaustralian.com.au',
