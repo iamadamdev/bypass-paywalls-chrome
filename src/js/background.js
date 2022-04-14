@@ -74,7 +74,8 @@ const allowCookies = [
   'time.com',
   'zeit.de',
   'expansion.com',
-  'dailytelegraph.com.au'
+  'dailytelegraph.com.au',
+  'washingtonpost.com'
 ];
 
 // Removes cookies after page load
@@ -122,7 +123,8 @@ const removeCookies = [
   'vn.nl',
   'vulture.com',
   'wsj.com',
-  'medium.com'
+  'medium.com',
+  'washingtonpost.com'
 ];
 
 // Contains remove cookie sites above plus any custom sites
