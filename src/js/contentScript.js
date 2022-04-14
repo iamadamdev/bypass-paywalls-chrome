@@ -79,7 +79,8 @@ if (matchDomain('elmercurio.com')) {
 } else if (matchDomain('washingtonpost.com')) {
   const leaderboard = document.querySelector('#leaderboard-wrapper');
   const adverts = document.querySelectorAll('div[data-qa="article-body-ad"]');
-  removeDOMElement(leaderboard, ...adverts);
+  const softwall = document.querySelector('[id^="softwall"]');
+  removeDOMElement(leaderboard, softwall, ...adverts);
   if (window.location.href.includes('/gdpr-consent/')) {
     const freeButton = document.querySelector('.gdpr-consent-container .continue-btn.button.free');
     if (freeButton) { freeButton.click(); }
