@@ -492,20 +492,22 @@ if (matchDomain('elmercurio.com')) {
   const paywall = document.querySelector('.paywall-bar');
   removeDOMElement(paywall);
 } else if (matchDomain(['postimees.ee', 'elu24.ee'])) {
-  setTimeout(function () {
+  document.addEventListener('DOMContentLoaded', () => {
     // Remove 'adblocker-detected' footer notification
     const adblockNotif = document.querySelector('.ad-block-notification-overlay');
     removeDOMElement(adblockNotif);
     document.body.removeAttribute('style');
-  }, 800); // Delay (in milliseconds)
+  });
 } else if (matchDomain('theolivepress.es')) {
-  const modalBackdrop = document.querySelector('.modal-backdrop');
-  const paywall = document.querySelector('.ev-open-modal-paywall-REQUIRE_LOGIN_WITH_ENTITLEMENT');
-  removeDOMElement(modalBackdrop, paywall);
+  document.addEventListener('DOMContentLoaded', () => {
+    for (const clazz of ['.modal-backdrop', '.ev-open-modal-paywall-REQUIRE_LOGIN_WITH_ENTITLEMENT', '.ev-open-modal-paywall-REQUIRE_LOGIN']) {
+      removeDOMElement(document.querySelector(clazz));
+    }
 
-  for (const clazz of ['ev-modals', 'modal-open']) {
-    document.body.classList.remove(clazz);
-  }
+    for (const clazz of ['ev-modals', 'modal-open']) {
+      document.body.classList.remove(clazz);
+    }
+  });
 } else if (matchDomain('themarker.com')) {
   setTimeout(function () {
     const paywall = document.querySelector('[data-test="bottomStrip"]');
