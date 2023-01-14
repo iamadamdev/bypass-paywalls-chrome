@@ -11,19 +11,13 @@ const restrictions = {
 
 // Don't remove cookies before page load
 const allowCookies = [
-  'ad.nl',
-  'bd.nl',
-  'bndestem.nl',
   'brisbanetimes.com.au',
   'canberratimes.com.au',
   'cen.acs.org',
   'demorgen.be',
   'denverpost.com',
-  'destentor.nl',
-  'ed.nl',
   'examiner.com.au',
   'gelocal.it',
-  'gelderlander.nl',
   'grubstreet.com',
   'harpers.org',
   'hbr.org',
@@ -37,7 +31,6 @@ const allowCookies = [
   'nymag.com',
   'ocregister.com',
   'parool.nl',
-  'pzc.nl',
   'qz.com',
   'scientificamerican.com',
   'seattletimes.com',
@@ -45,7 +38,6 @@ const allowCookies = [
   'sofrep.com',
   'spectator.co.uk',
   'speld.nl',
-  'tubantia.nl',
   'techinasia.com',
   'telegraaf.nl',
   'the-american-interest.com',
@@ -79,20 +71,14 @@ const allowCookies = [
 
 // Removes cookies after page load
 const removeCookies = [
-  'ad.nl',
-  'bd.nl',
   'bloomberg.com',
   'bloombergquint.com',
-  'bndestem.nl',
   'brisbanetimes.com.au',
   'canberratimes.com.au',
   'cen.acs.org',
   'demorgen.be',
   'denverpost.com',
-  'destentor.nl',
-  'ed.nl',
   'examiner.com.au',
-  'gelderlander.nl',
   'globes.co.il',
   'grubstreet.com',
   'harpers.org',
@@ -104,7 +90,6 @@ const removeCookies = [
   'nrc.nl',
   'nymag.com',
   'ocregister.com',
-  'pzc.nl',
   'qz.com',
   'scientificamerican.com',
   'seattletimes.com',
@@ -118,7 +103,6 @@ const removeCookies = [
   'thecut.com',
   'thediplomat.com',
   'towardsdatascience.com',
-  'tubantia.nl',
   'vn.nl',
   'vulture.com',
   'wsj.com',
@@ -139,19 +123,11 @@ const removeCookiesSelectHold = {
 
 // select only specific cookie(s) to drop from removeCookies domains
 const removeCookiesSelectDrop = {
-  'ad.nl': ['temptationTrackingId'],
   'ambito.com': ['TDNotesRead'],
-  'bd.nl': ['temptationTrackingId'],
-  'bndestem.nl': ['temptationTrackingId'],
   'demorgen.be': ['TID_ID'],
-  'destentor.nl': ['temptationTrackingId'],
-  'ed.nl': ['temptationTrackingId'],
   'fd.nl': ['socialread'],
-  'gelderlander.nl': ['temptationTrackingId'],
   'humo.be': ['TID_ID'],
   'nrc.nl': ['counter'],
-  'pzc.nl': ['temptationTrackingId'],
-  'tubantia.nl': ['temptationTrackingId'],
   'speld.nl': ['speld-paywall']
 };
 

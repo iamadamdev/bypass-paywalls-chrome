@@ -73,9 +73,6 @@ if (matchDomain('elmercurio.com')) {
       }
     }
   }
-} else if (matchDomain(['ad.nl', 'ed.nl', 'bndestem.nl', 'bd.nl', 'tubantia.nl', 'destentor.nl', 'pzc.nl', 'gelderlander.nl'])) {
-  const paywall = document.querySelector('.article__component.article__component--paywall-module-notification');
-  removeDOMElement(paywall);
 } else if (matchDomain('washingtonpost.com')) {
   const leaderboard = document.querySelector('#leaderboard-wrapper');
   const adverts = document.querySelectorAll('div[data-qa="article-body-ad"]');
